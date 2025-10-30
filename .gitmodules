@@ -1,0 +1,3 @@
+[submodule "amplifier"]
+	path = amplifier
+	url = https://github.com/cpark4x/amplifier.git
