@@ -1,44 +1,74 @@
-# Project Brief Tool - `/brief` (v3.0 - Adaptive Decision Support)
+# Project Brief Tool - `/brief` (v3.1 - Frictionless Adaptive Discovery)
 
-**Version**: 3.0.0
-**Philosophy**: Context-aware advisor that adapts to YOUR needs
+**Version**: 3.1.0
+**Philosophy**: Front-load value, minimize ceremony, offer recommendations over questions
 
-The `/brief` command helps you make better decisions by understanding your situation first, then guiding you through the appropriate discovery process. Not all decisions need 20 minutes of interrogation - some need quick validation, others need deep exploration.
+The `/brief` command helps you make better decisions by **immediately delivering value**, then offering the right depth of exploration. Respects that people are busy, want recommendations not interrogation, and need to see value before committing time.
 
 ---
 
-## What's New in v3.0
+## What's New in v3.1
 
-### The Critical Insight from v2.0 Testing
+### The Critical Insight from v3.0 Testing
 
-v2.0 worked brilliantly for its sweet spot (unclear problems, high-cost decisions) but had blind spots:
-- Treated all users as if they needed full discovery
-- No escape hatch for crises or validated work
-- Didn't recognize domain expertise
-- Forced process on team-validated decisions
+v3.0 was architecturally correct but practically tedious. Through simulated real-world testing, we discovered:
+- Context detection felt like bureaucracy when user already stated their ask
+- Open-ended questions created cognitive load
+- Users wanted recommendations, not interrogation
+- No preview of value before time commitment
+- Problem-first broke for creation/learning projects
+- Expert users had no fast-track escape hatch
 
-**v3.0 fixes this with adaptive intelligence.**
+**v3.1 fixes this with frictionless intelligence.**
 
-### Four Modes, Not One Process
+### Five Key Improvements
 
-v3.0 starts with **context detection** (30-90 seconds) to understand:
-- What's the urgency?
-- What exploration has already happened?
-- What's your expertise level?
-- Are you solo or working with a team?
+1. **Intelligent Context Parsing** (NEW)
+   - Parses your initial statement BEFORE asking questions
+   - Detects urgency keywords → skips directly to Quick Exit
+   - Detects validation signals → skips to Validated Builder
+   - Detects expertise → minimal questioning
+   - **Result**: 0-3 questions instead of 5
 
-Then routes you to the right mode:
+2. **Front-Load Immediate Value** (NEW)
+   - Gives useful insight BEFORE asking for time
+   - "Quick thought: Have you profiled to confirm caching is the bottleneck?"
+   - Shows common traps related to your approach
+   - **Result**: Value delivered in first 30 seconds
 
-1. **QUICK EXIT** (< 2 min): Crisis, validated decisions, expert practitioners
+3. **Output Preview Before Commitment** (NEW)
+   - Shows exactly what you'll get before asking for time
+   - Clear deliverable format preview
+   - Options: quick / light / deep / expert fast-track
+   - **Result**: Informed choice, no surprises
+
+4. **Recommendations Over Questions** (NEW)
+   - AI generates alternatives FOR you, you react
+   - "Here are 3 options I see..." instead of "What are your options?"
+   - Offers typical constraints, you confirm/correct
+   - **Result**: 50% less cognitive load
+
+5. **Expert Fast-Track Mode** (NEW - Mode 0)
+   - "I know what I'm doing, just document it"
+   - You dictate, AI structures
+   - No interrogation, just capture
+   - **Result**: 2 minutes for expert documentation
+
+### Five Modes, Not Four
+
+v3.1 adds **Expert Fast-Track** to the four adaptive modes:
+
+0. **EXPERT FAST-TRACK** (< 2 min): "I know what I'm doing, just document it"
+1. **QUICK EXIT** (< 2 min): Crisis, validated decisions, sanity checks
 2. **LIGHT DISCOVERY** (5-7 min): Experienced users, moderate complexity
 3. **DEEP DISCOVERY** (15-20 min): Unclear problems, solution-first framing
 4. **VALIDATED BUILDER** (5-10 min): Decision made, need execution planning
 
-**You stay in control** - can switch modes anytime by saying "go deeper" or "speed up".
+**You stay in control** - can switch modes anytime or fast-track if you're the expert.
 
 ---
 
-## How To Use v3.0
+## How To Use v3.1
 
 ### 1. Start the conversation
 
@@ -46,40 +76,68 @@ Then routes you to the right mode:
 /brief
 ```
 
-The AI begins with context detection:
+**New in v3.1**: AI parses your initial statement for context signals BEFORE asking questions.
 
-> "I'll help you think through this decision. First, let me understand your situation with a few quick questions:
->
-> 1. What are you trying to decide?
-> 2. Is this urgent, or can we take time to explore?
-> 3. Have you or your team already done any exploration or validation?
-> 4. What's your experience level in this domain?"
+**Rich statement example** (AI skips to value immediately):
+```
+User: "I want to add Redis caching to our API. Endpoints are slow."
 
-### 2. Get routed to the right mode
+AI: "Quick thought: Have you profiled to confirm caching is the bottleneck?
+     Common trap: adding caching when actual issue is unindexed queries.
 
-Based on your answers:
+     Want me to help validate that?
+     • Quick check (< 2 min)
+     • Light discovery (5-7 min)
+     • You're sure, just document it"
+```
+
+**Minimal statement example** (AI asks only missing context):
+```
+User: "Need help with a decision"
+
+AI: "I'll help you think through this. Quick context:
+     1. What's the urgency?
+     2. What validation have you done?
+     3. Your experience level?
+
+     This helps me give you the right process - 2 to 20 minutes depending on needs."
+```
+
+### 2. See what you'll get (NEW)
+
+Before committing time, AI shows output preview:
 
 ```
-Based on your situation, I recommend LIGHT DISCOVERY:
-- Estimated time: 5-7 minutes
-- We'll focus on: validating problem and exploring alternatives
-- You can switch modes anytime: say "go deeper", "speed up", or "just validate"
+Based on your situation, I recommend LIGHT DISCOVERY (5-7 min):
 
-Sound good?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📄 You'll get:
+  • Problem validated in your words
+  • 3+ alternatives with recommendations
+  • Next 3 concrete actions
+  • Brief document you can share with team
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Worth the time?
+• Yes, let's do it
+• Show me quick version instead
+• I'll dictate, you document (expert fast-track)
 ```
 
 ### 3. Work through your mode
 
-Each mode is optimized for its use case:
+Each mode is optimized and **recommendation-first** (NEW):
 
-**Quick Exit** → Sanity check, gotchas, done
-**Light Discovery** → Problem essence, constraints, alternatives, decision factors
-**Deep Discovery** → Full problem excavation like v2.0
-**Validated Builder** → Validate foundation, plan execution
+**Expert Fast-Track** → You dictate, AI documents (no questions)
+**Quick Exit** → AI offers gotchas/recommendations, you react
+**Light Discovery** → AI offers alternatives/constraints, you refine
+**Deep Discovery** → AI hypothesizes problem, you validate
+**Validated Builder** → AI proposes execution plan, you adjust
 
 ### 4. Get mode-appropriate output
 
-- **Quick Exit**: Conversation summary (no file unless requested)
+- **Expert Fast-Track**: Brief based on your expert dictation (< 2 min)
+- **Quick Exit**: Verbal validation with gotchas (no file unless requested)
 - **Light**: Streamlined two-part brief
 - **Deep**: Full two-part brief with confidence levels
 - **Validated Builder**: Execution plan with milestones and risks
@@ -88,15 +146,61 @@ Each mode is optimized for its use case:
 
 ## When To Use Each Mode
 
+### Mode 0: EXPERT FAST-TRACK (< 2 min) - NEW
+
+**Perfect for**:
+- Expert practitioners: "I've done this 5 times, know exactly what I'm doing"
+- Completed thinking: "Already analyzed, just need documentation"
+- Team documentation: "Want this structured for team review"
+- No time for questions: "Just let me dictate what matters"
+
+**What you get**:
+```
+✅ Expert Brief Complete
+
+📁 File: /brief/Brief.md
+
+_Note: This brief reflects the user's expert judgment and prior analysis._
+
+# [Your Project]
+
+## Problem & Context
+[Your problem description, structured]
+
+## Solution Approach
+[Your alternatives, reasoning, chosen approach - as you dictated]
+
+**Next Actions**: [Your next steps]
+**Success Criteria**: [Your metrics]
+```
+
+**Example flow**:
+```
+User: "I need to add rate limiting to our API. I've done this 5 times before,
+      know exactly what I'm doing. Just want it documented."
+
+AI: "Got it - you're the expert here. Tell me what should go in the brief:
+     - What problem are you solving?
+     - What alternatives did you consider?
+     - Why this approach wins?
+     - Success criteria?"
+
+User: [Dictates analysis]
+
+AI: [Generates structured brief in 2 minutes]
+```
+
+---
+
 ### Mode 1: QUICK EXIT (< 2 min)
 
 **Perfect for**:
-- Production outages: "API returning 500s, need logging"
-- Validated requirements: "PM approved, just need to execute"
-- Expert decisions: "I've done this 10 times, just want sanity check"
-- Micro-decisions: "async/await or promises?"
+- Production crises: "URGENT: API returning 500s, need logging NOW"
+- Validated requirements: "PM approved, compliance requires this"
+- Quick sanity check: "Just want to verify my thinking before proceeding"
+- Micro-decisions: "Should I use async/await or promises?"
 
-**What you get**:
+**What you get** (NEW - recommendation-first):
 ```
 ✅ Quick Validation Complete
 
@@ -368,9 +472,78 @@ v3.0 keeps all the strengths of v2.0 in Deep Discovery mode:
 
 ---
 
+## Philosophy Improvements in v3.1
+
+### What Changed From v3.0
+
+**v3.0 was architecturally correct:**
+- ✅ Adaptive modes based on context
+- ✅ Problem-first discovery
+- ✅ Quality gates
+- ✅ Domain adaptation
+
+**But practically tedious:**
+- ❌ Context detection felt bureaucratic
+- ❌ Open questions created cognitive load
+- ❌ No immediate value before time commitment
+- ❌ Didn't respect expert users
+- ❌ Repeated information user provided
+
+### v3.1 Core Principles
+
+#### 1. Ruthlessly Simple (preserved)
+- Five clear modes (not complex decision trees)
+- Context detection is 0-3 questions (down from 5)
+- Each mode has single clear purpose
+- No elaborate state machines
+
+#### 2. Front-Load Value (NEW)
+- Give insight BEFORE asking for time
+- Show what they'll get BEFORE commitment
+- Recommendations BEFORE questions
+- **Philosophy**: Earn the user's time, don't assume it
+
+#### 3. Respects Laziness (NEW)
+- People are busy - minimize ceremony
+- Parse initial statement for signals
+- Don't repeat information user provided
+- Offer recommendations over open questions
+- **Philosophy**: Cognitive load is a cost; minimize it
+
+#### 4. Trusts Expertise (NEW)
+- Expert Fast-Track for experienced users
+- "I know what I'm doing" escape hatch
+- Don't interrogate validated decisions
+- Let experts dictate, AI documents
+- **Philosophy**: Expertise should accelerate, not slow down
+
+#### 5. Trusts Emergence (preserved)
+- Doesn't force discovery on validated work
+- Adapts to what user reveals
+- Allows mode switching organically
+- Recognizes "enough" naturally
+
+#### 6. Present-Moment Focus (preserved)
+- Detects actual urgency immediately
+- Serves crises with <2 min validation
+- Doesn't over-plan for hypotheticals
+- Focuses on decision at hand
+
+### The "People Are Lazy" Insight
+
+Not "lazy" in a negative sense - **cognitively efficient**:
+- Want recommendations they can react to, not blank-slate questions
+- Want to see value immediately, not after 15 minutes
+- Want their expertise recognized, not re-questioned
+- Want brevity when urgent, depth when needed
+
+**v3.1 respects this by default.**
+
+---
+
 ## Known Limitations & When NOT To Use
 
-v3.0 is better but not perfect. Don't use `/brief` when:
+v3.1 is significantly better but not perfect. Don't use `/brief` when:
 
 ### 1. Pure Execution Tasks
 **Example**: "Format this code snippet"
@@ -396,11 +569,12 @@ v3.0 is better but not perfect. Don't use `/brief` when:
 
 ## Tips for Best Results
 
-### 1. Be Honest in Context Detection
+### 1. Provide Rich Initial Statements (NEW)
 
-The routing only works if you're honest:
-- ✅ "I haven't really thought about this much" → Deep Discovery
-- ❌ "I'm sure about this" (when you're not) → Wrong mode, poor results
+The more context in your opening, the less ceremony:
+- ✅ "Need Redis caching (API slow), not urgent, done this before" → Skips detection
+- ❌ "Need help" → Full context detection required
+- **v3.1 benefit**: Rich statements = immediate value, minimal questions
 
 ### 2. Trust the Process
 
@@ -428,9 +602,18 @@ Say "write it up" if:
 ### 5. Reference Prior Work
 
 If your team did discovery:
-- Say so in context detection
+- Say so upfront: "PM validated this with 20 customers"
+- AI will skip to Validated Builder immediately (v3.1 improvement)
 - Reference PM work, customer research, stakeholder decisions
-- AI will route to Validated Builder and build on that foundation
+- AI builds on that foundation, doesn't repeat validation
+
+### 6. Use Expert Fast-Track When Appropriate (NEW)
+
+If you've done the thinking:
+- Say "I know what I'm doing, just document it"
+- Or choose "expert fast-track" when offered options
+- You dictate, AI structures
+- 2 minutes to documentation vs 15 minutes of interrogation
 
 ---
 
@@ -465,7 +648,19 @@ AI will offer to switch to Deep Discovery mode.
 
 ## Version History
 
-### v3.0 (Current) - Adaptive Decision Support
+### v3.1 (Current) - Frictionless Adaptive Discovery
+- **NEW**: Intelligent context parsing (parses initial statement before asking)
+- **NEW**: Front-load immediate value (insight before questions)
+- **NEW**: Output preview before time commitment
+- **NEW**: Recommendation-first approach (AI offers, you react)
+- **NEW**: Expert Fast-Track mode (Mode 0: dictation, no interrogation)
+- **Improved**: 0-3 questions instead of 5 for context detection
+- **Improved**: Respects "people are lazy" (cognitively efficient)
+- **Improved**: Skips directly to mode when signals detected
+- **Preserved**: All v3.0 adaptive intelligence and modes
+- **Result**: Dramatically reduced friction, maintained rigor
+
+### v3.0 - Adaptive Decision Support
 - **NEW**: Context detection phase (30-90 seconds)
 - **NEW**: Four distinct modes (Quick Exit, Light, Deep, Validated Builder)
 - **NEW**: Domain-specific question adaptation
@@ -475,6 +670,7 @@ AI will offer to switch to Deep Discovery mode.
 - **Improved**: Respects user expertise and prior work
 - **Improved**: Graceful exits for crises and validated work
 - **Preserved**: All v2.0 strengths in Deep Discovery mode
+- **Limitation**: Context detection felt bureaucratic, open questions created cognitive load
 
 ### v2.0 - Problem-First Discovery
 - Added Phase 0: Problem Discovery
@@ -503,6 +699,13 @@ outcomist/
 
 ### Front-Matter (Mode-Specific)
 ```yaml
+# Expert Fast-Track Mode (NEW in v3.1)
+---
+created: 2025-10-31
+mode: expert_dictation
+source: user_expertise
+---
+
 # Deep Discovery Mode
 ---
 created: 2025-10-31
@@ -540,26 +743,29 @@ outcomist/
 ## Contributing
 
 If you improve `/brief`:
-1. Test across all 4 modes
-2. Validate mode detection logic works
+1. Test across all 5 modes (including Expert Fast-Track)
+2. Validate context parsing and signal detection works
 3. Update this README with learnings
-4. Track metrics for your domain
-5. Share examples of good adaptations
+4. Track friction points and cognitive load
+5. Share examples where v3.1 improvements shined
 
 ---
 
 ## The Bottom Line
 
-**v2.0 was a powerful tool for its sweet spot** (unclear problems, high-cost decisions).
+**v2.0 was powerful** for its sweet spot (unclear problems, high-cost decisions).
 
-**v3.0 is a flexible advisor** that meets you where you are:
-- Crisis? Quick validation.
-- Experienced? Light discovery.
-- Unclear? Deep exploration.
-- Validated? Execution planning.
+**v3.0 was adaptive** but practically tedious (context detection ceremony, open questions).
 
-**Same rigor, better fit.**
+**v3.1 is frictionless**:
+- Front-loads value before asking for time
+- Parses your statement before interrogating
+- Offers recommendations, you react
+- Expert fast-track when you know what you're doing
+- Shows what you'll get before you commit
+
+**Same rigor, zero friction.**
 
 ---
 
-**Ready to make a better decision?** Run `/brief` and let's understand your situation first. 🎯
+**Ready to make a better decision?** Run `/brief` and get immediate value. 🎯
