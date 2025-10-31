@@ -1,59 +1,44 @@
-# Project Brief Tool - `/brief` (v2.0 - Problem-First)
+# Project Brief Tool - `/brief` (v3.0 - Adaptive Decision Support)
 
-The `/brief` command helps you discover what problem you're actually solving before committing to a solution. It's designed for the insight that **most people arrive with solutions ("I need X") when they should start with problems ("I can't do Y")**.
+**Version**: 3.0.0
+**Philosophy**: Context-aware advisor that adapts to YOUR needs
 
-## The Core Problem
+The `/brief` command helps you make better decisions by understanding your situation first, then guiding you through the appropriate discovery process. Not all decisions need 20 minutes of interrogation - some need quick validation, others need deep exploration.
 
-Most AI tools (and teams) jump straight into building based on vague requests:
-- User: "I need a CRM"
-- AI: "Great! Let me help you build that..."
+---
 
-This often leads to:
-- Building the wrong thing
-- Solving symptoms, not root causes
-- Missing simpler alternatives
-- Wasted resources on solutions that don't move the needle
+## What's New in v3.0
 
-## What Makes `/brief` Different
+### The Critical Insight from v2.0 Testing
 
-**Traditional approach**: "What are you building?" → Elaborate the solution
+v2.0 worked brilliantly for its sweet spot (unclear problems, high-cost decisions) but had blind spots:
+- Treated all users as if they needed full discovery
+- No escape hatch for crises or validated work
+- Didn't recognize domain expertise
+- Forced process on team-validated decisions
 
-**`/brief` v2 approach**: "What can't you do today?" → Discover the problem → Explore alternatives → Choose optimal solution
+**v3.0 fixes this with adaptive intelligence.**
 
-### Key Innovation: Problem-First Discovery
+### Four Modes, Not One Process
 
-The tool conducts a **two-phase conversation**:
+v3.0 starts with **context detection** (30-90 seconds) to understand:
+- What's the urgency?
+- What exploration has already happened?
+- What's your expertise level?
+- Are you solo or working with a team?
 
-**Phase 0-0.5: Problem Discovery** (NEW in v2)
-- Surfaces the real problem before accepting any solution
-- Challenges assumed solutions gently
-- Explores 2+ alternatives
-- Tests if problem is real via "constraint removal"
+Then routes you to the right mode:
 
-**Phase 1-4: Solution Planning**
-- Once problem validated, plan the implementation
-- Document context, users, success criteria, constraints
+1. **QUICK EXIT** (< 2 min): Crisis, validated decisions, expert practitioners
+2. **LIGHT DISCOVERY** (5-7 min): Experienced users, moderate complexity
+3. **DEEP DISCOVERY** (15-20 min): Unclear problems, solution-first framing
+4. **VALIDATED BUILDER** (5-10 min): Decision made, need execution planning
 
-## What It Creates
+**You stay in control** - can switch modes anytime by saying "go deeper" or "speed up".
 
-The tool generates a **two-part brief** in `/brief/Brief.md`:
+---
 
-### Part 1: Problem Definition
-- **What We Can't Do Today** - Problem in outcome terms (not solution terms)
-- **Why It Matters** - Quantified impact (time/money/people affected)
-- **Current Situation** - How it's handled today, why insufficient
-- **Cost of Inaction** - What happens if we do nothing
-- **Validation Evidence** - Checkpoints to confirm problem is real
-
-### Part 2: Solution Approach
-- **Alternatives Considered** - Minimum 2+ options explored
-- **Why This Approach Wins** - Reasoning for chosen solution
-- **Simplest Test** - How to validate direction quickly
-- **Implementation Details** - Vision, users, success criteria, constraints
-
-**Quality Gate**: Part 2 cannot be written until Part 1 shows validated problem.
-
-## How To Use
+## How To Use v3.0
 
 ### 1. Start the conversation
 
@@ -61,275 +46,451 @@ The tool generates a **two-part brief** in `/brief/Brief.md`:
 /brief
 ```
 
-The AI will begin with:
-> "Let's discover what problem you're solving. Start anywhere - tell me what's on your mind."
+The AI begins with context detection:
 
-### 2. Answer naturally - but expect challenges
+> "I'll help you think through this decision. First, let me understand your situation with a few quick questions:
+>
+> 1. What are you trying to decide?
+> 2. Is this urgent, or can we take time to explore?
+> 3. Have you or your team already done any exploration or validation?
+> 4. What's your experience level in this domain?"
 
-If you start with a solution ("I want to build X"):
+### 2. Get routed to the right mode
 
-**Old approach**: "Great! Let me help you plan that..."
+Based on your answers:
 
-**New approach**: "Before we dive into how to build that, help me understand: **what can't you do today?**"
+```
+Based on your situation, I recommend LIGHT DISCOVERY:
+- Estimated time: 5-7 minutes
+- We'll focus on: validating problem and exploring alternatives
+- You can switch modes anytime: say "go deeper", "speed up", or "just validate"
 
-The AI will:
-- Probe for the real problem beneath your stated solution
-- Ask "constraint removal" questions ("If you couldn't build software, how would you solve this?")
-- Surface simpler alternatives
-- Test if the problem is real
+Sound good?
+```
 
-### 3. Explore alternatives together
+### 3. Work through your mode
 
-Before committing to your solution, the AI will ask:
-- "What's the simplest thing that could possibly work?"
-- "Could you just use [spreadsheet/existing tool] for now?"
-- "What's a $200 version before committing to the $20k version?"
+Each mode is optimized for its use case:
 
-**This isn't confrontational** - it's helping you find the right-sized solution.
+**Quick Exit** → Sanity check, gotchas, done
+**Light Discovery** → Problem essence, constraints, alternatives, decision factors
+**Deep Discovery** → Full problem excavation like v2.0
+**Validated Builder** → Validate foundation, plan execution
 
-### 4. Review the two-part brief
+### 4. Get mode-appropriate output
 
-The AI generates Brief.md with:
-- **Problem validation status** (Strong/Moderate/Weak)
-- **Alternatives you considered** (so you know why you chose this path)
-- **Recommended next step** (Proceed OR Test simpler approach first)
-- **Flagged assumptions** (areas of uncertainty)
+- **Quick Exit**: Conversation summary (no file unless requested)
+- **Light**: Streamlined two-part brief
+- **Deep**: Full two-part brief with confidence levels
+- **Validated Builder**: Execution plan with milestones and risks
 
-## Example Use Cases
+---
 
-### Example 1: Solution-Locked → Discovered Better Path
+## When To Use Each Mode
 
-**User**: "I need to build a custom CRM for my 20 customers"
+### Mode 1: QUICK EXIT (< 2 min)
 
-**AI**: "Before we plan that, what can't you do today?"
+**Perfect for**:
+- Production outages: "API returning 500s, need logging"
+- Validated requirements: "PM approved, just need to execute"
+- Expert decisions: "I've done this 10 times, just want sanity check"
+- Micro-decisions: "async/await or promises?"
 
-**User**: "Track customer conversations - keep forgetting what we discussed"
+**What you get**:
+```
+✅ Quick Validation Complete
 
-**AI**: "How often is this a problem?"
+**Decision**: Add error logging to login endpoint
 
-**User**: "Few times a week"
+**Key Considerations**:
+- Watch for PII in logs
+- Deploy with feature flag
+- Monitor log volume
 
-**AI**: "If you couldn't build software, how would you solve this?"
+**Next Action**: Deploy logging update, check last 24hr errors
 
-**User**: "I guess... Notion? Or a spreadsheet?"
+Need full brief? Say "write it up"
+Otherwise, proceed!
+```
 
-**AI**: "Why not try that for 2 weeks before building custom?"
+---
 
-**User**: "That's way simpler. Let's test that first."
+### Mode 2: LIGHT DISCOVERY (5-7 min)
 
-✅ **Outcome**: Avoided 3 months of building, tested problem with $0 investment
+**Perfect for**:
+- Experienced users: "I've thought about this some"
+- Moderate complexity: "Adding caching to our API"
+- Some validation done: "Talked to a few people"
+- Clear domain: Software, home, business with known patterns
 
-### Example 2: Problem Real, Solution Optimized
+**Process**:
+1. Problem essence (90 sec)
+2. Constraint exploration (90 sec)
+3. Alternatives sweep (90 sec)
+4. Decision factors (60 sec)
+5. Domain-specific questions (90 sec)
+6. Streamlined brief (60 sec)
 
-**User**: "Renovating kitchen with open floor plan - $60k project"
+**What you get**: Focused two-part brief with problem validation, alternatives, and next actions
 
-**AI**: "What can't you do in your current kitchen?"
+---
 
-**User**: "Can't host big family dinners - island only seats 4"
+### Mode 3: DEEP DISCOVERY (15-20 min)
 
-**AI**: "How often is that a problem?"
+**Perfect for**:
+- Unclear problems: "Something feels off..."
+- Solution-first framing: "We need to migrate to X"
+- High complexity: Many unknowns, vague requirements
+- No prior exploration: "Just starting to think about this"
 
-**User**: "3-4 times a year for holidays"
+**Process** (preserved from v2.0 with improvements):
+1. Problem excavation (4-5 min) + NEW: Team/org context
+2. Alternatives exploration (4-5 min)
+3. Context & details (3-4 min)
+4. Synthesis & validation (2-3 min)
+5. Full brief generation (2-3 min)
 
-**AI**: "Rest of the year when it's just you two?"
+**What you get**: Complete two-part brief with:
+- Confidence level (High/Medium/Low)
+- Team/org context
+- Reversibility assessment
+- Comprehensive alternatives analysis
 
-**User**: "Actually fine, maybe even cozy"
+---
 
-**AI**: "So 3-4 events per year feel cramped. Before $60k renovation - could you extend the island for $2k? Or use workflow changes like buffet in dining room?"
+### Mode 4: VALIDATED BUILDER (5-10 min)
 
-**User**: "Wait... let me test the cheap stuff first"
+**Perfect for**:
+- Decision already made: "We've decided to build notifications"
+- Prior discovery complete: "PM validated with customer research"
+- Need execution help: "Just need to plan implementation"
+- Stakeholder-driven: "Leadership mandated this"
 
-✅ **Outcome**: Preserved solution direction, found right-sized approach
+**Process**:
+1. Validate the validation (90 sec) - sanity check without repeating work
+2. Solution planning (4-5 min) - approach, risks, team, timeline
+3. Execution brief (2-3 min)
 
-### Example 3: Problem Validated, Solution Confirmed
+**What you get**: Execution-focused brief with:
+- Milestones and checkpoints
+- Risks and mitigation plans
+- Team and stakeholder map
+- Success criteria
 
-**User**: "Building analytics dashboard for product team"
+---
 
-**AI**: "What can't you do today?"
+## Domain Adaptation
 
-**User**: "Can't tell which features customers actually use - building blind"
+v3.0 automatically detects your domain and adapts questions:
 
-**AI**: "Walk me through last time that cost you"
+### Software Projects
+- "How does this fit existing architecture?"
+- "What's team expertise with [technology]?"
+- "What happens at 10x current scale?"
+- "What's the maintenance burden long-term?"
 
-**User**: "Built entire reporting module - 6 weeks - zero usage. $50k wasted."
+### Home/Personal Projects
+- "What's 5-year total cost including maintenance?"
+- "Do you have time/skills for ongoing upkeep?"
+- "Impact on home value or future flexibility?"
+- "Have you vetted contractors/gotten quotes?"
 
-**AI**: "How often does this happen?"
+### Business Initiatives
+- "Who are key stakeholders and what do they care about?"
+- "What organizational change is required?"
+- "What's the cost of delay? Expected ROI timeline?"
+- "Does team have bandwidth for this?"
 
-**User**: "Every quarter we build unused features"
+### Career Decisions
+- "What matters most in your career?"
+- "Where do you want to be in 2-3 years?"
+- "What are you willing to sacrifice? Not willing?"
+- "How easy to change course if this doesn't work?"
 
-**AI**: "Could you just add logging + use existing BI tool?"
+---
 
-**User**: "Tried - our events are too custom, BI tools can't handle it"
+## Examples Across Modes
 
-**AI**: "Okay, so you need custom analytics. Why build vs buy?"
+### Example 1: Crisis → Quick Exit
 
-**User**: "Evaluated 5 tools - none fit our event schema"
+**User**: "Production API is returning 500s on login endpoint. I need to add error logging."
 
-✅ **Outcome**: Problem real, alternatives exhausted, solution validated
+**Context Detection**: Urgent crisis
+**Mode**: Quick Exit (< 2 min)
 
-## Understanding Solution-Lock
+**Process**:
+- Validate framing: One-sentence summary
+- Sanity check: "Watch out for PII in logs"
+- Output: Verbal validation, no file
 
-### What is Solution-Lock?
+**Result**: User unblocked immediately, proceeds with confidence
 
-**Solution-lock** is when someone jumps to a specific solution without validating the underlying problem or considering alternatives.
+---
 
-**Signs you're solution-locked:**
-- ❌ You describe features, not pain: "It should have X, Y, Z"
-- ❌ You use vague benefits: "Streamline our process"
-- ❌ You copied someone: "Competitor has this, we need it too"
-- ❌ Success = implementation: "Success is when it's deployed"
-- ❌ Can't quantify impact: "It will save time" (how much?)
-- ❌ Can't explain "why now": "We should probably do this"
+### Example 2: Experienced → Light Discovery
 
-### How `/brief` Helps
+**User**: "I want to add Redis caching to our API. I've thought about it some - endpoints are getting slow."
 
-The tool uses **constraint removal tests** to surface real problems:
+**Context Detection**: Moderate experience, some thought
+**Mode**: Light Discovery (5-7 min)
 
-**Question**: "If you couldn't use software, how would you solve this?"
+**Process**:
+- Problem: "What's actually slow? Have you profiled?"
+- Constraint: "Is caching the bottleneck or unindexed queries?"
+- Alternatives: Database indexing, query optimization, caching
+- Domain: Software-specific scale questions
 
-**Why this works**: Forces you to articulate the problem independent of your assumed solution. If you can't answer, the problem might not be real.
+**Result**: User discovers unindexed queries are actual problem. Tries indexing before adding Redis complexity.
 
-**Question**: "What's the dumbest, fastest way to test if this matters?"
+---
 
-**Why this works**: Reveals if you need the expensive solution or if a simple test would validate the problem first.
+### Example 3: Solution-First → Deep Discovery
 
-## The Two-Part Structure
+**User**: "We need to migrate from PostgreSQL to MongoDB. It's more modern."
 
-### Why Two Parts?
+**Context Detection**: Solution-first framing, borrowed thinking
+**Mode**: Deep Discovery (15-20 min)
 
-**Part 1 must be complete** before Part 2 can be written. This enforces:
-- Problem clarity before solution commitment
-- Impact quantification before resource allocation
-- Alternative exploration before building
+**Process**:
+- Problem excavation: "What can't you do with Postgres?"
+- Constraint removal: "If DB wasn't the constraint, what would you change?"
+- Alternatives: Stay with Postgres, optimize queries, evaluate actual problem
+- Validation: "Is 'modern' solving a real problem?"
 
-**Quality Gates**:
+**Result**: User realizes no actual problem with Postgres. MongoDB doesn't solve anything. Stays with Postgres, invests time elsewhere.
 
-Before moving to Part 2, you must have:
-- [ ] Problem stated independently of any solution
-- [ ] Impact quantified (numbers, not "it will be better")
-- [ ] Concrete example of problem occurring
-- [ ] Considered 2+ alternatives including "do nothing"
+---
 
-### What If Problem Validation Is Weak?
+### Example 4: Validated → Validated Builder
 
-If the AI can't validate your problem strongly, the brief will:
-- Flag it in `problem_validated: false` front-matter
-- Document assumptions and risks explicitly
-- Recommend testing simpler approach first
-- Proceed with caution, not confidence
+**User**: "Our PM validated we need a notification system with customer research. We've decided to build it. Need help planning execution."
 
-**This is a feature, not a bug** - it's better to know your foundation is shaky than to build confidently on sand.
+**Context Detection**: Decision made, prior validation complete
+**Mode**: Validated Builder (5-10 min)
+
+**Process**:
+- Validate validation: Quick sanity check on foundation
+- Execution planning: Milestones, risks, team, timeline
+- Execution brief: Implementation-focused output
+
+**Result**: Execution-focused brief with milestones, team plan. References PM's prior discovery.
+
+---
+
+## Switching Modes Mid-Conversation
+
+You're always in control. Switch modes by saying:
+
+- **"Go deeper"** → Move to more thorough mode
+- **"Speed up"** → Move to lighter mode
+- **"Just validate this"** → Jump to Quick Exit
+
+The AI also watches for signals to suggest switching:
+
+**Quick Exit → Light/Deep**:
+- Sanity check reveals unclear problem
+- Complexity emerges unexpectedly
+
+**Light → Deep**:
+- Problem definition still unclear after 3 minutes
+- More unknowns than expected
+
+**Deep → Light**:
+- Problem becomes clearer fast
+- User signals time pressure: "Can we speed this up?"
+
+---
+
+## Philosophy Improvements in v3.0
+
+### Ruthlessly Simple
+- Four clear modes, not complex decision trees
+- Context detection is 3-5 questions max
+- Each mode has single clear purpose
+- No elaborate state machines
+
+### Trusts Emergence
+- Doesn't force discovery on validated work
+- Adapts to what user reveals
+- Allows mode switching organically
+- Recognizes "enough" naturally
+
+### Respects User Agency
+- Transparent about time/process upfront
+- User can switch modes or exit anytime
+- **Validates user's expertise and prior work** (NEW)
+- **Doesn't assume user is wrong** (NEW - Quick Exit mode)
+- Shows progress and options throughout
+- Always asks permission before proceeding
+
+### Present-Moment Focus
+- **Detects actual current context** (NEW)
+- **Quick Exit serves real urgency** (NEW)
+- Doesn't over-plan for hypotheticals
+- Focuses on decision at hand
+
+---
+
+## What's Preserved from v2.0
+
+v3.0 keeps all the strengths of v2.0 in Deep Discovery mode:
+
+✅ Problem-first discovery
+✅ Constraint removal tests
+✅ Solution-lock detection
+✅ Alternatives exploration required
+✅ Two-part brief structure
+✅ Quality gates
+✅ Gentle, curious tone
+
+**New**: v3.0 adds context awareness so these strengths apply when appropriate, not universally.
+
+---
+
+## Success Metrics (Updated for v3.0)
+
+### Process Metrics
+1. **Mode Distribution**: % of sessions in each mode
+   - Target: Diverse distribution (not 90% in one mode)
+2. **Mode Switches**: % of sessions that switch modes
+   - Target: 10-20% (indicates good responsiveness)
+3. **Completion Rate**: % of sessions completed vs abandoned
+   - Target: 70%+ (v2.0 baseline: 50-60%)
+
+### Outcome Metrics
+4. **Problem Pivot Rate**: % where user changes solution after discovery
+   - Target: 30-40% in Deep Discovery mode
+   - Target: 10-20% in Light Discovery mode
+5. **Time Efficiency**: User satisfaction with time invested
+   - Target: 80%+ say "time was worth it"
+6. **Cost Avoidance**: Documented cases of waste prevented
+   - Target: 5+ significant examples per quarter
+
+---
+
+## Known Limitations & When NOT To Use
+
+v3.0 is better but not perfect. Don't use `/brief` when:
+
+### 1. Pure Execution Tasks
+**Example**: "Format this code snippet"
+**Why**: No decision to make, just do it
+
+### 2. Pure Learning
+**Example**: "Teach me React hooks"
+**Why**: Learning is the outcome, not a decision
+
+### 3. Already Deep In Implementation
+**Example**: "Debug this error message"
+**Why**: Discovery phase is past, you're in execution
+
+### 4. Extremely Simple Choices
+**Example**: "Tabs or spaces?"
+**Why**: Just pick one and move on
+
+### 5. Creative Exploration
+**Example**: "Help me brainstorm ideas"
+**Why**: Brainstorming needs divergent thinking, not convergent decision-making
+
+---
 
 ## Tips for Best Results
 
-### Start With Problem-Talk, Not Solution-Talk
+### 1. Be Honest in Context Detection
 
-❌ **Solution-talk**: "I need a CRM"
-✅ **Problem-talk**: "I keep losing track of customer conversations"
+The routing only works if you're honest:
+- ✅ "I haven't really thought about this much" → Deep Discovery
+- ❌ "I'm sure about this" (when you're not) → Wrong mode, poor results
 
-❌ **Solution-talk**: "Need to renovate kitchen"
-✅ **Problem-talk**: "Can't host family dinners comfortably"
+### 2. Trust the Process
 
-### Quantify Everything
+If routed to Deep Discovery when you wanted Quick Exit:
+- The AI detected something in your framing
+- Give it 3-4 minutes before requesting mode switch
+- Often reveals blindspots you didn't see
 
-❌ "Wastes time"
-✅ "Wastes 5 hours per week"
+### 3. Speak Up About Time
 
-❌ "Costs money"
-✅ "Costs $800/month in restaurants"
+If time becomes a constraint mid-conversation:
+- Say "Can we speed this up?"
+- AI will offer to switch to lighter mode
+- You stay in control
 
-❌ "Happens often"
-✅ "Happens daily with 20 customers"
+### 4. Use "Write It Up" Strategically
 
-### Be Open to Alternatives
+In Quick Exit mode, output is verbal by default.
 
-The AI will ask "What if you just [simpler thing]?"
+Say "write it up" if:
+- Need to reference later
+- Want to share with team
+- Building body of decision docs
 
-**Don't get defensive** - this is helping you find the right solution.
+### 5. Reference Prior Work
 
-If your solution is best, you'll be able to explain why it beats alternatives. If you can't, that's valuable information.
+If your team did discovery:
+- Say so in context detection
+- Reference PM work, customer research, stakeholder decisions
+- AI will route to Validated Builder and build on that foundation
 
-### Use "Constraint Removal" Tests
-
-When stuck, ask yourself:
-- "If I couldn't build anything, how would I solve this?"
-- "What's the cheapest way to test if this matters?"
-- "If this magically worked tomorrow, what would I do differently?"
-
-These questions reveal if you're attached to a solution or actually solving a problem.
-
-## Advanced: When to Skip Problem Discovery
-
-Some users have already done deep problem validation. You can say:
-
-**"Skip to solution - I've validated the problem elsewhere"**
-
-The AI will note this and proceed directly to implementation planning.
+---
 
 ## Troubleshooting
 
-### "The AI keeps challenging my solution"
+### "I got routed to Deep Discovery but don't have 20 minutes"
 
-**Why**: You might be solution-locked. The AI is helping you discover if there's a simpler path.
+**Solution**: Say "I only have 5 minutes, can we do Light Discovery instead?"
 
-**Try**: Answer the "what can't you do today?" question without mentioning your solution.
+The AI will switch modes and focus on essentials.
 
-### "I don't know how to quantify the impact"
+### "Quick Exit didn't give me enough detail"
 
-**Why**: Problem might not be concrete enough yet.
+**Solution**: Say "write it up" to get a full brief document, or "go deeper" to switch to Light Discovery.
 
-**Try**: Think of the last time this problem hit you. What did it cost in time/money/stress?
+### "I'm in Light Discovery but need more depth"
 
-### "The brief says 'Weak validation'"
+**Solution**: Say "go deeper" or "this is more complex than I thought."
 
-**Why**: AI couldn't verify the problem is real with quantified impact.
+AI will offer to switch to Deep Discovery mode.
 
-**Action**: Either do more research to validate, or test a simpler approach first.
+### "The AI is challenging my solution and I'm getting defensive"
 
-### "This is taking longer than 15 minutes"
+**Possible causes**:
+1. You're solution-locked and the AI spotted it (this is helpful!)
+2. You have domain expertise the AI doesn't recognize (say "I'm an expert in this")
+3. You've already validated elsewhere (say "this is validated, just need execution help")
 
-**Why**: Deep problem discovery takes time if you started solution-locked.
+**Solution**: Be explicit about what you know and what you need.
 
-**Options**:
-1. Keep going - this time investment saves months later
-2. Say "Skip to solution" if you've done this validation elsewhere
+---
 
-## Philosophy
+## Version History
 
-### Outcomes Over Activities
+### v3.0 (Current) - Adaptive Decision Support
+- **NEW**: Context detection phase (30-90 seconds)
+- **NEW**: Four distinct modes (Quick Exit, Light, Deep, Validated Builder)
+- **NEW**: Domain-specific question adaptation
+- **NEW**: Team/organizational context awareness
+- **NEW**: Mode switching during conversation
+- **NEW**: Progress indicators throughout
+- **Improved**: Respects user expertise and prior work
+- **Improved**: Graceful exits for crises and validated work
+- **Preserved**: All v2.0 strengths in Deep Discovery mode
 
-**Activity-thinking**: "Renovate kitchen" (what you'll do)
-**Outcome-thinking**: "Reduce family meal stress" (what will change)
+### v2.0 - Problem-First Discovery
+- Added Phase 0: Problem Discovery
+- Added Phase 0.5: Solution Exploration
+- Two-part brief structure with quality gates
+- Solution-lock detection
+- Constraint removal tests
+- **Limitation**: One-size-fits-all approach
 
-`/brief` forces outcome-thinking by asking "what can't you do?" before "what will you build?"
+### v1.0 - Solution Elaboration
+- Single-phase conversation
+- Anchored on "What are you building?"
+- No alternative exploration
+- **Limitation**: Accepted solutions without problem validation
 
-### Test, Don't Guess
-
-**Guessing**: "I think users need X"
-**Testing**: "Let me try Y for 2 weeks and see if it solves the problem"
-
-`/brief` pushes for simple tests before expensive solutions.
-
-### Right-Sized Solutions
-
-**Over-engineering**: "$60k full renovation"
-**Right-sizing**: "$2k island extension - test first, then decide"
-
-`/brief` surfaces the $200 version before committing to the $20k version.
-
-## Integration with Development
-
-### Before Planning
-Run `/brief` to ensure you're solving a real problem
-
-### During Planning
-Reference Part 1 (Problem Definition) to keep focused on outcomes
-
-### During Implementation
-Check: Does this feature tie back to the validated problem?
-
-### After Launch
-Measure against Part 2 (Success Criteria) - did solving the problem create the expected outcome?
+---
 
 ## Technical Details
 
@@ -337,18 +498,32 @@ Measure against Part 2 (Success Criteria) - did solving the problem create the e
 ```
 outcomist/
 └── brief/
-    └── Brief.md  (two-part structure)
+    └── Brief.md  (format varies by mode)
 ```
 
-### Front-Matter
+### Front-Matter (Mode-Specific)
 ```yaml
+# Deep Discovery Mode
 ---
 created: 2025-10-31
-updated: 2025-10-31
-status: draft
-owner: your@email.com
+mode: deep_discovery
 problem_validated: true/false
 alternatives_explored: true/false
+confidence: high/medium/low
+---
+
+# Light Discovery Mode
+---
+created: 2025-10-31
+mode: light_discovery
+confidence: high/medium/low
+---
+
+# Validated Builder Mode
+---
+created: 2025-10-31
+mode: validated_builder
+decision_validated: [reference to prior work]
 ---
 ```
 
@@ -357,44 +532,34 @@ alternatives_explored: true/false
 outcomist/
 └── .claude/
     └── commands/
-        └── brief.md  (v2.0 - problem-first)
+        └── brief.md  (v3.0 - adaptive)
 ```
-
-## Version History
-
-### v2.0 (Current) - Problem-First Discovery
-- Added Phase 0: Problem Discovery (before solution acceptance)
-- Added Phase 0.5: Solution Exploration (alternatives required)
-- Two-part brief structure with quality gates
-- Solution-lock detection and gentle challenges
-- Constraint removal tests
-- "What if you couldn't build anything?" questions
-
-### v1.0 - Solution Elaboration
-- Single-phase conversation
-- Anchored on "What are you building?"
-- Single Brief.md output
-- No alternative exploration
-
-## Success Metrics
-
-Track these to measure `/brief` effectiveness:
-
-1. **Problem Pivot Rate**: % of briefs where user changed their solution after problem discovery
-2. **Alternative Exploration**: % of briefs documenting 2+ alternatives
-3. **Validation Strength**: % of briefs with "Strong" problem validation
-4. **Cost Avoidance**: Instances where simpler solution was tested first
-
-**Target**: 30-40% of users should reconsider or optimize their solution after problem discovery
-
-## Contributing
-
-If you improve the `/brief` command:
-1. Test on real projects first
-2. Update this README with learnings
-3. Share examples of good problem discovery
-4. Track if changes increase problem pivot rate
 
 ---
 
-**Ready to discover your real problem?** Run `/brief` and let's find out what you're actually trying to solve! 🎯
+## Contributing
+
+If you improve `/brief`:
+1. Test across all 4 modes
+2. Validate mode detection logic works
+3. Update this README with learnings
+4. Track metrics for your domain
+5. Share examples of good adaptations
+
+---
+
+## The Bottom Line
+
+**v2.0 was a powerful tool for its sweet spot** (unclear problems, high-cost decisions).
+
+**v3.0 is a flexible advisor** that meets you where you are:
+- Crisis? Quick validation.
+- Experienced? Light discovery.
+- Unclear? Deep exploration.
+- Validated? Execution planning.
+
+**Same rigor, better fit.**
+
+---
+
+**Ready to make a better decision?** Run `/brief` and let's understand your situation first. 🎯
