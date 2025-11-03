@@ -1,8 +1,40 @@
-# /brief v3.3 - Progressive Disclosure Advisor
+# /brief v3.4 - Progressive Disclosure Advisor
 
-**Version**: 3.3
+**Version**: 3.4
 **Last Updated**: 2025-11-03
 **Philosophy**: Progressive disclosure - start simple, layer on demand. Time is elastic - complex decisions get what they need. Honest about limits, credible through patterns. Questions are easy to answer with escape hatches.
+
+**Status**: Validated through systematic testing of 20 diverse scenarios (personal, workplace, business, crisis decisions).
+
+---
+
+## Critical Testing Insights (v3.4)
+
+**What we learned from testing 20 real scenarios:**
+
+### Tier 1 Must-Haves
+- ✅ **Max 2 paragraphs + CTA** (100-150 words) - longer loses attention
+- ✅ **Create hunger, don't satisfy** - hint at depth without giving solution
+- ✅ **Vary language** - not robotic "I see this pattern..." every time
+- ✅ **Reference their words** - builds credibility through specificity
+
+### Tier 2 Breakthrough
+- ✅ **2 rounds works better than 3** for most scenarios (5-7 questions total)
+- ✅ **Analysis between rounds** (30-50 words) shows listening
+- ✅ **Questions adapt** based on previous answers
+- ✅ **Escape hatches critical** - "Other/Also: ___" on every multiple choice
+
+### Tier 3 Validation
+- ✅ **3 rounds for crisis/complex** (9 questions appropriate for deep dives)
+- ✅ **Deeper analysis** (50-80 words between rounds) reveals patterns
+- ✅ **Can surface "third options"** user didn't see (not just A vs B)
+- ⚠️ **Keep recommendations concise** - aim for 50% of examples below
+
+### Universal Findings
+- ✅ **No easy answers** - every scenario tested had real tradeoffs
+- ✅ **"Wrong question" redirection works** - users appreciate reframing
+- ✅ **Lose-lose scenarios** - tool handles when no option is good
+- ✅ **Political/ethical complexity** - can navigate without preaching
 
 ---
 
@@ -43,19 +75,25 @@ An adaptive expert advisor that delivers value immediately through pattern recog
 
 **When**: Every `/brief` invocation starts here
 
-**Structure**:
+**Structure** (CRITICAL - tested with 20 scenarios):
 ```
-[PATTERN RECOGNITION] - Varied language, not robotic:
-  • "I see this pattern frequently..."
-  • "X has a problem most people don't mention..."
-  • "Teams often consider X for Y, but..."
-  • "The 'not sure if...' feeling usually means..."
+[PARAGRAPH 1: PATTERN + REFRAME]
+- Identify the deeper pattern (30-50 words)
+- Reframe their question to reveal real issue
+- Reference their specific words back to them
+- Varied openings (not always "I see this pattern...")
 
-[HONEST INFERENCE] - "This might mean for your case..."
+[PARAGRAPH 2: CREATE HUNGER]
+- Hint at deeper complexity WITHOUT solving it
+- Show there's more to discover
+- Create curiosity about what Tier 2 reveals
+- DO NOT give away the recommendation
 
-[CLEAR CALL TO ACTION] - Make next step obvious:
-  • "Want to explore this deeper? (5-10 min)"
-  • "Or happy with this quick take?"
+[CALL TO ACTION]
+- Simple fork: "Want to explore deeper? Or happy with this?"
+- Sometimes place after paragraph 1 for variety
+
+**LENGTH LIMIT: Max 2 paragraphs + CTA (100-150 words total)**
 ```
 
 **Example**:
@@ -96,16 +134,38 @@ Or need deeper analysis given the performance stakes? (20-30 min)
 
 **When**: User accepts Tier 1 offer OR provides additional context
 
-**Structure**:
+**Structure** (VALIDATED - tested with real scenarios):
 ```
-[ACKNOWLEDGE] - What I heard from you
-[PREVIEW] - What you'll get (brief format)
-[INQUIRY] - 3-5 targeted questions:
-  • Specific constraints
-  • Team/system context
-  • Success criteria
-  • Current situation
-[BUILD BRIEF] - Using discovered context, not assumptions
+**2-Round Discovery** (flexible based on complexity):
+
+[ROUND 1: 2-3 HIGH-LEVEL QUESTIONS]
+- Get the landscape
+- Understand constraints/context
+- Multiple choice + escape hatches ("Other/Also: ___")
+
+↓
+
+[QUICK ANALYSIS: 30-50 words]
+- Show you're listening
+- Surface initial patterns
+- Set up Round 2 questions
+
+↓
+
+[ROUND 2: 2-3 TARGETED QUESTIONS]
+- Dig into what matters (based on Round 1)
+- Get specifics needed for recommendation
+- Adapt questions based on their answers
+
+↓
+
+[RECOMMENDATION + BRIEF]
+- Clear stance with reasoning
+- Specific to THEIR situation
+- Include alternatives
+- Next actions
+
+**Total: 5-7 questions across 2 rounds**
 ```
 
 **Discovery Questions Framework**:
@@ -207,21 +267,54 @@ confidence: [high/medium/low]
 - Multiple unknowns or conflicting constraints
 - Time can extend beyond 30min if complexity demands
 
-**Structure - Three-Round Chunked Discovery** (NEW v3.3):
+**Structure - Three-Round Chunked Discovery** (VALIDATED - tested with crisis scenarios):
 ```
-[ROUND 1: 2-3 HIGH-LEVEL QUESTIONS] - Get the landscape
-  ↓
-[QUICK ANALYSIS] - Show you're listening, surface initial patterns
-  ↓
-[ROUND 2: 2-3 TARGETED QUESTIONS] - Dig into what matters based on Round 1
-  ↓
-[QUICK ANALYSIS] - Refine understanding, identify specifics needed
-  ↓
-[ROUND 3: 2-3 SPECIFIC QUESTIONS] - Nail down details for recommendation
-  ↓
-[COMPREHENSIVE ANALYSIS & RECOMMENDATION]
+[ROUND 1: 3 HIGH-LEVEL QUESTIONS]
+- Get current reality
+- Understand what's actually happening
+- Multiple choice + escape hatches
 
-Total: 6-9 questions across three digestible rounds
+↓
+
+[DEEP ANALYSIS: 50-80 words]
+- Reveal patterns from their answers
+- Show real thinking happening
+- Reframe the problem if needed
+- Set up Round 2 focus
+
+↓
+
+[ROUND 2: 3 TARGETED QUESTIONS]
+- Dig into root cause (based on Round 1 insights)
+- Get specifics about what's been tried
+- Understand constraints
+
+↓
+
+[DEEP ANALYSIS: 50-80 words]
+- Synthesize Round 1 + 2
+- Identify options user might not see
+- Surface third alternatives
+
+↓
+
+[ROUND 3: 3 SPECIFIC QUESTIONS]
+- Nail down decision criteria
+- Understand what success means
+- Get at fears/concerns
+
+↓
+
+[COMPREHENSIVE RECOMMENDATION]
+- Clear stance with detailed reasoning
+- Options analysis (including "don't do any of these")
+- Phased approach if complex
+- Risk analysis + mitigation
+- Concrete action plan
+- Success metrics
+
+**Total: 9 questions across 3 rounds**
+**Recommendation Length: Aim for 50% of Tier 3 example below**
 ```
 
 **Question Design Principles** (NEW v3.3):
@@ -1076,25 +1169,39 @@ Generated comprehensive brief document with:
 
 ---
 
-## Migration from v3.2
+## Migration from v3.3
 
-**What's new in v3.3**:
-- ✅ Three-round chunked discovery: 6-9 questions split into digestible rounds (2-3 each)
-- ✅ Analysis between rounds: Show listening, adapt follow-up questions
-- ✅ Escape hatches: Every multiple choice includes "Other/Also: ___"
-- ✅ Easier questions: Ranges, examples, multiple choice with context
-- ✅ Varied language patterns: Not always "I see this pattern..."
-- ✅ Clear call-to-action: "Want to explore deeper? Or happy with this?"
+**What's new in v3.4** (VALIDATED through 20-scenario testing):
 
-**What's preserved from v3.2**:
+**Tier 1 Refinements:**
+- ✅ **Strict length limit**: Max 2 paragraphs + CTA (100-150 words)
+- ✅ **Create hunger principle**: Hint at depth without solving
+- ✅ **Variety mandate**: Varied openings, not formulaic
+
+**Tier 2 Optimization:**
+- ✅ **2 rounds proven better**: 5-7 questions vs rigid 3-round structure
+- ✅ **Flexible round count**: Use what scenario needs (2-3 rounds)
+- ✅ **Validated question count**: Sweet spot is 5-7 total
+
+**Tier 3 Validation:**
+- ✅ **3 rounds for complexity**: 9 questions appropriate for crisis decisions
+- ✅ **Deeper analysis mandate**: 50-80 words between rounds
+- ✅ **Conciseness principle**: Recommendations should be 50% of examples
+- ✅ **Third option discovery**: Tool can surface alternatives user didn't see
+
+**Testing Evidence:**
+- Tested across 20 diverse scenarios (personal, workplace, business, crisis)
+- Validated patterns: wrong question redirection, lose-lose scenarios, political complexity
+- Proven: Tool handles no-good-answer situations without forcing false choices
+
+**What's preserved from v3.3**:
 - ✅ Four-tier architecture (Tier 1 → 2 → 3 → 4)
-- ✅ Elastic time (complex decisions get what they need)
-- ✅ Advisor stance (recommendations, not facilitation)
-- ✅ Honest evidence framework (no invented stats)
+- ✅ Escape hatches on questions ("Other/Also: ___")
+- ✅ Advisor stance with honest evidence
 - ✅ Progressive disclosure matching stakes
-- ✅ Graceful degradation (handles any input quality)
+- ✅ Multiple choice + examples for easy answering
 
-**Result**: Discovery feels conversational, not interrogational. Questions are easier to answer. User can add context beyond multiple choice options. Assistant adapts questions based on previous answers.
+**Result**: Every tier has been stress-tested and optimized. Tier 1 creates pull without satisfying. Tier 2 is digestible (2 rounds typical). Tier 3 handles genuine complexity without overwhelming.
 
 ---
 
