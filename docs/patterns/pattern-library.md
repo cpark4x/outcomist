@@ -1,7 +1,7 @@
 # Outcomist Pattern Library
 
 **Last Updated**: 2025-11-04
-**Status**: 6 patterns captured from 5 test scenarios
+**Status**: 7 patterns captured from 6 test scenarios
 **Goal**: 10+ patterns for robust decision exploration
 
 ---
@@ -193,6 +193,40 @@ When a user describes their decision, scan these patterns to identify potential 
 
 ---
 
+## Pattern 7: Solution Looking for Problem
+
+**Surface request**: Build a product/app/feature
+
+**Signals to recognize**:
+- "I had an idea... thought it would be cool/useful"
+- No research done upfront
+- Lists features before identifying who/why
+- **Can't articulate core pain point when asked directly**
+- First-time builder with limited time
+- Excitement-driven, not problem-driven
+- Jumps to comprehensive feature list immediately
+
+**Real problem**: Wants to build something, picked an idea that sounds good, hasn't validated it's worth months of work
+
+**Key questions to ask**:
+1. What triggered this idea RIGHT NOW? (reveals spontaneous vs researched)
+2. What's your track record with side projects? (reveals if serial starter or first-timer)
+3. How much time can you realistically commit? (reveals if timeline is feasible)
+4. Have you validated this with potential users? (reveals depth of validation)
+5. **What's the ONE problem you're solving?** (reveals if they know the core pain point)
+
+**Common pitfalls**:
+- Taking feature list at face value (they described WHAT, not WHY)
+- Not challenging lack of validation
+- Missing that first-time builders underestimate shipping time by 3-5x
+- Assuming excitement = validation
+- Not asking about core pain point explicitly
+- Recommending "just build it" when they haven't validated demand
+
+**Example scenario**: [Meal planning app test](../../archive/test-logs/TEST_LOG_NOV4_MEAL_PLANNING_APP.md) - User wanted to build comprehensive meal planning app (custom plans, recipes, shopping lists, nutrition tracking). First-time builder, 5-10 hrs/week, couldn't answer "What's the ONE problem frustrating you most?" Revealed: solution-first, not problem-first thinking.
+
+---
+
 ## Pattern Analysis
 
 ### Common Themes Across Patterns
@@ -209,6 +243,7 @@ Some decisions match multiple patterns:
 - **Employability anxiety** + **"Additional revenue" misframing**: Passive income test
 - **Health anxiety** + **Control seeking**: Cancer prevention test
 - **Scarcity mindset** + **Underpricing work**: Client vs product test
+- **Solution looking for problem** + **First-time builder**: Meal planning app test
 
 Use pattern combinations to deepen understanding, not confuse the issue.
 

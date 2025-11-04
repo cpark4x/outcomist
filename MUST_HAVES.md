@@ -1,14 +1,14 @@
 # Outcomist Must-Have Improvements
 
 **Date**: 2025-11-04 (Updated)
-**Status**: Captured from 5 successful test scenarios
+**Status**: Captured from 6 successful test scenarios
 **Purpose**: Core improvements to nail advisory excellence before adding execution/companion layers
 
 ---
 
 ## Context
 
-After testing 5 scenarios (office redesign, passive income, cancer prevention, feature decision, client vs product), we identified 4 critical improvements that will elevate Outcomist's advisory excellence from "good" to "must-have."
+After testing 6 scenarios (office redesign, passive income, cancer prevention, feature decision, client vs product, meal planning app), we identified 4 critical improvements that will elevate Outcomist's advisory excellence from "good" to "must-have."
 
 **Focus**: Nail the advisory layer first, then add execution/companion features later.
 
@@ -29,6 +29,7 @@ After testing 5 scenarios (office redesign, passive income, cancer prevention, f
 - **Cancer test**: Q1 revealed friend's stage 4 diagnosis → anxiety trigger
 - **Feature decision test**: Q3 revealed product positioning contradiction → values crisis
 - **Client vs product test**: Q2 revealed $60K savings/12-14 months runway → false scarcity
+- **Meal planning app test**: Q5 revealed inability to articulate core pain point → solution looking for problem
 
 **The insight:** ONE question consistently unlocks the real problem. Can we get better at identifying which question to ask when?
 
@@ -247,9 +248,14 @@ After testing 5 scenarios (office redesign, passive income, cancer prevention, f
    - Signals: Fear language ("market is tough"), strong fundamentals contradicting scarcity
    - Real: Fear preventing commitment despite having resources and validation
 
+7. **Solution looking for problem pattern** (Meal Planning App test)
+   - Surface: Build a product/app/feature
+   - Signals: Feature list without validation, can't articulate core pain point, excitement-driven
+   - Real: Wants to build something, picked idea that sounds good, hasn't validated demand
+
 ### Success Criteria
 
-- [ ] Pattern library with 10+ patterns documented
+- [ ] Pattern library with 10+ patterns documented (70% complete - 7 patterns captured)
 - [ ] Each pattern has: signals, real problem, key questions, pitfalls
 - [ ] Patterns link to test logs (examples of pattern in action)
 - [ ] New scenarios can quickly match against pattern library
@@ -303,10 +309,10 @@ After testing 5 scenarios (office redesign, passive income, cancer prevention, f
 
 **Before adding execution/companion layers, we must hit:**
 
-1. ✅ **5 test scenarios completed** (office, passive income, cancer, feature decision, client vs product)
-2. ⏳ **10+ test scenarios validated** (from test-scenarios.md) - 50% complete
+1. ✅ **6 test scenarios completed** (office, passive income, cancer, feature decision, client vs product, meal planning app)
+2. ⏳ **10+ test scenarios validated** (from test-scenarios.md) - 60% complete
 3. ⏳ **Question quality framework implemented** (question library + heuristics)
-4. ⏳ **Pattern library built** (10+ patterns documented) - 60% complete (6 patterns captured)
+4. ⏳ **Pattern library built** (10+ patterns documented) - 70% complete (7 patterns captured)
 5. ⏳ **Adaptive questioning working** (questions evolve based on answers)
 6. ⏳ **Confidence calibration refined** (nuanced levels + upfront caveats)
 7. ✅ **User validation consistently positive** (every test scenario validated)
@@ -315,5 +321,5 @@ After testing 5 scenarios (office redesign, passive income, cancer prevention, f
 
 ---
 
-**Status**: ✅ 50% toward pattern library goal (5 of 10+ scenarios tested, 6 patterns captured)
-**Next**: Test 5 more scenarios to complete pattern library and validate question framework
+**Status**: ✅ 60% toward validation goal (6 of 10+ scenarios tested, 7 patterns captured)
+**Next**: Test 4 more scenarios to complete pattern library and validate question framework
