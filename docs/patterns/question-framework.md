@@ -1,7 +1,7 @@
 # Question Quality Framework
 
-**Last Updated**: 2025-11-04
-**Status**: Documented from 5 test scenarios, needs systematic implementation
+**Last Updated**: 2025-11-04 (v4.1 improvements from Test #8)
+**Status**: Updated with critical learnings from user feedback
 **Purpose**: Know which questions to ask when
 
 ---
@@ -18,6 +18,76 @@ Across 5 test scenarios:
 - **Client vs product test**: Q2 (financial runway) revealed $60K savings → false scarcity
 
 **The challenge**: Can we get better at identifying WHICH question to ask WHEN?
+
+---
+
+## Critical New Question Types (v4.1 - From Test #8 Feedback)
+
+### 0. Intent Check Question
+**When to use**: IMMEDIATELY after Tier 1, before discovery begins
+
+**Purpose**: Distinguish validation seekers from execution partners
+
+**Question**:
+> "Before we dig deeper, let me understand your intent:
+>
+> **Are you looking for validation on WHETHER to pursue this, or guidance on HOW to execute it well?**
+>
+> (This helps me tailor the questions to what you actually need)"
+
+**What this reveals**:
+- **Validation seeker**: "I want to know if this is a good idea" → Focus on pros/cons, alternatives
+- **Execution partner**: "I'm doing this, help me do it right" → Focus on how to build/execute well
+
+**Why critical**: Prevents recommending "don't do it" to someone who's already decided and wants execution guidance. Avoids bias in wrong direction.
+
+**Example**: Test #8 (workout app) - User said "AI will build it in hours" (confidence signal) but I assumed validation-seeking and discouraged building. Should have checked intent first.
+
+---
+
+### 0.5. "Show Me" Question (Data Request)
+**When to use**: When user describes a system, process, or problem in Round 1
+
+**Purpose**: Get real data instead of making assumptions
+
+**Questions**:
+- "Can you show me your [current system]? Paste an example so I can see what you're working with."
+- "Walk me through what a typical [use case] looks like - give me a specific recent example."
+- "Can you share [the artifact] so I understand how you [do the thing]?"
+
+**What this reveals**: Actual structure, patterns, pain points that assumptions miss
+
+**Why critical**:
+- Seeing real data reveals patterns you can't predict
+- Makes user feel heard, not judged
+- Prevents assumption-based questioning
+
+**Example**: Test #8 - Should have asked "Can you show me your Apple Notes format?" instead of assuming what it looked like. Would have revealed 2-year consistent system immediately.
+
+**Anti-pattern**:
+- ❌ "What made those fail?" (assumption-based)
+- ✅ "Can you show me what your tracking looks like?" (data-based)
+
+---
+
+### 0.75. Capability Check Question
+**When to use**: Round 2, when discussing building/doing something complex
+
+**Purpose**: Understand user's capabilities and whether building has intrinsic value
+
+**Questions**:
+- "What's your experience with [building/doing] this?"
+- "What timeline seems realistic to you?"
+- "Is [building/doing] this part of the value for you (learning, enjoyment), or purely utility?"
+
+**What this reveals**:
+- User's actual skills (don't assume "building is hard")
+- Whether building itself has value beyond the end product
+- Realistic timelines from user's perspective
+
+**Why critical**: Your assumptions about "hard" might not match their reality. Building might have value for learning, enjoyment, portfolio.
+
+**Example**: Test #8 - User said "AI will build it in hours" but I assumed it would take weeks and discouraged building. Should have asked about their experience first.
 
 ---
 
