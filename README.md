@@ -77,7 +77,7 @@ Execute and track implementation
 ### Patterns & Principles
 - [Pattern Library](./docs/patterns/pattern-library.md) - 6 patterns captured from testing
 - [Question Framework](./docs/patterns/question-framework.md) - Question quality heuristics
-- [Progressive Disclosure](./docs/principles/progressive-disclosure.md) - Tier 1-4 architecture (coming soon)
+- [Progressive Disclosure](./docs/principles/progressive-disclosure.md) - Tier 1-4 architecture
 
 ### Testing
 - [Test Scenarios](./test-scenarios.md) - 20 scenarios for validation
