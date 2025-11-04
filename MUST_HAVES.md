@@ -1,14 +1,16 @@
 # Outcomist Must-Have Improvements
 
 **Date**: 2025-11-04 (Updated)
-**Status**: Captured from 7 successful test scenarios
+**Status**: Captured from 8 test scenarios (7 successful, 1 mixed with critical feedback)
 **Purpose**: Core improvements to nail advisory excellence before adding execution/companion layers
 
 ---
 
 ## Context
 
-After testing 7 scenarios (office redesign, passive income, cancer prevention, feature decision, client vs product, meal planning app, Amplifier presentation), we identified 4 critical improvements that will elevate Outcomist's advisory excellence from "good" to "must-have."
+After testing 8 scenarios (office redesign, passive income, cancer prevention, feature decision, client vs product, meal planning app, Amplifier presentation, workout app), we identified 4 critical improvements that will elevate Outcomist's advisory excellence from "good" to "must-have."
+
+**Test #8 (workout app) revealed critical command weaknesses** that need addressing - see EXPLORE_COMMAND_IMPROVEMENTS.md for details.
 
 **Focus**: Nail the advisory layer first, then add execution/companion features later.
 
@@ -315,17 +317,23 @@ After testing 7 scenarios (office redesign, passive income, cancer prevention, f
 
 **Before adding execution/companion layers, we must hit:**
 
-1. ✅ **7 test scenarios completed** (office, passive income, cancer, feature decision, client vs product, meal planning app, Amplifier presentation)
-2. ⏳ **10+ test scenarios validated** (from test-scenarios.md) - 70% complete
-3. ⏳ **Question quality framework implemented** (question library + heuristics)
+1. ✅ **8 test scenarios completed** (office, passive income, cancer, feature decision, client vs product, meal planning app, Amplifier presentation, workout app)
+2. ⏳ **10+ test scenarios validated** (from test-scenarios.md) - 80% complete
+3. ⚠️ **Question quality framework implemented** - NEEDS IMPROVEMENT (see Test #8 feedback)
 4. ⏳ **Pattern library built** (10+ patterns documented) - 80% complete (8 patterns captured)
 5. ⏳ **Adaptive questioning working** (questions evolve based on answers)
-6. ⏳ **Confidence calibration refined** (nuanced levels + upfront caveats)
-7. ✅ **User validation consistently positive** (every test scenario validated)
+6. ⚠️ **Bias separation** - Separate discovery from recommendation (NEW from Test #8)
+7. ⚠️ **User validation** - Test #8 showed bias issues ("seemed to bias towards not building")
+
+**Critical finding from Test #8**: Command needs improvements before more testing:
+- Add intent check (validation vs execution)
+- Use "Show Me" questions (data, not assumptions)
+- Add summary step before recommendation
+- Check capabilities, don't assume
 
 **Only then do we add execution/companion layers.**
 
 ---
 
-**Status**: ✅ 70% toward validation goal (7 of 10+ scenarios tested, 8 patterns captured)
-**Next**: Test 3 more scenarios to complete pattern library and validate question framework
+**Status**: ⚠️ 80% scenarios complete BUT command improvements needed before continuing
+**Next**: Implement Test #8 improvements, THEN test 2 more scenarios to validate fixes
