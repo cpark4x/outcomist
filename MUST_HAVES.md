@@ -1,14 +1,14 @@
 # Outcomist Must-Have Improvements
 
-**Date**: 2025-11-03
-**Status**: Captured from 3 successful test scenarios
+**Date**: 2025-11-04 (Updated)
+**Status**: Captured from 5 successful test scenarios
 **Purpose**: Core improvements to nail advisory excellence before adding execution/companion layers
 
 ---
 
 ## Context
 
-After testing 3 scenarios (office redesign, passive income, cancer prevention), we identified 4 critical improvements that will elevate Outcomist's advisory excellence from "good" to "must-have."
+After testing 5 scenarios (office redesign, passive income, cancer prevention, feature decision, client vs product), we identified 4 critical improvements that will elevate Outcomist's advisory excellence from "good" to "must-have."
 
 **Focus**: Nail the advisory layer first, then add execution/companion features later.
 
@@ -27,6 +27,8 @@ After testing 3 scenarios (office redesign, passive income, cancer prevention), 
 - **Office test**: Q4 revealed multi-use space → personal sanctuary need
 - **Passive income test**: Q4 revealed $500K+ capital → entire recommendation pivot
 - **Cancer test**: Q1 revealed friend's stage 4 diagnosis → anxiety trigger
+- **Feature decision test**: Q3 revealed product positioning contradiction → values crisis
+- **Client vs product test**: Q2 revealed $60K savings/12-14 months runway → false scarcity
 
 **The insight:** ONE question consistently unlocks the real problem. Can we get better at identifying which question to ask when?
 
@@ -42,6 +44,7 @@ After testing 3 scenarios (office redesign, passive income, cancer prevention), 
    - Capital available? (passive income test - game changer)
    - Time available? (office test - revealed renovation appetite)
    - Risk tolerance? (would apply to business decisions)
+   - Financial runway? (client vs product test - revealed false scarcity)
 
 3. **Usage/context questions** (for space/design/product decisions):
    - How will you actually use this? (office test - revealed games + personal storage)
@@ -234,6 +237,16 @@ After testing 3 scenarios (office redesign, passive income, cancer prevention), 
    - Signals: High-effort option framed as "additional" (doesn't match)
    - Real: Either security hedge OR wrong solution entirely
 
+5. **Popularity contest hiding identity crisis pattern** (Feature Decision test)
+   - Surface: Feature prioritization decision (10 customers vs 2 customers)
+   - Signals: Framed as count vs value, features serve opposite stakeholders, one "controversial"
+   - Real: Product identity crisis - must choose who you're building for
+
+6. **Scarcity mindset hiding opportunity pattern** (Client vs Product test)
+   - Surface: "Stable money vs risky thing" decision
+   - Signals: Fear language ("market is tough"), strong fundamentals contradicting scarcity
+   - Real: Fear preventing commitment despite having resources and validation
+
 ### Success Criteria
 
 - [ ] Pattern library with 10+ patterns documented
@@ -290,17 +303,17 @@ After testing 3 scenarios (office redesign, passive income, cancer prevention), 
 
 **Before adding execution/companion layers, we must hit:**
 
-1. ✅ **3 test scenarios completed** (office, passive income, cancer)
-2. ⏳ **10+ test scenarios validated** (from test-scenarios.md)
+1. ✅ **5 test scenarios completed** (office, passive income, cancer, feature decision, client vs product)
+2. ⏳ **10+ test scenarios validated** (from test-scenarios.md) - 50% complete
 3. ⏳ **Question quality framework implemented** (question library + heuristics)
-4. ⏳ **Pattern library built** (10+ patterns documented)
+4. ⏳ **Pattern library built** (10+ patterns documented) - 60% complete (6 patterns captured)
 5. ⏳ **Adaptive questioning working** (questions evolve based on answers)
 6. ⏳ **Confidence calibration refined** (nuanced levels + upfront caveats)
-7. ⏳ **User validation consistently positive** (every test scenario)
+7. ✅ **User validation consistently positive** (every test scenario validated)
 
 **Only then do we add execution/companion layers.**
 
 ---
 
-**Status**: ✅ Captured - Ready for implementation prioritization
-**Next**: Test 7 more scenarios to build pattern library and validate question framework
+**Status**: ✅ 50% toward pattern library goal (5 of 10+ scenarios tested, 6 patterns captured)
+**Next**: Test 5 more scenarios to complete pattern library and validate question framework
