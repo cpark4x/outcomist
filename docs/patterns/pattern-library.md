@@ -1,7 +1,7 @@
 # Outcomist Pattern Library
 
 **Last Updated**: 2025-11-04
-**Status**: 7 patterns captured from 6 test scenarios
+**Status**: 8 patterns captured from 7 test scenarios
 **Goal**: 10+ patterns for robust decision exploration
 
 ---
@@ -227,6 +227,41 @@ When a user describes their decision, scan these patterns to identify potential 
 
 ---
 
+## Pattern 8: Premature Presentation (Presenting Without Proof)
+
+**Surface request**: Help me prepare a presentation for leadership/stakeholders
+
+**Signals to recognize**:
+- Excited about vision/project
+- **No measurable results yet** to back up the ask
+- **Unclear what they're asking for** ("just a check-in", "not sure")
+- Skeptics already exist in the audience
+- Top-level support but middle management doubt
+- Wants adoption/behavior change without proof
+- Timing driven by excitement, not strategy
+
+**Real problem**: Presenting too early out of excitement, not readiness. Will burn credibility on "we might have something" when they could wait and present "we DO have something."
+
+**Key questions to ask**:
+1. What does the audience currently know? (reveals awareness vs skepticism)
+2. What specific decision are you asking them to make? (reveals if ask is clear)
+3. What's the current adoption/results status? (reveals if they have proof)
+4. What happens if they say "prove it first"? (reveals if timeline is flexible)
+5. **What's driving the timing - why now vs later?** (reveals if it's excitement vs necessity)
+6. Are you under threat that requires immediate action? (reveals true urgency)
+
+**Common pitfalls**:
+- Taking "prepare presentation" request at face value
+- Not challenging whether they should present at all
+- Missing the credibility gap (big ask, no proof)
+- Not questioning unclear ask ("not sure what I want")
+- Assuming excitement = readiness to present
+- Not asking about strategic timing
+
+**Example scenario**: [Amplifier SLT presentation test](../../archive/test-logs/TEST_LOG_NOV4_AMPLIFIER_PRESENTATION.md) - User wanted to present Amplifier project to SLT for "awareness, air cover, and pivot teams." Reality: No results yet, handful of users, unclear ask ("just a check-in, not sure"), middle management skeptics. Recommendation: DON'T present now, build proof first (3-6 months), then present with clear results and ask.
+
+---
+
 ## Pattern Analysis
 
 ### Common Themes Across Patterns
@@ -244,6 +279,7 @@ Some decisions match multiple patterns:
 - **Health anxiety** + **Control seeking**: Cancer prevention test
 - **Scarcity mindset** + **Underpricing work**: Client vs product test
 - **Solution looking for problem** + **First-time builder**: Meal planning app test
+- **Premature presentation** + **Unclear ask**: Amplifier SLT presentation test
 
 Use pattern combinations to deepen understanding, not confuse the issue.
 
