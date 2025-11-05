@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcomist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">Outcomist</h1>
+            <p class="tagline">Pattern recognition for better decisions</p>
+        </header>
+
+        <main id="main-content">
+            <div id="input-section" class="section">
+                <label for="decision-input" class="input-label">What decision are you exploring?</label>
+                <input
+                    type="text"
+                    id="decision-input"
+                    class="decision-input"
+                    placeholder="Describe what you're trying to decide..."
+                    autofocus
+                >
+                <button id="explore-btn" class="primary-btn">Explore</button>
+            </div>
+
+            <div id="conversation-section" class="section hidden">
+                <div id="conversation-history"></div>
+
+                <div id="intent-selection" class="intent-selection hidden">
+                    <p class="intent-question">Are you looking for validation on <strong>WHETHER</strong> to pursue this, or guidance on <strong>HOW</strong> to execute it well?</p>
+                    <div class="intent-buttons">
+                        <button id="intent-validation" class="intent-btn">
+                            <span class="intent-title">Validation</span>
+                            <span class="intent-subtitle">WHETHER to do this</span>
+                        </button>
+                        <button id="intent-execution" class="intent-btn">
+                            <span class="intent-title">Execution</span>
+                            <span class="intent-subtitle">HOW to do this well</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="user-input-area" class="user-input-area hidden">
+                    <textarea
+                        id="user-response"
+                        class="user-response-input"
+                        placeholder="Type your response..."
+                        rows="3"
+                    ></textarea>
+                    <button id="submit-response" class="primary-btn">Send</button>
+                </div>
+
+                <div id="proceed-area" class="proceed-area hidden">
+                    <button id="proceed-btn" class="primary-btn proceed-btn">Continue to deeper exploration</button>
+                </div>
+
+                <div id="streaming-cursor" class="cursor hidden"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
