@@ -1,7 +1,7 @@
 # Outcomist Pattern Library
 
-**Last Updated**: 2025-11-04
-**Status**: 8 patterns captured from 7 test scenarios
+**Last Updated**: 2025-11-05
+**Status**: 9 patterns captured from 8 test scenarios
 **Goal**: 10+ patterns for robust decision exploration
 
 ---
@@ -262,6 +262,55 @@ When a user describes their decision, scan these patterns to identify potential 
 
 ---
 
+## Pattern 9: Stuck in Build Phase (No-Code/LLM Builders)
+
+**Surface request**: Help me finish/accelerate my product build
+
+**Signals to recognize**:
+- Ambitious roadmap (many epics, 100+ user stories)
+- **Cannot get ONE flow to reviewable/demo state**
+- Mentions "LLM limitations" or tools as blocker
+- Has infrastructure but no end-to-end demo
+- Non-technical (no-code, uses AI to "vibe code")
+- Focuses on features/stories, not working product
+- Stuck in build phase, can't reach review phase
+- Needs to "fail fast" but building comprehensive solution
+
+**Real problem**: Scope management, not technical limitations. Building 179 things when they need 1 working demo. Wrong prompt strategy for LLM (asking for "features" instead of "demo").
+
+**Key questions to ask**:
+1. **"Do you have something reviewable right now (demo, video, screenshot, prototype) or is it all in-progress?"** (reveals if stuck in build phase)
+2. **"Show me the docs that need scrubbing"** (reveals scope - often 100+ stories)
+3. **"Walk me through your typical workflow when you [build with AI]. Where does it usually break down?"** (reveals LLM is building infrastructure, not demos)
+4. "What does 'complete' look like for ONE feature?" (reveals definition is too comprehensive)
+5. "What currently EXISTS vs what's BROKEN?" (reveals if problem is scope vs bugs)
+
+**Common pitfalls**:
+- Taking "LLM limitations" at face value (it's usually scope, not AI capability)
+- Recommending better prompts when real issue is ruthless scope cut
+- Not probing for reviewable artifacts early
+- Treating as technical problem when it's product strategy problem
+- Missing that no-code users need demo-first, not architecture-first approach
+- Not recognizing that LLMs are GREAT at demos, TERRIBLE at comprehensive systems
+
+**What they need**:
+1. **Scope reality check** - "You're building 179 things when you need 1 thing"
+2. **Concrete 'done' definition** - "Demo-ready = 2-min screencast", not "production-ready"
+3. **Permission to fake it** - "Hardcode everything not in hero flow"
+4. **Executable artifact** - Not just advice, but DEMO_V1.md they can hand to LLM
+5. **Co-creation support** - Help them create the scoped spec together
+
+**Why this pattern emerges with LLM builders**:
+- Users who don't code rely on LLM for everything
+- LLMs are GREAT at: copying patterns, hardcoding demos, vertical slices
+- LLMs are TERRIBLE at: architecture, anticipating edge cases, knowing "done"
+- Users ask for "features" → LLM builds infrastructure → never reaches reviewable state
+- Users need to ask for "demo" → LLM builds visible UI → can actually review
+
+**Example scenario**: [Stuck in Build Phase test - Test #9](../../TEST_SCENARIO_9_REPORT.md) - User had 179 stories across 4 epics, couldn't get ONE to reviewable state. Blamed "LLM limitations" but real issue was scope. Needed demo-first strategy: 7-step hero flow, hardcode everything else, success = 2-min screencast. Co-created DEMO_V1.md together.
+
+---
+
 ## Pattern Analysis
 
 ### Common Themes Across Patterns
@@ -280,6 +329,7 @@ Some decisions match multiple patterns:
 - **Scarcity mindset** + **Underpricing work**: Client vs product test
 - **Solution looking for problem** + **First-time builder**: Meal planning app test
 - **Premature presentation** + **Unclear ask**: Amplifier SLT presentation test
+- **Stuck in build phase** + **Solution looking for problem**: No-code builders with ambitious scope
 
 Use pattern combinations to deepen understanding, not confuse the issue.
 
