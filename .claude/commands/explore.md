@@ -236,6 +236,11 @@ Your call: trust the quick take, or invest 10 minutes for the real answer?
 
 **When**: User accepts Tier 1 offer OR provides additional context
 
+**Note on Time Expectations** (Ken's feedback - Test #9):
+The frontend should set time expectations when offering Tier 2. Recommended text:
+"This will take about 10 minutes with 4-5 questions. If your problem is simpler,
+let me know and I can give you a quick take instead."
+
 **Structure** (2-round discovery with summary):
 ```
 [ROUND 1: LANDSCAPE QUESTION]
@@ -247,14 +252,22 @@ CRITICAL RULES:
 - Ask about their PERSONAL situation, feelings, or constraints
 - Avoid asking users to research external/market data (e.g., "Look up industry pricing" or "Research competitor offerings")
 - Focus on THEIR OWN situation and data (e.g., "What are your current costs?" - they may or may not know)
-- Examples (LOW effort):
+
+EVIDENCE GATHERING (Ken's feedback - Test #9):
+- When user describes problems, errors, docs, or artifacts → ask to see them
+- "Show me" is better than "Tell me" when evidence exists
+- Don't accept descriptions when actual artifacts are available
+- Examples: "Show me the error", "Paste the relevant section", "Send a screenshot"
+
+SPECIAL PROBES (based on context):
+- If building/creating something → Ask early: "Do you have something reviewable right now (demo, video, screenshot, prototype) or is it all in-progress?"
+- If mentions constraints (no-code, solo, non-technical) → Ask: "Walk me through your typical workflow when you [do this]. Where does it usually break down?"
+
+EXAMPLES (LOW effort):
   * "What's your current situation?"
   * "What have you tried so far?"
   * "What's working and what's not?"
   * "What's most important to you in this decision?"
-- Don't ask for detailed data, examples, or artifacts in Round 1
-- Keep the question conversational and simple
-- Reference their decision context
 
 ↓
 
@@ -319,6 +332,12 @@ CRITICAL RULES:
 - For execution seekers: how to do it well (can offer multiple paths)
 - Include reasoning based on their context
 - Don't invent statistics or fake evidence
+
+CO-CREATION OFFER (Ken's feedback - Test #9):
+After delivering recommendation, explicitly offer collaboration:
+"Want me to help you create [the artifact/next step] together, or do you want to take it from here?"
+
+This makes collaboration opt-in but explicit - user doesn't have to ask permission.
 
 **Total: 4-6 questions across 2 rounds + summary confirmation**
 ```

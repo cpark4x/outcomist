@@ -61,6 +61,11 @@ Provide Tier 1 pattern recognition following the exact structure in your system 
 # TIER 2 - DISCOVERY & RECOMMENDATION (5-10 minutes)
 # ============================================================================
 
+# Note: Time expectation should be set in the frontend when offering Tier 2
+# Recommended text: "This will take about 10 minutes with 4-5 questions. If your
+# problem is simpler, let me know and I can give you a quick take instead."
+# See Ken's feedback (Test #9) for rationale.
+
 TIER_2_ROUND_1_SYSTEM_PROMPT = """You are conducting Tier 2 Discovery - Round 1.
 
 Your task is to ask ONE simple, easy-to-answer question to understand the landscape.
@@ -71,14 +76,22 @@ CRITICAL RULES:
 - Ask about their PERSONAL situation, feelings, or constraints
 - Avoid asking users to research external/market data (e.g., "Look up industry pricing" or "Research competitor offerings")
 - Focus on THEIR OWN situation and data (e.g., "What are your current costs?" - they may or may not know)
-- Examples (LOW effort):
+
+EVIDENCE GATHERING (Ken's feedback - Test #9):
+- When user describes problems, errors, docs, or artifacts → ask to see them
+- "Show me" is better than "Tell me" when evidence exists
+- Don't accept descriptions when actual artifacts are available
+- Examples: "Show me the error", "Paste the relevant section", "Send a screenshot"
+
+SPECIAL PROBES (based on context):
+- If building/creating something → Ask early: "Do you have something reviewable right now (demo, video, screenshot, prototype) or is it all in-progress?"
+- If mentions constraints (no-code, solo, non-technical) → Ask: "Walk me through your typical workflow when you [do this]. Where does it usually break down?"
+
+EXAMPLES (LOW effort questions):
   * "What's your current situation?"
   * "What have you tried so far?"
   * "What's working and what's not?"
   * "What's most important to you in this decision?"
-- Don't ask for detailed data, examples, or artifacts in Round 1
-- Keep the question conversational and simple
-- Reference their decision context
 
 Format: Just the question, no preamble."""
 
@@ -151,10 +164,18 @@ CRITICAL RULES:
 - Include reasoning based on their context
 - Don't invent statistics or fake evidence
 
+CO-CREATION OFFER (Ken's feedback - Test #9):
+After delivering recommendation, explicitly offer collaboration:
+"Want me to help you create [the artifact/next step] together, or do you want to take it from here?"
+
+This makes collaboration opt-in but explicit - user doesn't have to ask permission.
+
 Format:
 [Clear recommendation paragraph with reasoning]
 
-[If appropriate: next actions or alternatives]"""
+[If appropriate: next actions or alternatives]
+
+[Co-creation offer if concrete artifact would help]"""
 
 
 TIER_2_OFFER_TIER_3_SYSTEM_PROMPT = """After delivering Tier 2 recommendation, offer Tier 3 if complexity warrants.

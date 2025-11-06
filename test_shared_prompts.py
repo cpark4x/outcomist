@@ -308,6 +308,15 @@ def test_cli_sync_with_shared_library():
         'Avoid asking users to research external/market data',
         'Focus on THEIR OWN situation and data',
 
+        # Round 1 - Evidence gathering (Test #9)
+        'EVIDENCE GATHERING (Ken\'s feedback - Test #9)',
+        '"Show me" is better than "Tell me" when evidence exists',
+
+        # Round 1 - Special probes (Test #9)
+        'SPECIAL PROBES (based on context)',
+        'Do you have something reviewable right now',
+        'Walk me through your typical workflow',
+
         # Round 2 - Anti-research + capability checking
         'Avoid asking users to research external/market data',
         'Check capabilities - don\'t assume user lacks skills',
@@ -318,6 +327,13 @@ def test_cli_sync_with_shared_library():
 
         # Recommendation - No fake stats
         'Don\'t invent statistics or fake evidence',
+
+        # Recommendation - Co-creation offer (Test #9)
+        'CO-CREATION OFFER (Ken\'s feedback - Test #9)',
+        'Want me to help you create',
+
+        # Time expectations note (Test #9)
+        'Note on Time Expectations',
 
         # Sync marker
         'Prompts synced from outcomist_shared/prompts.py',
