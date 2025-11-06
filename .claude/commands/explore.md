@@ -47,7 +47,7 @@ Then proceed with Tier 1 once they provide context.
 
 **Purpose**: Immediate value through pattern recognition
 
-### Output Format
+### Output Format (v4.4 - Question-First Design)
 
 Generate Tier 1 response with this structure:
 
@@ -62,158 +62,64 @@ Generate Tier 1 response with this structure:
 
 ---
 
-### [Adaptive section header based on fork pattern]
+### Here's what I need to understand:
 
-[Context-appropriate question introducing the fork]
+**To [outcome user wants], I need to explore:**
 
-**[Option A Name]**
-- [What this path explores]
-- [One example question]
+1. **[Concrete question 1]** - [Why this matters / what it reveals]
+2. **[Concrete question 2]** - [Why this matters / what it reveals]
+3. **[Concrete question 3]** - [Why this matters / what it reveals]
+4. **[Concrete question 4]** - [Why this matters / what it reveals]
 
-**[Option B Name]**
-- [What this path explores]
-- [One example question]
-
-*Or just say "show me" and I'll ask the first question.*
+*I'll ask 4-5 questions (~10 min) to understand these dimensions, then deliver a clear recommendation on [what you'll decide].*
 
 ---
 
-### What happens next
+### Ready to dig in?
 
-I'll ask 4-5 questions (~10 min) tailored to whichever path you choose, then deliver a clear recommendation.
+Reply with:
+- **"yes"** to start discovery
+- **"show me"** to see the first question now
+- **Ask anything** if you need clarification
 
 ---
 ```
 
-### Fork Pattern Detection
+### Question Selection Guidance
 
-The AI should analyze the user's decision to determine which fork pattern applies:
+**Analyze the user's decision to generate 4 relevant questions:**
 
-**1. Language cues:**
-- "should we/is this worth" → Existence Fork
-- "what should/which option" → Prioritization Fork
-- "how to/how should" → Execution Fork
-- "when to/timing" → Timing Fork
-- "who/which users" → Audience Fork
+**For Existence Decisions** ("should we", "is this worth"):
+- Why this medium/approach, why now?
+- Who's your audience and is there unmet demand?
+- What's the real cost (time, money, energy)?
+- What's your exit criteria / success metric?
 
-**2. Context signals:**
-- New/exploratory → Earlier forks (Existence, Prioritization)
-- Detailed/specific → Later forks (Execution, Timing)
-- Multiple stakeholders mentioned → Audience Fork
+**For Prioritization Decisions** ("what should we", "which option"):
+- What's blocking users today / where do they struggle?
+- What features/options are on your radar?
+- What's your capacity and timeline?
+- What does success look like for this decision?
 
-**3. Default**: If unclear, use Existence Fork (most fundamental)
+**For Execution Decisions** ("how to", "how should we"):
+- What's your scope and what are you deferring?
+- What constraints or requirements must you respect?
+- What capabilities do you have vs need to build?
+- What's your timeline and risk tolerance?
 
-The fork pattern determines:
-- Section header wording
-- Option names and descriptions
-- Example questions shown
-- Question bank used in Tier 2
+**For Timing Decisions** ("when to", "timing", "now vs later"):
+- What's driving the urgency / what changes if you wait?
+- What dependencies or blockers exist?
+- What would be different in 3/6/12 months?
+- What's the cost of being too early vs too late?
 
-### Fork Pattern Templates
+**For Audience Decisions** ("who", "which users"):
+- Who needs this most and why?
+- What can you realistically support given your capabilities?
+- What's the strategic value of different segments?
+- Where do you have strongest competitive advantage?
 
-#### Pattern 1: Existence Fork
-**Detected when**: "should we", "is this worth", new/exploratory language
-
-```markdown
-### Let me understand your real question
-
-The core uncertainty seems to be whether this should exist. Let me help you explore:
-
-**Validate desirability** (Is this solving a real need?)
-- Who would use this and what problem does it solve for them?
-
-**Understand feasibility** (Can we actually build this?)
-- What capabilities and resources would this require?
-
-*Or just say "show me" and I'll ask the first question.*
-```
-
-#### Pattern 2: Prioritization Fork
-**Detected when**: "what should we", "which option", comparing alternatives
-
-```markdown
-### Let me understand your real question
-
-You're weighing options. Let me help you compare:
-
-**Compare alternatives** (How does this stack up?)
-- What are you choosing between and what's the real trade-off?
-
-**Understand current state** (What's the context?)
-- What's working/not working today that makes this relevant?
-
-*Or just say "show me" and I'll ask the first question.*
-```
-
-#### Pattern 3: Execution Fork
-**Detected when**: "how to", "how should we", specific implementation language
-
-```markdown
-### Let me understand your real question
-
-You're planning how to build. Let me help clarify:
-
-**Define scope and boundaries** (What's in/out?)
-- Where should we start and what should we defer?
-
-**Plan implementation approach** (How to build it?)
-- What's the technical/operational approach that fits our constraints?
-
-*Or just say "show me" and I'll ask the first question.*
-```
-
-#### Pattern 4: Timing Fork
-**Detected when**: "when to", "timing", "now vs later"
-
-```markdown
-### Let me understand your real question
-
-You're deciding when to act. Let me help assess:
-
-**Understand urgency and triggers** (Why now vs later?)
-- What's driving the timing and what would we miss by waiting?
-
-**Identify dependencies and blockers** (What needs to be true first?)
-- What has to happen before this becomes viable?
-
-*Or just say "show me" and I'll ask the first question.*
-```
-
-#### Pattern 5: Audience Fork
-**Detected when**: "who", "which users", "target audience"
-
-```markdown
-### Let me understand your real question
-
-You're deciding who to serve. Let me help prioritize:
-
-**Understand user needs** (Who needs this most?)
-- Which user segment has the strongest need and why?
-
-**Assess organizational readiness** (Who can we serve well?)
-- Which audience can we realistically support given our capabilities?
-
-*Or just say "show me" and I'll ask the first question.*
-```
-
-#### Default (Existence Fork)
-**When fork pattern is unclear**, default to Existence Fork
-
-```markdown
-### Are you looking for validation or guidance?
-
-Let me understand what you need:
-
-**Validation** (Should we do this at all?)
-- Assess whether this is worth pursuing
-- Understand constraints and trade-offs
-
-**Guidance** (How to do this well?)
-- Plan the execution approach
-- Navigate specific challenges
-
-*Or just say "show me" and I'll ask the first question.*
-```
+**Key principle**: Show the **actual questions** you'll ask, not abstract fork options. Users need to see exactly what territory will be explored.
 
 ### Formatting Principles (Validated)
 
@@ -221,11 +127,12 @@ Let me understand what you need:
 - `###` for section headers
 - `>` blockquotes for key reframes
 - `---` horizontal rules between sections
-- `**Bold**` for option headers (not markdown headers)
+- `**Bold**` for emphasis
+- Numbered lists (`1.`, `2.`, `3.`, `4.`) for questions
 - Blank lines between all elements
 - Short paragraphs (30-60 words max)
 
-**Example Tier 1 (v4.3 format with Prioritization Fork):**
+**Example Tier 1 (v4.4 format with Question-First):**
 
 ```markdown
 # Tier 1: Pattern Recognition
@@ -238,33 +145,35 @@ Feature prioritization isn't about counting votes. It's about strategy. Building
 
 ---
 
-### Let me understand your real question
+### Here's what I need to understand:
 
-You're weighing options. Let me help you compare:
+**To recommend the highest-impact next move, I need to explore:**
 
-**Compare alternatives** (How do these features stack up?)
-- What are you choosing between and what's the real trade-off?
+1. **What's blocking users today?** - Where do sessions break down or fail to deliver value?
+2. **What features are on your radar?** - What improvements are you considering?
+3. **What's your capacity?** - How much complexity can you take on right now?
+4. **What does success look like?** - More users? Better outcomes? Specific metrics?
 
-**Understand current state** (What's the context?)
-- What's working/not working today that makes this decision urgent?
-
-*Or just say "show me" and I'll ask the first question.*
+*I'll ask 4-5 questions (~10 min) to understand these dimensions, then deliver a clear recommendation on where to focus next.*
 
 ---
 
-### What happens next
+### Ready to dig in?
 
-I'll ask 4-5 questions (~10 min) tailored to whichever path you choose, then deliver a clear recommendation.
+Reply with:
+- **"yes"** to start discovery
+- **"show me"** to see the first question now
+- **Ask anything** if you need clarification
 
 ---
 ```
 
-**Key Changes in v4.3:**
-- ✅ Adaptive fork patterns (5 patterns based on decision type)
-- ✅ Improved formatting (blockquotes, horizontal rules, better spacing)
-- ✅ Fork detection logic (language cues + context signals)
-- ✅ Shorter, clearer structure (easier to scan)
-- ✅ "Show me" option emphasized (reduce decision fatigue)
+**Key Changes in v4.4:**
+- ✅ Question-first format (show actual questions, not abstract fork options)
+- ✅ Clearer value proposition ("To [outcome], I need to explore:")
+- ✅ Explicit question list (users see exactly what will be asked)
+- ✅ Simpler call-to-action (3 clear options)
+- ✅ Works across all decision types (no more confusing fork templates)
 
 **Key Changes in v4.2:**
 - ✅ Intent check now comes BEFORE question preview (tailor questions to intent)
