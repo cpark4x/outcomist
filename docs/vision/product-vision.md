@@ -12,7 +12,7 @@ Outcomist helps you think through your project to deeply understand what you wan
 
 This is an important step before starting the project.
 
-**Current Status**: Stage 1 (Explore) validated with 5 test scenarios, team testing in progress.
+**Current Status**: Stage 1 (Explore) validated with 8 test scenarios, 9 patterns documented, Ken's improvements incorporated (v4.2).
 
 ---
 
@@ -143,6 +143,11 @@ The commonality: They have decisions to make. They need clarity on what they're 
 - Deciding how to redesign their space
 - Pattern: Work optimization masking personal needs
 
+**The No-Code Builder** (New - Test #9)
+- Using AI to build products, stuck in build phase
+- Pattern: Stuck building 179 features when they need 1 demo
+- Real issue: Scope management, not LLM limitations
+
 **The Domain**: Personal, workplace, management, business, product decisions.
 
 ---
@@ -231,13 +236,20 @@ Every decision captured improves pattern recognition. More usage → better reco
 - ✅ `/explore` command working
 - ✅ Pattern recognition validated
 - ✅ Discovery questions adaptive
-- ✅ 5 test scenarios completed successfully
-- ✅ 6 patterns documented
+- ✅ 8 test scenarios completed successfully
+- ✅ 9 patterns documented (1 away from 10+ goal!)
+- ✅ Ken's Test #9 improvements incorporated:
+  - Evidence gathering ("Show me" questions)
+  - Reviewable artifact probes
+  - Workflow/constraint probing
+  - Explicit co-creation offers
+  - Time expectation setting
+- ✅ Shared prompt library (single source of truth)
 - ✅ Team testing in progress
 
 **Next**: Complete Stage 1 Validation
-- ⏳ 10+ test scenarios (50% complete)
-- ⏳ Pattern library expansion (target: 10+ patterns)
+- ⏳ 10+ test scenarios (80% complete - need 2 more)
+- ⏳ Pattern library expansion (90% complete - need 1 more pattern)
 - ⏳ Question framework systematic implementation
 - ⏳ Internal traction validation
 
