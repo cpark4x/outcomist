@@ -233,7 +233,14 @@ Every decision captured improves pattern recognition. More usage → better reco
 ## Current Status
 
 **Shipped**: v4.2
-- ✅ `/explore` command working
+- ✅ **Web App Launched** (Nov 5, 2025)
+  - Beautiful minimal UI (Apple-inspired design)
+  - Real-time SSE streaming for AI responses
+  - Progressive disclosure UI (Tier 1 → Intent → Tier 2)
+  - Local-first architecture (FastAPI + vanilla JS)
+  - Runs at http://localhost:8000
+  - Comprehensive testing completed (engineer/designer/product perspectives)
+- ✅ `/explore` CLI command working
 - ✅ Pattern recognition validated
 - ✅ Discovery questions adaptive
 - ✅ 8 test scenarios completed successfully
@@ -244,7 +251,7 @@ Every decision captured improves pattern recognition. More usage → better reco
   - Workflow/constraint probing
   - Explicit co-creation offers
   - Time expectation setting
-- ✅ Shared prompt library (single source of truth)
+- ✅ Shared prompt library (single source of truth for web + CLI)
 - ✅ Team testing in progress
 
 **Next**: Complete Stage 1 Validation
