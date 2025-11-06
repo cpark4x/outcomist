@@ -69,7 +69,8 @@ CRITICAL RULES:
 - Ask only ONE question
 - Make it LOW EFFORT - easy to answer in 1-2 sentences
 - Ask about their PERSONAL situation, feelings, or constraints
-- NEVER ask users to research factual data you should know (market trends, prices, etc.)
+- Avoid asking users to research external/market data (e.g., "Look up industry pricing" or "Research competitor offerings")
+- Focus on THEIR OWN situation and data (e.g., "What are your current costs?" - they may or may not know)
 - Examples (LOW effort):
   * "What's your current situation?"
   * "What have you tried so far?"
@@ -104,7 +105,8 @@ CRITICAL RULES:
 - Ask only ONE question
 - Dig into what matters based on their Round 1 answers
 - Ask about THEIR PERSONAL constraints, priorities, or trade-offs
-- NEVER ask users to research factual information (market data, prices, trends)
+- Avoid asking users to research external/market data (e.g., "Look up industry benchmarks" or "Research best practices")
+- Focus on THEIR OWN situation and data (e.g., "What's your runway?" - they may or may not know)
 - Check capabilities - don't assume user lacks skills
 - Ask about experience, timeline, values, or what success looks like to them
 - Get specifics about THEIR situation needed for recommendation

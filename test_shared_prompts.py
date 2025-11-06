@@ -286,6 +286,60 @@ def print_test_results():
         print("❌ FAIL - Significant issues detected")
     print("="*80 + "\n")
 
+
+def test_cli_sync_with_shared_library():
+    """
+    Validate CLI prompts contain key phrases from shared library.
+
+    This test ensures that .claude/commands/explore.md is synced with
+    outcomist_shared/prompts.py (the single source of truth).
+    """
+    from pathlib import Path
+
+    cli_path = Path('.claude/commands/explore.md')
+    if not cli_path.exists():
+        raise FileNotFoundError(f"CLI command file not found: {cli_path}")
+
+    cli_content = cli_path.read_text()
+
+    # Key phrases that MUST be present in CLI (from shared library)
+    required_phrases = [
+        # Round 1 - Anti-research rule
+        'Avoid asking users to research external/market data',
+        'Focus on THEIR OWN situation and data',
+
+        # Round 2 - Anti-research + capability checking
+        'Avoid asking users to research external/market data',
+        'Check capabilities - don\'t assume user lacks skills',
+
+        # Summary - No judgment
+        'NO JUDGMENT - just state what they told you',
+        'This is about LISTENING, not ADVISING',
+
+        # Recommendation - No fake stats
+        'Don\'t invent statistics or fake evidence',
+
+        # Sync marker
+        'Prompts synced from outcomist_shared/prompts.py',
+    ]
+
+    missing_phrases = []
+    for phrase in required_phrases:
+        if phrase not in cli_content:
+            missing_phrases.append(phrase)
+
+    if missing_phrases:
+        print("\n❌ CLI SYNC VALIDATION FAILED")
+        print("\nMissing phrases in CLI that should be synced from shared library:")
+        for phrase in missing_phrases:
+            print(f"  • {phrase}")
+        print(f"\nPlease sync .claude/commands/explore.md with outcomist_shared/prompts.py")
+        raise AssertionError(f"CLI missing {len(missing_phrases)} required phrases from shared library")
+
+    print("✅ CLI prompts synced with shared library")
+    print("   All key phrases from outcomist_shared/prompts.py are present in CLI")
+
+
 if __name__ == "__main__":
     print("Starting comprehensive test...")
     print("Note: This script provides the testing framework.")
@@ -296,5 +350,11 @@ if __name__ == "__main__":
     test_results["comparison"]["prompts_match"] = True  # Both use outcomist_shared/prompts.py
     test_results["comparison"]["behavior_match"] = "PENDING"  # Needs actual test
     test_results["comparison"]["quality_match"] = "PENDING"  # Needs actual test
+
+    # Run sync validation first
+    print("\n" + "="*80)
+    print("CLI SYNC VALIDATION")
+    print("="*80)
+    test_cli_sync_with_shared_library()
 
     print_test_results()
