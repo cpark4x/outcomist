@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Mockup - Before/After Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .comparison {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .version {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .version-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .version-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .version-subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .before {
+            border-top: 4px solid #ef4444;
+        }
+
+        .after {
+            border-top: 4px solid #10b981;
+        }
+
+        /* Before styling - lots of text */
+        .before-content {
+            font-size: 15px;
+            color: #333;
+        }
+
+        .before-content p {
+            margin-bottom: 16px;
+        }
+
+        .before-content strong {
+            color: #000;
+        }
+
+        .before-question {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .before-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .before-card {
+            padding: 24px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .before-card:hover {
+            border-color: #3b82f6;
+            background: #f8fafc;
+        }
+
+        .before-card-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            background: #e0e0e0;
+            border-radius: 50%;
+        }
+
+        .before-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .before-card-subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* After styling - minimal and clear */
+        .after-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .after-header {
+            text-align: center;
+        }
+
+        .after-question {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .after-subtext {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .after-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .after-card {
+            padding: 40px 24px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .after-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .after-card-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+        }
+
+        .after-card-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .after-card-subtitle {
+            font-size: 16px;
+            color: #6b7280;
+        }
+
+        .collapsible {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .collapsible-trigger {
+            background: none;
+            border: none;
+            width: 100%;
+            padding: 12px 16px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #3b82f6;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .collapsible-trigger:hover {
+            background: #f8fafc;
+        }
+
+        .collapsible-content {
+            padding: 16px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            background: #f9fafb;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        .annotations {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f0fdf4;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+
+        .annotation-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #166534;
+        }
+
+        .annotation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .annotation-list li {
+            padding: 8px 0;
+            color: #166534;
+            display: flex;
+            align-items: start;
+        }
+
+        .annotation-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 1200px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison">
+        <!-- BEFORE -->
+        <div class="version before">
+            <div class="version-header">
+                <div class="version-title">❌ Current (Before)</div>
+                <div class="version-subtitle">Too much text, buried question</div>
+            </div>
+
+            <div class="before-content">
+                <p>You're framing aging as something happening TO you rather than WITH you. The real pattern here isn't about skincare products - it's about your relationship with change and how you're measuring self-worth against an impossible standard of stopping time.</p>
+
+                <p>This goes much deeper than routine optimization. There's a complex interplay between self-care as genuine wellness versus self-care as anxiety management, plus the question of whether you're trying to solve an internal problem with external solutions. The "right" approach depends entirely on what you're actually optimizing for.</p>
+
+                <p>Before we dig deeper, let me understand your intent:</p>
+
+                <div class="before-question">
+                    <strong>Are you looking for validation on WHETHER to pursue this, or guidance on HOW to execute it well?</strong>
+                    <p style="margin-top: 12px; font-size: 14px; color: #666;">(This helps me tailor the questions to what you actually need)</p>
+                </div>
+
+                <p><strong>[IF VALIDATION SEEKER:]</strong> I'll ask 4-5 questions (~10 min) to understand:</p>
+                <ul style="margin: 12px 0 12px 24px; color: #666;">
+                    <li>What's driving the urgency around aging concerns</li>
+                    <li>Whether skincare addresses your core worry</li>
+                    <li>What tradeoffs you're willing to make</li>
+                </ul>
+
+                <p><strong>[IF EXECUTION SEEKER:]</strong></p>
+                <p>I'll ask 4-5 questions (~10 min) to understand:</p>
+                <ul style="margin: 12px 0 12px 24px; color: #666;">
+                    <li>Your current routine and skin type</li>
+                    <li>Budget and time constraints</li>
+                    <li>Specific outcomes you want to achieve</li>
+                </ul>
+
+                <p style="margin-top: 20px;">Ready to explore?</p>
+
+                <div class="before-cards">
+                    <div class="before-card">
+                        <div class="before-card-icon"></div>
+                        <div class="before-card-title">Validation</div>
+                        <div class="before-card-subtitle">WHETHER to do this</div>
+                    </div>
+                    <div class="before-card">
+                        <div class="before-card-icon"></div>
+                        <div class="before-card-title">Execution</div>
+                        <div class="before-card-subtitle">HOW to do this well</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AFTER -->
+        <div class="version after">
+            <div class="version-header">
+                <div class="version-title">✅ Proposed (After)</div>
+                <div class="version-subtitle">Clear question, minimal distractions</div>
+            </div>
+
+            <div class="after-content">
+                <div class="after-header">
+                    <h2 class="after-question">What do you need help with?</h2>
+                    <p class="after-subtext">Choose the path that matches your goal</p>
+                </div>
+
+                <div class="after-cards">
+                    <div class="after-card">
+                        <div class="after-card-icon">⚖️</div>
+                        <div class="after-card-title">Validation</div>
+                        <div class="after-card-subtitle">WHETHER to do this</div>
+                    </div>
+                    <div class="after-card">
+                        <div class="after-card-icon">🎯</div>
+                        <div class="after-card-title">Execution</div>
+                        <div class="after-card-subtitle">HOW to do this well</div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <button class="collapsible-trigger" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
+                        Why this question matters
+                        <span>▼</span>
+                    </button>
+                    <div class="collapsible-content" style="display: none;">
+                        <p><strong>Validation path</strong> explores whether this decision aligns with your deeper goals. I'll ask 4-5 questions about what's driving this decision.</p>
+                        <p style="margin-top: 12px;"><strong>Execution path</strong> assumes you've decided and focuses on how to do it well. I'll ask about your current situation, constraints, and desired outcomes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="annotations">
+                <div class="annotation-title">Key Improvements:</div>
+                <ul class="annotation-list">
+                    <li><strong>Lead with the question</strong> - It's now the headline</li>
+                    <li><strong>Cards only</strong> - Removed redundant text presentation</li>
+                    <li><strong>90% less text</strong> - From ~250 words to ~25 words</li>
+                    <li><strong>Visual hierarchy</strong> - Clear what to focus on first</li>
+                    <li><strong>Context on demand</strong> - Collapsible for those who want details</li>
+                    <li><strong>Faster decision</strong> - User knows what to click immediately</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

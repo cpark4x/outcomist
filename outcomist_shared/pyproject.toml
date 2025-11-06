@@ -1,0 +1,12 @@
+[project]
+name = "outcomist-shared"
+version = "1.0.0"
+description = "Shared prompt library for Outcomist"
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["outcomist_shared"]

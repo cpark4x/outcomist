@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Options - Intent Selection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .intro p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .option {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .option-header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        .option-label {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .option-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .option-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .option-content {
+            /* Styling defined per option */
+        }
+
+        /* Option A: Progressive Disclosure */
+        .option-a .step {
+            margin-bottom: 24px;
+        }
+
+        .option-a .step-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .option-a .step-number {
+            width: 32px;
+            height: 32px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .option-a .step-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+
+        .option-a .step-content {
+            margin-left: 44px;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .option-a .cards-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .option-a .card-mini {
+            padding: 16px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .option-a .card-mini-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .option-a .card-mini-subtitle {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        /* Option B: Insight First */
+        .option-b .insight-box {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .option-b .insight-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .option-b .insight-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .option-b .insight-highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .option-b .question-section {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .option-b .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .option-b .question-helper {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .option-b .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .option-b .card {
+            padding: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .option-b .card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+
+        .option-b .card-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .option-b .card-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .option-b .card-subtitle {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* Option C: Question-Driven */
+        .option-c .big-question {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .option-c .question-main {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .option-c .question-sub {
+            font-size: 16px;
+            color: #6b7280;
+        }
+
+        .option-c .cards-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .option-c .card-large {
+            padding: 32px 24px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .option-c .card-large:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .option-c .card-large-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .option-c .card-large-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .option-c .card-large-description {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .option-c .card-large-example {
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #4b5563;
+            font-style: italic;
+        }
+
+        .option-c .card-large-example::before {
+            content: "Example: ";
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .option-c .explainer {
+            padding: 20px;
+            background: #f0f9ff;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .option-c .explainer-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1e40af;
+        }
+
+        .option-c .explainer-text {
+            font-size: 14px;
+            color: #1e3a8a;
+            line-height: 1.5;
+        }
+
+        /* Option D: Side-by-Side Comparison */
+        .option-d .intro-text {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 16px;
+            color: #4b5563;
+        }
+
+        .option-d .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .option-d .path {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .option-d .path:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+        }
+
+        .option-d .path-header {
+            background: #3b82f6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .option-d .path-icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .option-d .path-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .option-d .path-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .option-d .path-body {
+            padding: 20px;
+            background: white;
+        }
+
+        .option-d .path-section {
+            margin-bottom: 16px;
+        }
+
+        .option-d .path-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .option-d .path-section-title {
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .option-d .path-section-content {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .option-d .path-section-list {
+            list-style: none;
+            padding: 0;
+            font-size: 13px;
+        }
+
+        .option-d .path-section-list li {
+            padding: 4px 0;
+            color: #4b5563;
+            display: flex;
+            align-items: start;
+        }
+
+        .option-d .path-section-list li::before {
+            content: "→";
+            margin-right: 8px;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .pros-cons {
+            margin-top: 32px;
+            padding: 20px;
+            background: #fefce8;
+            border-radius: 8px;
+            border-left: 4px solid #eab308;
+        }
+
+        .pros-cons-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #854d0e;
+        }
+
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .pros, .cons {
+            font-size: 14px;
+        }
+
+        .pros h4, .cons h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #854d0e;
+        }
+
+        .pros ul, .cons ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pros li, .cons li {
+            padding: 4px 0;
+            color: #713f12;
+        }
+
+        .pros li::before {
+            content: "✓ ";
+            color: #16a34a;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+
+        .cons li::before {
+            content: "✗ ";
+            color: #dc2626;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+
+        @media (max-width: 1400px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .option-a .cards-preview,
+            .option-b .cards,
+            .option-c .cards-large,
+            .option-d .comparison-table,
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h1>Four Design Approaches</h1>
+            <p>Each option addresses the UX challenge differently. Compare how they balance <strong>clarity</strong> (making the question easy to understand) with <strong>value</strong> (preserving Outcomist's insight and reframing).</p>
+        </div>
+
+        <div class="options-grid">
+            <!-- OPTION A: Progressive Disclosure -->
+            <div class="option option-a">
+                <div class="option-header">
+                    <span class="option-label">Option A</span>
+                    <h2 class="option-title">Progressive Disclosure</h2>
+                    <p class="option-description">Reveal information step-by-step as user needs it</p>
+                </div>
+
+                <div class="option-content">
+                    <div class="step">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Show the insight first</div>
+                        </div>
+                        <div class="step-content">
+                            <strong>Pattern detected:</strong> You're treating aging as something to fight rather than something to work with. This suggests the real question isn't about products—it's about your relationship with change.
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Ask what they need</div>
+                        </div>
+                        <div class="step-content">
+                            <p style="margin-bottom: 12px;"><strong>What would help you most right now?</strong></p>
+                            <div class="cards-preview">
+                                <div class="card-mini">
+                                    <div class="card-mini-title">Explore this pattern</div>
+                                    <div class="card-mini-subtitle">Understand the deeper question</div>
+                                </div>
+                                <div class="card-mini">
+                                    <div class="card-mini-title">Get specific guidance</div>
+                                    <div class="card-mini-subtitle">Build a skincare routine</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Show what happens next</div>
+                        </div>
+                        <div class="step-content">
+                            If they choose "Explore": 4-5 questions about what's driving the urgency<br>
+                            If they choose "Guidance": 4-5 questions about routine, budget, outcomes
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pros-cons">
+                    <div class="pros-cons-title">Evaluation</div>
+                    <div class="pros-cons-grid">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Keeps the reframing/insight</li>
+                                <li>Clearer information hierarchy</li>
+                                <li>Natural reading flow (top to bottom)</li>
+                                <li>User sees value before choosing</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Still significant text to read</li>
+                                <li>Multiple cognitive steps</li>
+                                <li>Requires understanding all 3 steps</li>
+                                <li>Might feel like a process</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION B: Insight First, Then Choose -->
+            <div class="option option-b">
+                <div class="option-header">
+                    <span class="option-label">Option B</span>
+                    <h2 class="option-title">Insight First</h2>
+                    <p class="option-description">Lead with value, make choice secondary</p>
+                </div>
+
+                <div class="option-content">
+                    <div class="insight-box">
+                        <div class="insight-label">Pattern Detected</div>
+                        <div class="insight-text">
+                            You're framing aging as something happening TO you. But the real question isn't about skincare products—it's about your relationship with change.
+                        </div>
+                        <div class="insight-highlight">
+                            The "right" approach depends on what you're actually optimizing for: genuine wellness or anxiety management?
+                        </div>
+                    </div>
+
+                    <div class="question-section">
+                        <div class="question-text">How should we explore this?</div>
+                        <div class="question-helper">Choose your path forward</div>
+                    </div>
+
+                    <div class="cards">
+                        <div class="card">
+                            <div class="card-icon">⚖️</div>
+                            <div class="card-title">Validation</div>
+                            <div class="card-subtitle">Explore whether to pursue this</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-title">Execution</div>
+                            <div class="card-subtitle">Plan how to do this well</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pros-cons">
+                    <div class="pros-cons-title">Evaluation</div>
+                    <div class="pros-cons-grid">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Demonstrates value immediately</li>
+                                <li>Insight visually prominent</li>
+                                <li>Clear visual hierarchy</li>
+                                <li>Shorter overall page</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>User still needs to read insight first</li>
+                                <li>Choice labels might be unclear</li>
+                                <li>No context for what each path involves</li>
+                                <li>Assumes insight resonates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION C: Question-Driven with Examples -->
+            <div class="option option-c">
+                <div class="option-header">
+                    <span class="option-label">Option C</span>
+                    <h2 class="option-title">Question-Driven</h2>
+                    <p class="option-description">Make the choice self-explanatory with examples</p>
+                </div>
+
+                <div class="option-content">
+                    <div class="big-question">
+                        <div class="question-main">What kind of help do you need?</div>
+                        <div class="question-sub">Choose the approach that matches where you are</div>
+                    </div>
+
+                    <div class="cards-large">
+                        <div class="card-large">
+                            <div class="card-large-icon">⚖️</div>
+                            <div class="card-large-title">Should I do this?</div>
+                            <div class="card-large-description">
+                                Help me think through whether this decision aligns with what I really want. I'm not sure if I should pursue this.
+                            </div>
+                            <div class="card-large-example">
+                                "I'm debating whether to invest in a serious skincare routine or if I'm just anxious about aging"
+                            </div>
+                        </div>
+
+                        <div class="card-large">
+                            <div class="card-large-icon">🎯</div>
+                            <div class="card-large-title">How do I do this?</div>
+                            <div class="card-large-description">
+                                I've decided to do this. Help me figure out the best way to execute based on my situation and constraints.
+                            </div>
+                            <div class="card-large-example">
+                                "I want a morning skincare routine for my combination skin, under $200/month, max 10 minutes"
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explainer">
+                        <div class="explainer-title">Why this matters</div>
+                        <div class="explainer-text">
+                            Different questions need different approaches. "Should I?" explores patterns and deeper motivations. "How do I?" focuses on practical execution.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pros-cons">
+                    <div class="pros-cons-title">Evaluation</div>
+                    <div class="pros-cons-grid">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Self-explanatory with examples</li>
+                                <li>User can identify their situation</li>
+                                <li>Clear differentiation between paths</li>
+                                <li>No prerequisite reading required</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Loses the reframing/insight</li>
+                                <li>Doesn't demonstrate Outcomist's value</li>
+                                <li>User might not see the pattern</li>
+                                <li>Feels more generic/transactional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION D: Side-by-Side Comparison -->
+            <div class="option option-d">
+                <div class="option-header">
+                    <span class="option-label">Option D</span>
+                    <h2 class="option-title">Side-by-Side</h2>
+                    <p class="option-description">Show both paths clearly with full transparency</p>
+                </div>
+
+                <div class="option-content">
+                    <div class="intro-text">
+                        I can help you in two different ways. Choose the one that fits where you are:
+                    </div>
+
+                    <div class="comparison-table">
+                        <div class="path">
+                            <div class="path-header">
+                                <div class="path-icon">⚖️</div>
+                                <div class="path-title">Validation Path</div>
+                                <div class="path-subtitle">Should I do this?</div>
+                            </div>
+                            <div class="path-body">
+                                <div class="path-section">
+                                    <div class="path-section-title">When to choose this</div>
+                                    <div class="path-section-content">
+                                        You're not sure if this decision is right for you. You want to explore the deeper patterns and motivations.
+                                    </div>
+                                </div>
+                                <div class="path-section">
+                                    <div class="path-section-title">What we'll explore</div>
+                                    <ul class="path-section-list">
+                                        <li>What's driving this urgency?</li>
+                                        <li>Does this solve your core concern?</li>
+                                        <li>What tradeoffs are you willing to make?</li>
+                                        <li>Are there deeper patterns at play?</li>
+                                    </ul>
+                                </div>
+                                <div class="path-section">
+                                    <div class="path-section-title">Time commitment</div>
+                                    <div class="path-section-content">4-5 questions (~10 minutes)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="path">
+                            <div class="path-header">
+                                <div class="path-icon">🎯</div>
+                                <div class="path-title">Execution Path</div>
+                                <div class="path-subtitle">How do I do this?</div>
+                            </div>
+                            <div class="path-body">
+                                <div class="path-section">
+                                    <div class="path-section-title">When to choose this</div>
+                                    <div class="path-section-content">
+                                        You've decided to do this. Now you want practical guidance on how to execute it well.
+                                    </div>
+                                </div>
+                                <div class="path-section">
+                                    <div class="path-section-title">What we'll explore</div>
+                                    <ul class="path-section-list">
+                                        <li>Your current situation and constraints</li>
+                                        <li>Your budget and time available</li>
+                                        <li>Specific outcomes you want</li>
+                                        <li>Practical steps to get started</li>
+                                    </ul>
+                                </div>
+                                <div class="path-section">
+                                    <div class="path-section-title">Time commitment</div>
+                                    <div class="path-section-content">4-5 questions (~10 minutes)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pros-cons">
+                    <div class="pros-cons-title">Evaluation</div>
+                    <div class="pros-cons-grid">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Complete transparency</li>
+                                <li>User knows exactly what to expect</li>
+                                <li>Clear differentiation</li>
+                                <li>Informed decision-making</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Most text-heavy option</li>
+                                <li>No reframing/insight shown</li>
+                                <li>Feels more transactional</li>
+                                <li>Requires reading both paths</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

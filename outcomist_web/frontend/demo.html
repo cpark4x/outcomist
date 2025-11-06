@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Outcomist - Pattern recognition for better decisions">
+    <title>Outcomist - Design Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="container">
+        <header role="banner">
+            <h1 class="logo">Outcomist</h1>
+            <p class="tagline">Your thinking partner</p>
+        </header>
+
+        <main id="main-content" role="main">
+            <!-- Intent Selection Demo - Refined Option B -->
+            <div class="intent-selection-refined">
+                <!-- Insight Box - Shows value immediately -->
+                <div class="insight-box">
+                    <div class="insight-label">Pattern Detected</div>
+                    <div class="insight-text">
+                        You're framing this as <strong>"should I take this client work or focus on my product?"</strong> - but the real question isn't about choosing between options. It's about your relationship with risk and whether you trust your product's momentum.
+                    </div>
+                    <div class="insight-highlight">
+                        The "right" answer depends on what you're actually optimizing for: financial safety or product velocity?
+                    </div>
+                </div>
+
+                <!-- Question Section -->
+                <div class="question-section">
+                    <h2 class="question-text">Choose your path</h2>
+                    <p class="question-helper">Pick the option that matches where you are</p>
+                </div>
+
+                <!-- Choice Cards -->
+                <div class="cards-refined">
+                    <button class="card-refined">
+                        <span class="card-refined-icon">⚖️</span>
+                        <h3 class="card-refined-title">Should I do this?</h3>
+                        <p class="card-refined-meta">~10 min · 4-5 questions</p>
+                        <p class="card-refined-description">
+                            Explore whether this aligns with what you really want
+                        </p>
+                    </button>
+
+                    <button class="card-refined">
+                        <span class="card-refined-icon">🎯</span>
+                        <h3 class="card-refined-title">How do I do this well?</h3>
+                        <p class="card-refined-meta">~10 min · 4-5 questions</p>
+                        <p class="card-refined-description">
+                            Figure out the best way to execute given your situation
+                        </p>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Add click handlers for intent selection cards
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.card-refined').forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    const choice = index === 0 ? 'Validation (Should I?)' : 'Execution (How do I?)';
+                    alert(`This is a design demo.\n\nYou selected: ${choice}\n\nIn the real app, this would start the ${choice} conversation flow.`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
