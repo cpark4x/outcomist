@@ -53,7 +53,7 @@ The v4.3 adaptive fork patterns work well for typical user decisions with clear 
 3. **[Concrete question 3]** - [Why this matters / what it reveals]
 4. **[Concrete question 4]** - [Why this matters / what it reveals]
 
-*I'll ask 4-5 questions (~10 min) to understand these dimensions, then deliver a clear recommendation on [what you'll decide].*
+*I'll ask 4-5 questions (~10 min), then deliver a clear recommendation.*
 
 ---
 

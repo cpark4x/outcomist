@@ -71,7 +71,7 @@ Generate Tier 1 response with this structure:
 3. **[Concrete question 3]** - [Why this matters / what it reveals]
 4. **[Concrete question 4]** - [Why this matters / what it reveals]
 
-*I'll ask 4-5 questions (~10 min) to understand these dimensions, then deliver a clear recommendation on [what you'll decide].*
+*I'll ask 4-5 questions (~10 min), then deliver a clear recommendation.*
 
 ---
 
@@ -154,7 +154,7 @@ Feature prioritization isn't about counting votes. It's about strategy. Building
 3. **What's your capacity?** - How much complexity can you take on right now?
 4. **What does success look like?** - More users? Better outcomes? Specific metrics?
 
-*I'll ask 4-5 questions (~10 min) to understand these dimensions, then deliver a clear recommendation on where to focus next.*
+*I'll ask 4-5 questions (~10 min), then deliver a clear recommendation.*
 
 ---
 
