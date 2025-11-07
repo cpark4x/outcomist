@@ -6,6 +6,55 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added v4.5 (2025-01-07)
+- **Collaborative Partnership Tone**: Replaced patronizing language with stress-testing framing
+  - Changed "But the real question is" → "Let me offer another angle"
+  - Added acknowledgment: "that's a solid starting point" before reframing
+  - Framed recommendations as stress-tests, not prescriptions
+  - Added explicit invitation to disagree: "Does this direction feel right?"
+- **Dimension Preview (Not Questions)**: Prevents users from answering immediately
+  - Shows dimension labels without question marks
+  - Added "(Don't answer yet...)" instruction
+  - Clarifies these are exploration dimensions, not prompts to respond to
+- **Clear Call-to-Action**: Reduced confusion about what to type
+  - Changed from bullets to bold commands: **yes**, **show me**, **clarify**
+  - Prevents users typing "(1)" instead of command words
+  - Explicit instruction: "Type one of these to continue:"
+- **Value Proposition for All Users**: Discovery validates even good thinking
+  - "Even if you're confident in your framing, structured discovery often reveals insights"
+  - Positions discovery as validation + exploration, not just fixing confusion
+- **Context Inference Guidelines**: Prevents bad assumptions
+  - Ask explicitly about role/goal/stage before recommending, or caveat assumptions
+  - Don't assume "founder building product" vs "engineer learning"
+  - Don't assume project stage without evidence
+  - Partnership language: "you know your context better than I do"
+- **Competitive Analysis Depth**: HOW/WHY explanations, not just assertions
+  - Explain HOW competitors work with examples
+  - Show WHY their approaches fail specifically
+  - Acknowledge Outcomist's tradeoffs honestly
+- **Tier 2 Collaborative Tone**: Softer, partnership language
+  - "Help me understand" instead of "Walk me through"
+  - Reassurance that limited data is useful: "just share what you know"
+  - "Let's explore together" framing
+- **Documentation**: Created [test-session-summary-2025-01-06.md](docs/testing/test-session-summary-2025-01-06.md) with findings from Tests #10 and #11
+
+### Changed
+- **Tier 1 Format**: Updated dimension preview to show labels, not questions
+- **Tier 1 Tone**: Partnership language throughout reframing and explanation
+- **Tier 2 Questions**: Collaborative framing in all question guidance
+- **Tier 3 Recommendations**: Stress-test framing with explicit invitation to disagree
+- **Context Handling**: Added guidelines for inferring or asking about missing context
+
+### Fixed
+- Users no longer try to answer dimension preview questions immediately (removed question marks, added "Don't answer yet")
+- Users no longer respond "(1)" to options (removed bullets, used bold commands)
+- Inconsistent list formatting (standardized: bullets for info, bold for commands, numbers for dimensions)
+- Missing role/goal context causing biased assumptions (added context inference guidelines)
+- Missing project stage context causing misaligned recommendations (ask or caveat assumptions)
+- Too prescriptive tone without confidence (stress-test framing, partnership language)
+- Tier 3 lacks competitive differentiation depth (added HOW/WHY templates)
+- Patronizing tone (replaced "you're wrong" with "let's explore together")
+
 ### Added v4.4 (2025-01-06)
 - **Question-First Format**: Replaced abstract fork pattern templates with explicit question lists
   - Users now see the actual 4 questions that will be asked instead of generic fork options
