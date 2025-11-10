@@ -77,10 +77,13 @@ Execute validated proposal, track progress, handle blockers, measure outcomes.
 ## Documentation
 
 ### Core Documentation
-- [Product Vision](./docs/vision/product-vision.md) - What we're building & why
+- [Product Vision v2](./docs/vision/product-vision-v2.md) - What we're building & why (3-epic model)
+- [End-to-End Flow](./docs/vision/end-to-end-flow.md) - Complete user journey through all epics
+- [Epic 1: Deep Discovery](./docs/epics/epic-1-deep-discovery.md) - Pattern recognition + discovery process
+- [Epic 2: Proposal Review](./docs/epics/epic-2-proposal-review.md) - Proposal validation & refinement
+- [Epic 3: Build & Track](./docs/epics/epic-3-build-track.md) - Optional execution support
 - [Pattern Library](./docs/patterns/pattern-library.md) - 9 patterns captured from 13 tests
 - [Question Framework](./docs/patterns/question-framework.md) - Question quality heuristics
-- [Progressive Disclosure](./docs/architecture/progressive-disclosure.md) - Tier 1-4 architecture
 
 ### Testing & Validation
 - [Test Scenarios](./docs/testing/test-scenarios.md) - Single source of truth (13 tests)
@@ -94,26 +97,27 @@ Execute validated proposal, track progress, handle blockers, measure outcomes.
 
 ---
 
-## Current Status (Stage 1)
+## Current Status (Epic 1)
 
-**Shipped**: v4.5 (January 2025)
+**Shipped**: v4.8 (January 2025)
+- ✅ Product Vision v2 alignment - 3-epic model validated
+- ✅ Context-adaptive response system (3 response types)
+- ✅ Question type detection (information/execution/decision routing)
+- ✅ Trade-off discovery mechanism with factual validation
 - ✅ Pattern recognition working (9 patterns captured)
-- ✅ Discovery questions validated (13 real-world tests)
+- ✅ Discovery questions validated (10 regression tests + 4 sample tests)
 - ✅ Progressive disclosure architecture (Tier 1-4)
-- ✅ Context inference guidelines (from Test #11 feedback)
-- ✅ Collaborative partnership tone (from v4.5 refinements)
+- ✅ Context inference guidelines
+- ✅ Collaborative partnership tone
+- ✅ UX improvements: numbered lists, discovery transparency, question pacing
 
-**In Progress**: v4.6
-- 🔄 Trade-off discovery mechanism (triggered by Test #12 failure)
-- 🔄 Factual validation requirement (research before presenting trade-offs)
-- ⏳ Regression testing across all 13 scenarios
+**Test Results**: 100% pass rate (10/10 regression tests)
+- See [v4.8 Full Regression Test](docs/testing/results/v4.8-full-regression-test.md) for complete results
+- See [v4.8 Prompt Alignment Test](docs/testing/results/v4.8-prompt-alignment-test.md) for Product Vision v2 validation
 
-**Next**: Complete v4.6 validation
-- ⏳ Run all 13 regression tests with v4.6
-- ⏳ Document v4.6 validation report
-- ⏳ Capture Pattern #10 if revealed
-
-**Then**: Build Stages 2 & 3
+**Next**: Build Epic 2 & 3
+- ⏳ Epic 2: Proposal Review (tangible, high-quality proposals)
+- ⏳ Epic 3: Build & Track (optional execution support)
 
 ---
 
@@ -181,12 +185,33 @@ This project lives inside the [amplifier repository](https://github.com/cpark4x/
 
 ## Links
 
-- [Explore Command](.claude/commands/explore-command.md) - Full command specification
+- [Explore Command](.claude/commands/explore.md) - Full command specification
 - [Pattern Library](./docs/patterns/pattern-library.md) - Decision patterns
 - [Question Framework](./docs/patterns/question-framework.md) - Question heuristics
-- [Test Logs](./archive/test-logs/) - Detailed test documentation
+- [Test Scenarios](./docs/testing/test-scenarios.md) - All test scenarios
+- [Test Results](./docs/testing/results/) - Version-specific test results
 
 ---
 
-**Version**: 4.8 (shipped)
+**Version**: 4.8 (shipped January 2025)
 **Last Updated**: 2025-01-10
+
+---
+
+## Recent Improvements (v4.6 - v4.8)
+
+### v4.8 (January 2025)
+- **Product Vision v2 Alignment**: Consolidated to 3-epic model (Epic 1: Deep Discovery, Epic 2: Proposal Review, Epic 3: Build & Track)
+- **Context-Adaptive Response System**: Three response types based on user needs (Direct Engagement, Gentle Observation, Clarifying Questions)
+- **UX Improvements**: Comprehensive numbered lists, discovery structure transparency, question pacing (1-2 questions max per round)
+- **100% Test Pass Rate**: All 10 regression tests + 4 sample tests passed
+
+### v4.7 (January 2025)
+- **Question Type Detection**: Routes information requests, execution requests, and decision questions appropriately
+- **Improved Bedside Manner**: Immediate research for information requests (no meta-questions)
+- **Execution Request Handling**: Minimal discovery, fast path to practical output
+
+### v4.6 (January 2025)
+- **Trade-off Discovery Mechanism**: Reveals actual priorities through concrete choices
+- **Factual Validation**: Research before presenting trade-offs to ensure accuracy
+- **Revealed Preference Guidance**: Choice behavior > stated preferences

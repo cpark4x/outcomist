@@ -6,6 +6,62 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added v4.8 (2025-01-10)
+- **Product Vision v2 Alignment**: Consolidated from 5-epic to 3-epic model
+  - Epic 1: Deep Discovery (pattern recognition + questions + optional analysis)
+  - Epic 2: Proposal Review (tangible, high-quality proposals for validation)
+  - Epic 3: Build & Track (optional execution support)
+  - Updated explore.md with 3-epic terminology and "executable proposal" framing
+- **UX Improvements from Regression Testing**:
+  - Comprehensive numbered list formatting for ALL user choice points (improves scannability)
+  - Discovery structure transparency: Users see 2-round flow upfront with time estimate
+  - Question pacing codification: 1-2 questions per round maximum (reduces cognitive load)
+- **Full Regression Testing**: 100% pass rate (10 regression tests + 4 sample tests)
+  - Tests #1, #6, #9, #10, #11, #14 validated with v4.8
+  - Tests #12, #13, #15, #16 validated with v4.8
+  - All v4.6-4.8 features confirmed working after Product Vision v2 alignment
+- **Documentation**:
+  - Created [v4.8-full-regression-test.md](docs/testing/results/v4.8-full-regression-test.md) with complete validation results
+  - Created [v4.8-prompt-alignment-test.md](docs/testing/results/v4.8-prompt-alignment-test.md) with sample test results
+  - Updated [README.md](README.md) with v4.8 status and recent improvements
+
+### Changed
+- **Epic Numbering**: Renumbered from 5 epics to 3 (consolidated discovery into Epic 1)
+- **Terminology**: "Stage" → "Epic" throughout documentation
+- **Discovery Framing**: Emphasized "executable proposal" as Epic 1 output
+- **User Choice Points**: All multi-option selections now use numbered lists consistently
+
+### Fixed
+- Unnumbered "Ready to explore?" options causing user confusion (Test #1 feedback)
+- Asking 3 questions at once (reduced to 1-2 per round based on Test #9 feedback)
+- Lack of discovery structure transparency (users now know what to expect upfront from Test #11 feedback)
+
+### Added v4.7 (2025-01-08)
+- **Question Type Detection**: Routes different question types appropriately
+  - Information requests → Immediate WebSearch (no meta-questions)
+  - Execution requests → Practical output with minimal discovery
+  - Decision questions → Structured discovery process
+  - Improves "bedside manner" by removing unnecessary meta-questions
+- **Context-Adaptive Response System**: Three response types based on user needs
+  - Type 1: Direct Engagement (80% - user ready for structured discovery)
+  - Type 2: Gentle Observation (15% - pattern reframe + stress-test offer)
+  - Type 3: Clarifying Questions (5% - fundamental ambiguity needs resolution)
+  - Adapts to user's clarity level and question type
+- **Deeper Question Detection**: Identifies when "information requests" actually need discovery
+  - "Is Outcomist similar to ChatGPT?" → Comparison + "Why are you asking?"
+  - Reveals hidden decision behind information questions
+- **Documentation**: Created [v4.7-question-type-detection.md](docs/design/v4.7-question-type-detection.md) and [v4.7-impact-analysis.md](docs/design/v4.7-impact-analysis.md)
+
+### Changed
+- **Response Routing**: Questions now routed by type before applying response system
+- **Information Requests**: Immediate research instead of meta-questions ("better bedside manner")
+- **Execution Requests**: Fast path to practical value with minimal scoping questions
+
+### Fixed
+- Information requests no longer receive unnecessary discovery ("ChatGPT has better bedside manner" - Test #13 feedback)
+- Execution requests no longer over-questioned ("spent a lot of time to get here" - Test #15 feedback)
+- Decision questions still receive full structured discovery appropriately
+
 ### Added v4.6 (2025-01-07)
 - **Trade-off Discovery Mechanism**: Reveals actual priorities through concrete choices
   - Triggers after Tier 2 Round 1 when conflicting dimensions detected
