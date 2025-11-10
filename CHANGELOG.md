@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added v4.6 (2025-01-07)
+- **Trade-off Discovery Mechanism**: Reveals actual priorities through concrete choices
+  - Triggers after Tier 2 Round 1 when conflicting dimensions detected
+  - Presents 2 concrete options with explicit Pro/Con/Impact structure
+  - Uses revealed preference (choices) over stated preference (abstract questions)
+  - Example conflicts: Timeline vs. quality, volume vs. revenue, vision vs. resources
+- **Factual Validation Requirement**: Verify claims before presenting trade-off options
+  - Don't assume facts (whale season dates, feature complexity, market data)
+  - Research first, then present options with accurate information
+  - Prevents undermining recommendations with incorrect data
+- **Revealed Preference Guidance**: Use choice behavior to guide discovery
+  - If Option A chosen: Focus remaining discovery on maximizing that dimension
+  - If Option B chosen: Focus discovery on alternative path
+  - Choice behavior > stated preferences when conflicts exist
+- **Documentation**: Analysis confirmed trade-off presentation is systemic improvement (5 of 8 tests had conflicting preferences)
+
+### Changed
+- **Tier 2 Structure**: Added optional trade-off presentation between Round 1 and Round 2
+- **Discovery Flow**: Round 1 → (Conflict check) → Trade-off presentation (if needed) → Round 2
+- **Priority Detection**: Concrete choices reveal actual priorities more reliably than abstract questions
+
+### Fixed
+- Users' hidden trade-offs now surfaced explicitly (Test #12 failure - diving dates vs. whale season)
+- Recommendations now based on revealed priorities, not assumed priorities
+- Factual errors caught before presenting options (verify whale seasons, feature complexity, etc.)
+
 ### Added v4.5 (2025-01-07)
 - **Collaborative Partnership Tone**: Replaced patronizing language with stress-testing framing
   - Changed "But the real question is" → "Let me offer another angle"

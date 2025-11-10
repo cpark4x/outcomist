@@ -1,7 +1,7 @@
 # Outcomist Pattern Library
 
-**Last Updated**: 2025-11-05
-**Status**: 9 patterns captured from 8 test scenarios
+**Last Updated**: 2025-01-07
+**Status**: 9 patterns captured from 13 documented test scenarios
 **Goal**: 10+ patterns for robust decision exploration
 
 ---
@@ -40,7 +40,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Missing the emotional/personal dimension
 - Recommending minimal changes when transformation desired
 
-**Example scenario**: [Office redesign test](../../archive/test-logs/TEST_LOG_NOV3_OFFICE.md) - User wanted "inspiring office" but real need was personal sanctuary with games, personal memorabilia, and retreat space.
+**Example scenario**: [Test #2 - Office Redesign](../testing/test-scenarios.md#test-2-office-redesign) ([full results](../testing/results/test-02-results-early.md)) - User wanted "inspiring office" but real need was personal sanctuary with games, personal memorabilia, and retreat space.
 
 ---
 
@@ -69,7 +69,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Missing that "additional revenue" framing contradicts high effort required
 - Not exploring less-effort hedging options (savings, passive investments)
 
-**Example scenario**: [Passive income test](../../archive/test-logs/TEST_LOG_NOV3_PASSIVE_INCOME.md) - User wanted "fast food franchise for additional revenue" but real issue was employability anxiety. Had $500K+ capital - better hedge was passive income, not high-effort business.
+**Example scenario**: [Test #3 - Passive Income](../testing/test-scenarios.md#test-3-passive-income) ([full results](../testing/results/test-03-results-early.md)) - User wanted "fast food franchise for additional revenue" but real issue was employability anxiety. Had $500K+ capital - better hedge was passive income, not high-effort business.
 
 ---
 
@@ -99,7 +99,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Not recognizing hereditary patterns that change risk profile
 - Treating all prevention the same (hereditary vs. lifestyle vs. random)
 
-**Example scenario**: [Cancer prevention test](../../archive/test-logs/TEST_LOG_NOV3_CANCER_PREVENTION.md) - User wanted "preventative measures" after friend's stage 4 diagnosis. Family history revealed hereditary pattern (colon, pancreatic, breast cancer early-onset) → genetic counseling recommended, not generic screening.
+**Example scenario**: [Test #4 - Cancer Prevention](../testing/test-scenarios.md#test-4-cancer-prevention) ([summary](../testing/results/early-tests-summary.md#test-4-cancer-prevention)) - User wanted "preventative measures" after friend's stage 4 diagnosis. Family history revealed hereditary pattern (colon, pancreatic, breast cancer early-onset) → genetic counseling recommended, not generic screening.
 
 ---
 
@@ -128,7 +128,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Recommending business when passive investment better fits need
 - Missing capital availability that changes recommendation entirely
 
-**Example scenario**: [Passive income test](../../archive/test-logs/TEST_LOG_NOV3_PASSIVE_INCOME.md) - "Fast food franchise for additional revenue" (high-effort) didn't match "additional" framing. Real issue: employability hedge with $500K+ capital available.
+**Example scenario**: [Test #3 - Passive Income](../testing/test-scenarios.md#test-3-passive-income) ([full results](../testing/results/test-03-results-early.md)) - "Fast food franchise for additional revenue" (high-effort) didn't match "additional" framing. Real issue: employability hedge with $500K+ capital available.
 
 ---
 
@@ -159,7 +159,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Not recognizing when features lock you into positioning
 - Assuming more customers = better decision
 
-**Example scenario**: [Feature decision test](../../archive/test-logs/TEST_LOG_NOV4_FEATURE_DECISION.md) - "10 customers want workplace presence (RTO tool), 2 want exclude list (safety feature)." Real issue: Product identity crisis. Can't serve both employers (surveillance) and employees (privacy/safety).
+**Example scenario**: [Test #5 - Feature Decision](../testing/test-scenarios.md#test-5-feature-decision) ([summary](../testing/results/early-tests-summary.md#test-5-feature-decision)) - "10 customers want workplace presence (RTO tool), 2 want exclude list (safety feature)." Real issue: Product identity crisis. Can't serve both employers (surveillance) and employees (privacy/safety).
 
 ---
 
@@ -189,7 +189,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Missing that low-rate work can be distraction from inflection point
 - Not recognizing scarcity mindset despite substantial runway
 
-**Example scenario**: [Client vs product test](../../archive/test-logs/TEST_LOG_NOV4_CLIENT_VS_PRODUCT.md) - "$6K/month client (stable) vs $2K MRR product (risky)." Reality: $60K savings (12-14 months runway), product 4X growth in 6 months, 97% retention. Client was $40/hour (below market). Scarcity in head, not bank account.
+**Example scenario**: [Test #7 - Client vs Product](../testing/test-scenarios.md#test-7-client-vs-product) ([full results](../testing/results/test-07-results-early.md)) - "$6K/month client (stable) vs $2K MRR product (risky)." Reality: $60K savings (12-14 months runway), product 4X growth in 6 months, 97% retention. Client was $40/hour (below market). Scarcity in head, not bank account.
 
 ---
 
@@ -223,7 +223,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Not asking about core pain point explicitly
 - Recommending "just build it" when they haven't validated demand
 
-**Example scenario**: [Meal planning app test](../../archive/test-logs/TEST_LOG_NOV4_MEAL_PLANNING_APP.md) - User wanted to build comprehensive meal planning app (custom plans, recipes, shopping lists, nutrition tracking). First-time builder, 5-10 hrs/week, couldn't answer "What's the ONE problem frustrating you most?" Revealed: solution-first, not problem-first thinking.
+**Example scenario**: [Test #8 - Meal Planning App](../testing/test-scenarios.md#test-8-meal-planning-app) ([summary](../testing/results/early-tests-summary.md#test-8-meal-planning-app)) - User wanted to build comprehensive meal planning app (custom plans, recipes, shopping lists, nutrition tracking). First-time builder, 5-10 hrs/week, couldn't answer "What's the ONE problem frustrating you most?" Revealed: solution-first, not problem-first thinking.
 
 ---
 
@@ -258,7 +258,7 @@ When a user describes their decision, scan these patterns to identify potential 
 - Assuming excitement = readiness to present
 - Not asking about strategic timing
 
-**Example scenario**: [Amplifier SLT presentation test](../../archive/test-logs/TEST_LOG_NOV4_AMPLIFIER_PRESENTATION.md) - User wanted to present Amplifier project to SLT for "awareness, air cover, and pivot teams." Reality: No results yet, handful of users, unclear ask ("just a check-in, not sure"), middle management skeptics. Recommendation: DON'T present now, build proof first (3-6 months), then present with clear results and ask.
+**Example scenario**: [Test #6 - Workplace Politics](../testing/test-scenarios.md#test-6-workplace-politics) - User wanted to present Amplifier project to SLT for "awareness, air cover, and pivot teams." Reality: No results yet, handful of users, unclear ask ("just a check-in, not sure"), middle management skeptics. Recommendation: DON'T present now, build proof first (3-6 months), then present with clear results and ask.
 
 ---
 
@@ -307,7 +307,33 @@ When a user describes their decision, scan these patterns to identify potential 
 - Users ask for "features" → LLM builds infrastructure → never reaches reviewable state
 - Users need to ask for "demo" → LLM builds visible UI → can actually review
 
-**Example scenario**: [Stuck in Build Phase test - Test #9](../../TEST_SCENARIO_9_REPORT.md) - User had 179 stories across 4 epics, couldn't get ONE to reviewable state. Blamed "LLM limitations" but real issue was scope. Needed demo-first strategy: 7-step hero flow, hardcode everything else, success = 2-min screencast. Co-created DEMO_V1.md together.
+**Example scenario**: [Test #9 - Ken's Workspaces](../testing/test-scenarios.md#test-9-kens-workspaces) - User had 179 stories across 4 epics, couldn't get ONE to reviewable state. Blamed "LLM limitations" but real issue was scope. Needed demo-first strategy: 7-step hero flow, hardcode everything else, success = 2-min screencast. Co-created DEMO_V1.md together.
+
+---
+
+## Additional Test Learnings (v4.5+)
+
+### Tests Without Clear Pattern Match
+
+Some tests validated core capabilities rather than revealing new patterns:
+
+**[Test #11 - Manoj's Infrastructure Agent](../testing/test-scenarios.md#test-11-manojs-infrastructure-agent)** ([full results](../testing/results/test-11-results-v4.5.md))
+- **Score**: ⭐⭐⭐ (Mixed - context inference issues)
+- **Key Learning**: Must ask about role/background/goal before making assumptions
+- **Impact**: Led to v4.5 context inference guidelines
+- **User Feedback**: "Maybe it needs to understand my context and background to understand where my need to build the tool is coming from"
+
+**[Test #12 - Johanna's Diving Vacation](../testing/test-scenarios.md#test-12-johannas-diving-vacation)** ([full results](../testing/results/test-12-results-v4.5.md))
+- **Score**: ⭐⭐ (FAILED - factual error + missed trade-off)
+- **Key Learning**: Must research/verify factual claims before presenting trade-offs
+- **Impact**: Triggered v4.6 trade-off discovery mechanism with factual validation requirement
+- **Critical Failure**: Stated whale season incorrectly, never surfaced December vs. peak season trade-off
+
+**[Test #13 - Similarity Question](../testing/test-scenarios.md#test-13-similarity-question)** ([full results](../testing/results/test-13-results-v4.5.md))
+- **Score**: ⭐ (FAILED - wrong approach)
+- **Key Learning**: Distinguish information/research requests from decision questions
+- **Impact**: Revealed need for question type detection
+- **User Feedback**: "Shouldn't you be able to tell me / or research for me?"
 
 ---
 
@@ -381,6 +407,17 @@ As you test more scenarios, capture new patterns using this template:
 
 ## Links
 
+### Pattern Resources
 - [Question Framework](./question-framework.md) - Question quality heuristics
-- [Test Scenarios](../testing/test-scenarios.md) - Full list of 20 scenarios
-- [Test Logs](../../archive/test-logs/) - Detailed test documentation
+- [Progressive Disclosure](../architecture/progressive-disclosure.md) - The tier system structure
+
+### Test Documentation
+- [Test Scenarios](../testing/test-scenarios.md) - Single source of truth (all 13 tests)
+- [Test Results](../testing/results/) - Version-specific outcomes
+- [Test Status](../testing/results/STATUS.md) - Documentation progress tracker
+- [Archive Test Logs](../../archive/test-logs/) - Historical raw test logs
+
+### Version History
+- Tests #1-#10: v4.5 validation (January 2025)
+- Tests #11-#13: v4.5 failures that shaped v4.6 (January 2025)
+- Tests #2-#8: Early version validation (pre-v4.5)

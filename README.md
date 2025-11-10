@@ -67,42 +67,61 @@ Execute and track implementation
 
 ---
 
+## Repository Structure
+
+```
+/docs/                    # All documentation
+  /architecture/          # System design & technical specs
+  /patterns/              # Decision patterns & question framework
+  /testing/               # Test scenarios & results (regression tests)
+  /design/                # Version improvements & tone refinements
+  /vision/                # Product vision & roadmap
+
+/outcomist_web/           # Web implementation (Reflex)
+/outcomist_shared/        # Shared prompt library (used by CLI & web)
+/archive/                 # Historical artifacts & test logs
+/tests/                   # Test scripts
+/.claude/                 # CLI commands (/explore)
+```
+
 ## Documentation
 
-### Vision
+### Core Documentation
 - [Product Vision](./docs/vision/product-vision.md) - What we're building & why
-- [Three-Stage Journey](./docs/vision/three-stage-journey.md) - explore → design → build (coming soon)
-- [User Personas](./docs/vision/user-personas.md) - Who this is for (coming soon)
-
-### Patterns & Principles
-- [Pattern Library](./docs/patterns/pattern-library.md) - 6 patterns captured from testing
+- [Pattern Library](./docs/patterns/pattern-library.md) - 9 patterns captured from 13 tests
 - [Question Framework](./docs/patterns/question-framework.md) - Question quality heuristics
-- [Progressive Disclosure](./docs/principles/progressive-disclosure.md) - Tier 1-4 architecture
+- [Progressive Disclosure](./docs/architecture/progressive-disclosure.md) - Tier 1-4 architecture
 
-### Testing
-- [Test Scenarios](./test-scenarios.md) - 20 scenarios for validation
-- [MUST_HAVES](./MUST_HAVES.md) - Active implementation roadmap
+### Testing & Validation
+- [Test Scenarios](./docs/testing/test-scenarios.md) - Single source of truth (13 tests)
+- [Test Results](./docs/testing/results/) - Version-specific outcomes
+- [Test Status](./docs/testing/results/STATUS.md) - Documentation progress
 
 ### Archive
-- [Test Logs](./archive/test-logs/) - Historical test documentation
+- [Test Logs](./archive/test-logs/) - Historical raw test logs
 - [Changelogs](./archive/changelogs/) - Version history
+- [Work Artifacts](./archive/work-artifacts/) - Implementation attempts
 
 ---
 
 ## Current Status (Stage 1)
 
-**Shipped**: v4.0
-- ✅ Pattern recognition working
-- ✅ Discovery questions validated
-- ✅ 5 test scenarios completed
-- ✅ 6 patterns captured
-- ✅ User validation consistently positive
+**Shipped**: v4.5 (January 2025)
+- ✅ Pattern recognition working (9 patterns captured)
+- ✅ Discovery questions validated (13 real-world tests)
+- ✅ Progressive disclosure architecture (Tier 1-4)
+- ✅ Context inference guidelines (from Test #11 feedback)
+- ✅ Collaborative partnership tone (from v4.5 refinements)
 
-**Next**: Complete validation
-- ⏳ 5 more test scenarios (50% complete)
-- ⏳ Pattern library (60% complete - target 10+)
-- ⏳ Question framework implementation
-- ⏳ Adaptive questioning systematic
+**In Progress**: v4.6
+- 🔄 Trade-off discovery mechanism (triggered by Test #12 failure)
+- 🔄 Factual validation requirement (research before presenting trade-offs)
+- ⏳ Regression testing across all 13 scenarios
+
+**Next**: Complete v4.6 validation
+- ⏳ Run all 13 regression tests with v4.6
+- ⏳ Document v4.6 validation report
+- ⏳ Capture Pattern #10 if revealed
 
 **Then**: Build Stages 2 & 3
 
@@ -179,5 +198,5 @@ This project lives inside the [amplifier repository](https://github.com/cpark4x/
 
 ---
 
-**Version**: 4.0
-**Last Updated**: 2025-11-04
+**Version**: 4.6 (in progress)
+**Last Updated**: 2025-01-07
