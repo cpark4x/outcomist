@@ -1,0 +1,356 @@
+# Epic 2: Discovery & Understanding
+
+**Status**: ✅ Validated and shipped
+**Duration**: ~5-10 minutes
+**Current Version**: v4.7 (January 2025)
+
+---
+
+## Overview
+
+Epic 2 guides users through structured discovery using adaptive questions that uncover constraints, priorities, and evidence. Users walk away with personalized recommendations grounded in their actual situation.
+
+## User Story
+
+**As a decision-maker**, I explore my decision through adaptive questions that uncover constraints, priorities, and evidence, **so I** get a personalized recommendation grounded in my actual situation.
+
+## Outcome
+
+Users walk away with:
+- **Discovered constraints** they hadn't explicitly articulated
+- **Clear priorities** revealed through trade-offs
+- **Evidence gathered** with facts verified
+- **Specific recommendation** tailored to their situation
+
+## Design Principles
+
+### Adaptive (Questions based on answers)
+Questions adapt based on previous answers. Not a fixed questionnaire—a conversation that responds to what users reveal.
+
+### Evidence-Based ("Show me" questions)
+The system verifies facts before making recommendations. "Show me" questions gather real data instead of assumptions.
+
+### Progressive (Start broad, then targeted)
+Round 1: 2-3 high-level questions to understand landscape
+Round 2: One targeted follow-up based on Round 1 insights
+
+### Transparent (Show reasoning)
+Users see what the system detected and why recommendations are made.
+
+---
+
+## Flow
+
+### Phase 1: Intent Checking
+
+Before discovery begins, the system asks:
+
+> "Are you looking for **validation** on whether to pursue this, or **guidance** on how to execute it well?"
+
+**Purpose**: Distinguish validation seekers from execution partners
+
+**Outcome**:
+- **Validation intent**: Focus on pros/cons, alternatives, whether to proceed
+- **Execution intent**: Focus on how to build/execute well
+
+**Stored in**: `Session.intent`
+
+### Phase 2: Round 1 Questions (2-3 questions)
+
+**Goal**: Understand landscape, constraints, and context
+
+**Question types**:
+1. **Trigger questions**: "What happened that's making you think about this RIGHT NOW?"
+2. **Constraint questions**: "What's your financial runway / capital situation?"
+3. **Usage/Context questions**: "How will you actually use this?"
+4. **"Show me" questions**: "Can you show me [artifact/example] so I can see what you're working with?"
+
+**Delivery**: Asked one-by-one, not all at once. User answers each before next appears.
+
+**Adaptive**: Questions generated based on pattern identified in Epic 1
+
+See [Question Framework](../patterns/question-framework.md) for complete question library
+
+### Phase 3: Analysis & Pattern Synthesis
+
+After Round 1 answers, the system:
+1. Analyzes answers to identify key insights
+2. Shows what it detected (transparent reasoning)
+3. Synthesizes pattern understanding
+
+**Example output**:
+> "Here's what I'm seeing:
+> - You have 12-14 months runway ($60K savings / $5K burn)
+> - Your product is growing 4X in 6 months with 97% retention
+> - The 'stable' client work is $40/hour (below market)
+>
+> This looks like scarcity mindset despite strong fundamentals."
+
+**Purpose**: Make reasoning transparent before Round 2
+
+### Phase 4: Round 2 Targeted Follow-up
+
+**Goal**: Clarify one specific aspect based on Round 1
+
+**Question types**:
+- **Capability check**: "What's your experience building this? Is building itself valuable (learning/enjoyment)?"
+- **Values check**: "What's your product positioning? Who do you claim to serve?"
+- **Priority check**: "If money weren't a concern, would you still want to do this?"
+
+**Delivery**: Single focused question
+
+**Purpose**: Deepen understanding on the dimension that matters most
+
+### Phase 5: Summary & Confirmation
+
+The system generates a summary of key insights:
+
+**Example**:
+> "Let me make sure I've understood:
+> - You have 12-14 months runway
+> - Product is growing rapidly (4X in 6 months)
+> - Client work is underpriced ($40/hour)
+> - You're framing this as 'stable vs risky' but math shows low risk
+>
+> Does this capture it?"
+
+**User confirms**: Yes / Needs correction
+
+**Purpose**: Validate understanding before recommendation
+
+### Phase 6: Personalized Recommendation
+
+The system delivers specific, actionable advice:
+
+**Example**:
+> "Given your situation, I recommend:
+>
+> **Focus on your product**. Here's why:
+> - You have 12-14 months runway (not precarious)
+> - Product is at inflection point (4X growth, 97% retention)
+> - Pausing momentum now costs more than financial risk
+> - Client work is underpriced distraction ($40/hour)
+>
+> The risk isn't financial—it's opportunity cost."
+
+**Format**: Specific recommendation + clear reasoning + next steps
+
+---
+
+## Features
+
+### Feature 2.1: Adaptive Questioning (Round 1)
+
+**What it does**: Generates 2-3 context-aware high-level questions
+
+**Implementation**:
+- System prompt: `TIER_2_ROUND_1_SYSTEM_PROMPT`
+- User prompt: Generated by `get_tier_2_round_1_prompt(session)`
+- Uses pattern from Epic 1 + user intent
+- Maps pattern to relevant questions from framework
+
+**Question selection** (from [Question Framework](../patterns/question-framework.md)):
+- **Trigger questions**: For health/anxiety/career decisions
+- **Constraint questions**: For resource decisions
+- **Usage/Context questions**: For space/design/product decisions
+- **Values questions**: For positioning/identity decisions
+
+### Feature 2.2: Evidence Gathering ("Show me")
+
+**What it does**: Requests real data/examples instead of assumptions
+
+**Implementation**:
+- "Show me" questions embedded in Round 1
+- Requests artifacts, examples, screenshots, data
+- Reveals actual structure/patterns vs. assumed ones
+
+**Example questions**:
+- "Can you show me your Apple Notes format?"
+- "Walk me through a typical [use case] - give me a specific recent example"
+- "Can you share [artifact] so I understand how you [do thing]?"
+
+**Purpose**: Ground recommendations in reality, not assumptions
+
+### Feature 2.3: Pattern Synthesis & Analysis
+
+**What it does**: Analyzes Round 1 answers and shows reasoning
+
+**Implementation**:
+- System prompt: `TIER_2_ANALYSIS_SYSTEM_PROMPT`
+- User prompt: Generated by `get_tier_2_analysis_prompt(session)`
+- Temperature: 1.0
+- Max tokens: 1024
+
+**Output format**:
+```
+Here's what I'm seeing:
+- [Insight 1 from answers]
+- [Insight 2 from answers]
+- [Pattern detected]
+
+[What this means for the decision]
+```
+
+**Purpose**: Transparent reasoning before Round 2 question
+
+### Feature 2.4: Targeted Follow-up (Round 2)
+
+**What it does**: Asks one focused question based on Round 1
+
+**Implementation**:
+- System prompt: `TIER_2_ROUND_2_SYSTEM_PROMPT`
+- User prompt: Generated by `get_tier_2_round_2_prompt(session)`
+- Single question, not multiple
+- Deepens understanding on critical dimension
+
+**Question types**:
+- **Capability check**: User's skills/timeline/intrinsic value
+- **Values check**: Product positioning/who they serve
+- **Priority check**: What really matters when resources aren't limiting
+
+### Feature 2.5: Summary & Confirmation
+
+**What it does**: Validates understanding before recommendation
+
+**Implementation**:
+- System prompt: `TIER_2_SUMMARY_SYSTEM_PROMPT`
+- User prompt: Generated by `get_tier_2_summary_prompt(session)`
+- Bullet-point summary of key insights
+- User confirms or corrects
+
+**Purpose**: Prevent misunderstanding before final recommendation
+
+### Feature 2.6: Personalized Recommendation
+
+**What it does**: Delivers specific advice grounded in evidence
+
+**Implementation**:
+- System prompt: `TIER_2_RECOMMENDATION_SYSTEM_PROMPT`
+- User prompt: Generated by `get_tier_2_recommendation_prompt(session)`
+- Includes reasoning, not just advice
+- Actionable next steps
+
+**Format**:
+```
+I recommend: [specific action]
+
+Here's why:
+- [Evidence point 1]
+- [Evidence point 2]
+- [Evidence point 3]
+
+Next steps:
+- [Action 1]
+- [Action 2]
+```
+
+---
+
+## Technical Implementation
+
+### Architecture
+
+**Engine**: `ExplorationEngine` (`outcomist_web/backend/engine.py`)
+
+**Key methods**:
+- `start_tier_2()`: Begins Round 1
+- `handle_answer()`: Processes user responses adaptively
+- `_generate_analysis()`: Synthesizes Round 1 answers
+- `_ask_round_2_question()`: Generates Round 2 follow-up
+- `_generate_summary()`: Creates summary for confirmation
+- `confirm_summary_and_recommend()`: Delivers final recommendation
+
+### API Endpoints
+
+**Start Epic 2**: `GET /api/sessions/{id}/proceed`
+**Answer question**: `GET /api/sessions/{id}/respond?answer={text}`
+**Confirm summary**: `POST /api/sessions/{id}/confirm`
+
+All endpoints use Server-Sent Events (SSE) for streaming
+
+### Session State
+
+**After Epic 2 completion**:
+```python
+{
+  "id": "session_id",
+  "decision_statement": "original input",
+  "intent": "validation" | "execution",
+  "current_tier": 2,
+  "state": {
+    "current_round": 2,
+    "questions_asked": ["Q1", "Q2", "analysis", "Q3"],
+    "user_answers": ["A1", "A2", "A3"],
+    "summary": "validated summary",
+    "recommendation": "final recommendation"
+  },
+  "conversation": [...]  # Full conversation history
+}
+```
+
+---
+
+## Validation & Testing
+
+### Test Coverage
+
+**Validated across 13 test scenarios**:
+
+- Test #2: Office redesign → Revealed personal sanctuary through usage questions
+- Test #3: Passive income → $500K capital revealed through constraint questions
+- Test #4: Cancer prevention → Friend's diagnosis revealed through trigger questions
+- Test #5: Feature decision → Values contradiction revealed through positioning questions
+- Test #7: Client vs product → 12-month runway revealed scarcity mindset
+- Test #8: Meal planning app → Validation vs execution intent check
+
+See [Test Scenarios](../testing/test-scenarios.md)
+
+### Success Metrics
+
+**Adaptive questioning**: Questions relevant to pattern and prior answers
+**Evidence gathering**: "Show me" questions reveal actual vs. assumed reality
+**Pattern synthesis**: Users recognize insights as accurate
+**Personalized recommendations**: Grounded in evidence, specific, actionable
+
+### Critical Improvements
+
+**v4.7**: Question type detection (information vs. decision requests)
+**v4.6**: Trade-off discovery + factual validation before recommendations
+**v4.5**: Partnership tone, context inference guidelines
+**v4.1**: Intent checking (validation vs. execution)
+
+---
+
+## Related Documentation
+
+- **Question Framework**: [docs/patterns/question-framework.md](../patterns/question-framework.md)
+- **Pattern Library**: [docs/patterns/pattern-library.md](../patterns/pattern-library.md)
+- **Epic 1 (Pattern Recognition)**: [docs/epics/epic-1-pattern-recognition.md](./epic-1-pattern-recognition.md)
+- **Epic 3 (Deep Analysis)**: [docs/epics/epic-3-deep-analysis.md](./epic-3-deep-analysis.md)
+- **Epic Transitions**: [docs/principles/epic-transitions.md](../principles/epic-transitions.md)
+- **Test Documentation**: [docs/testing/test-scenarios.md](../testing/test-scenarios.md)
+
+---
+
+## Future Enhancements
+
+### Multi-Round Expansion
+**Current**: 2 rounds (high-level + targeted follow-up)
+**Future**: Adaptive round count based on decision complexity
+
+### Question Quality Scoring
+**Goal**: Measure which questions unlock insights
+**Benefit**: Learn which questions work best for which patterns
+
+### Evidence Verification
+**Current**: "Show me" questions gather data
+**Future**: Automated fact-checking (dates, numbers, claims)
+
+---
+
+## Document Status
+
+**Last Updated**: 2025-01-10
+**Status**: Complete documentation of validated Epic 2
+**Maintainer**: Product team
+**Next Review**: After Epic 3 implementation

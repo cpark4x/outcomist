@@ -12,7 +12,7 @@ Outcomist helps you think through your project to deeply understand what you wan
 
 This is an important step before starting the project.
 
-**Current Status**: Stage 1 (Explore) validated with 8 test scenarios, 9 patterns documented, Ken's improvements incorporated (v4.2).
+**Current Status**: Epic 1-2 (Pattern Recognition & Discovery) validated with 13 test scenarios, 9 patterns documented. Version 4.7 shipped.
 
 ---
 
@@ -82,22 +82,32 @@ They get fast answers to surface questions. They optimize for the wrong outcomes
 
 ## How It Works (Technical)
 
-Outcomist uses **progressive disclosure**:
+Outcomist uses **progressive disclosure** through five epics:
 
-### Tier 1: Pattern Recognition (30 seconds)
-Identify the deeper pattern. Reframe the question. Show what you're really asking.
+### Epic 1: Pattern Recognition (30 seconds) - ✅ Validated
+Identify the deeper pattern using 9 documented patterns. Reframe the question. Show what you're really deciding.
 
-### Tier 2: Discovery (5-10 minutes)
-Ask 4-6 targeted questions. One at a time. Adaptive based on answers. Deliver clear recommendation.
+### Epic 2: Discovery (5-10 minutes) - ✅ Validated
+Ask adaptive questions one at a time. Gather evidence. Synthesize insights. Deliver personalized recommendation.
 
-### Tier 3/4: Deep Analysis (Optional)
-For complex decisions: alternatives, risk analysis, scenario planning, stakeholder mapping.
+### Epic 3: Deep Analysis (20-30 minutes) - ⏳ Proposed
+For complex decisions: systematic alternative comparison, risk assessment, scenario planning.
 
-**Key**: Start simple, go deeper only if the decision warrants it.
+### Epic 4: Design (Variable) - ⏳ Proposed
+Create wireframes, specifications, and prototypes before building.
+
+### Epic 5: Build & Track (Ongoing) - ⏳ Proposed
+Execute implementation, handle blockers, measure outcomes, capture learning.
+
+**Key**: Start simple (Epic 1), go deeper only if the decision warrants it. Most decisions resolve at Epic 2.
 
 ---
 
-## The Three-Stage Journey
+## The Five-Epic Journey
+
+See [End-to-End Flow Documentation](./end-to-end-flow.md) for complete details on all five epics.
+
+## The Three Decision Phases
 
 Outcomist is **Stage 1** of a three-stage decision journey:
 

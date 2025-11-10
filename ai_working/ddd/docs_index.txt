@@ -1,0 +1,18 @@
+# Phase 2: Non-Code Files Index
+
+## Files to Create (7)
+[x] docs/vision/end-to-end-flow.md
+[x] docs/epics/epic-1-pattern-recognition.md
+[x] docs/epics/epic-2-discovery.md
+[x] docs/epics/epic-3-deep-analysis.md
+[x] docs/epics/epic-4-design.md
+[x] docs/epics/epic-5-build.md
+[x] docs/principles/epic-transitions.md
+
+## Files to Update (4)
+[x] docs/vision/product-vision.md
+[x] docs/principles/progressive-disclosure.md
+[x] README.md
+[x] MUST_HAVES.md (verified - no changes needed)
+
+## Total: 11 files

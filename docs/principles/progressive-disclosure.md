@@ -16,9 +16,9 @@ For Outcomist, this means:
 
 ---
 
-## The Four-Tier Architecture
+## The Epic Architecture
 
-### Tier 1: Pattern Recognition (30 seconds)
+### Epic 1: Pattern Recognition (30 seconds)
 **Purpose**: Immediate value through pattern recognition
 
 **Structure**:
@@ -63,7 +63,11 @@ Ready to explore?
 
 ---
 
-### Tier 2: Discovery (5-10 minutes)
+See [Epic 1 Documentation](../epics/epic-1-pattern-recognition.md) for complete details.
+
+---
+
+### Epic 2: Discovery (5-10 minutes)
 **Purpose**: Build context through structured inquiry, deliver specific recommendation
 
 **Structure**:
@@ -93,7 +97,9 @@ Include next actions
 
 **Total**: 4-6 questions across 2 rounds
 
-**After recommendation**, offer Tier 3:
+See [Epic 2 Documentation](../epics/epic-2-discovery.md) for complete details.
+
+**After recommendation**, offer Epic 3:
 > This recommendation is based on what you've told me so far.
 >
 > Want to go deeper? I can spend another 20-30 minutes on:

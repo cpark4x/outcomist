@@ -2,7 +2,7 @@
 
 **Decision exploration through pattern recognition and progressive discovery**
 
-**Current Status**: Stage 1 (Explore) complete - v4.0 shipped
+**Current Status**: Epic 1-2 (Pattern Recognition & Discovery) validated - v4.8 shipped
 
 ---
 
@@ -37,33 +37,31 @@ People frame decisions wrong:
 
 ---
 
-## The Three-Stage Journey
+## The Five-Epic Journey
 
-Outcomist is Stage 1 of a three-stage decision journey:
+Outcomist guides decisions through five progressive epics. See [End-to-End Flow Documentation](docs/vision/end-to-end-flow.md) for complete details.
 
-### **Stage 1: Explore** (Current - `/explore`)
-Understand the real problem through pattern recognition and discovery
-- **Uncover**: When you don't know the core problem
-- **Inform**: When context needs synthesis
-- **Challenge**: When you think you know but you're wrong
+### **Epic 1: Pattern Recognition** (✅ Validated - 30 seconds)
+Identify deeper patterns using 9 documented patterns. Reframe the question.
+**Output**: Understanding what you're really deciding
 
-**Output**: Understanding + clear recommendation
+### **Epic 2: Discovery** (✅ Validated - 5-10 minutes)
+Adaptive questions, evidence gathering, personalized recommendation.
+**Output**: Clear recommendation grounded in your situation
 
-### **Stage 2: Design** (Future - `/design`)
-Align on what to build before building it
-- Show wireframes, designs, specs, prototypes
-- Iterate on OUTPUT before execution
-- Prevents "building the wrong thing efficiently"
+### **Epic 3: Deep Analysis** (⏳ Proposed - 20-30 minutes)
+Systematic alternative comparison, risk assessment, scenario planning.
+**Output**: Confident direction with full analysis
 
-**Output**: Visual representation you sign off on
+### **Epic 4: Design** (⏳ Proposed - Variable)
+Wireframes, specifications, prototypes before building.
+**Output**: Validated design ready for implementation
 
-### **Stage 3: Build** (Future - `/build`)
-Execute and track implementation
-- Actually build the thing
-- Handle blockers
-- Measure outcomes
+### **Epic 5: Build & Track** (⏳ Proposed - Ongoing)
+Execute, handle blockers, measure outcomes, capture learning.
+**Output**: Working solution + lessons learned
 
-**Output**: Working solution
+**Note**: Most decisions resolve at Epic 2. Deeper epics for complex, high-stakes decisions only.
 
 ---
 
@@ -198,5 +196,5 @@ This project lives inside the [amplifier repository](https://github.com/cpark4x/
 
 ---
 
-**Version**: 4.6 (in progress)
-**Last Updated**: 2025-01-07
+**Version**: 4.8 (shipped)
+**Last Updated**: 2025-01-10
