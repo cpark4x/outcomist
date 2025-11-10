@@ -1,53 +1,60 @@
 # Outcomist: Decision to Action Journey
 
-**Complete end-to-end user flow across all epics**
+**Complete end-to-end user flow across three epics**
+
+**Last Updated**: 2025-01-10
+**Status**: Aligned with Product Vision v2
 
 ---
 
 ## The Big Picture
 
-Outcomist guides users through a complete decision-to-action journey structured as five epics:
+Outcomist guides users through a complete decision-to-action journey structured as three epics:
 
-1. **Epic 1: Pattern Recognition** (✅ Validated) - 30 seconds
-2. **Epic 2: Discovery** (✅ Validated) - 5-10 minutes
-3. **Epic 3: Deep Analysis** (⏳ Proposed) - 20-30 minutes
-4. **Epic 4: Design** (⏳ Proposed) - Variable
-5. **Epic 5: Build & Track** (⏳ Proposed) - Ongoing
+1. **Epic 1: Deep Discovery** (✅ Validated) - 30 sec to 30 min (adaptive)
+2. **Epic 2: Proposal Review** (⏳ Proposed) - Variable
+3. **Epic 3: Build & Track** (⏳ Proposed - Optional) - Ongoing
 
 ### Core Principles
 
-**Progressive Disclosure**: Match complexity to decision needs. Most decisions resolve at Epic 2. Epic 3-5 support complex, high-stakes decisions.
+**Get to Proposal Quickly**: Users want to reach Epic 2 (proposal review) as fast as possible. Epic 1 exists solely to make Epic 2 proposals high-quality and executable.
+
+**Quality Over Speed**: Proposals must be tangible, polished, and gap-free enough for users to confidently evaluate.
+
+**No "Floating Countertops"**: AI only proposes solutions it can actually execute within user's constraints.
 
 **User Agency**: Users choose depth at each transition. The system never forces unnecessary exploration.
 
-**Evidence-Based**: Recommendations grounded in facts, constraints, and user priorities.
+**Evidence-Based**: Recommendations grounded in facts, constraints, and validated executability.
 
-**Transparent Reasoning**: Users see why recommendations are made.
+**Transparent Reasoning**: Users see why recommendations are made and what's required to execute.
 
 ---
 
-## Epic 1: Pattern Recognition & Quick Insight
+## Epic 1: Deep Discovery
 
-**Status**: ✅ Validated and shipped
+**Status**: ✅ Validated and shipped (v4.8)
+
+**Note**: This epic combines what was previously "Pattern Recognition", "Discovery", and "Deep Analysis" into ONE continuous discovery process. The depth adapts to the decision's complexity.
 
 ### User Story
 
-"As a decision-maker, I bring a decision statement and immediately see the deeper pattern I'm actually facing, so I understand what I'm really deciding."
+"As a decision-maker, I need AI to deeply understand my problem AND validate it can execute a solution, so I get a high-quality, executable proposal to review."
 
 ### Outcome
 
 Users walk away with:
-- Their decision reframed to reveal the real issue
-- Understanding of the underlying pattern
-- Preview of what deeper exploration would uncover
-- Clear choice: validate the reframe or explore deeper
+- Deep understanding of the real problem (not just stated problem)
+- Validated that AI can execute within their constraints
+- Executable proposal: "Here's what I'll build for you"
+- Ready to transition to Epic 2 (proposal review)
 
 ### Principles
 
-- **Speed**: 30 seconds or less
-- **Insight**: Reveal non-obvious patterns using 9 documented patterns
-- **Agency**: User chooses next step
-- **Transparency**: Show reasoning behind pattern detection
+- **Adaptive Depth**: Quick (pattern + questions) OR thorough (includes alternatives comparison)
+- **Executability First**: AI only proposes what it can actually deliver
+- **Constraint Awareness**: Technical, resource, skill, access constraints captured
+- **One Continuous Process**: Not separate stages, but one discovery flow
 
 ### Flow
 

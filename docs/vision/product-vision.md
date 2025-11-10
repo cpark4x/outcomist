@@ -1,8 +1,11 @@
 # Outcomist Product Vision
 
+> **⚠️ NOTE**: This document describes the original vision. See **[Product Vision v2](./product-vision-v2.md)** for the current aligned vision with 3-epic model.
+
 **Your thinking partner.**
 
 **Last Updated**: 2025-01-05
+**Status**: Superseded by Product Vision v2 (2025-01-10)
 
 ---
 

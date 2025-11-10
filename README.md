@@ -2,7 +2,7 @@
 
 **Decision exploration through pattern recognition and progressive discovery**
 
-**Current Status**: Epic 1-2 (Pattern Recognition & Discovery) validated - v4.8 shipped
+**Current Status**: Epic 1 (Deep Discovery) validated - v4.8 shipped | Epic 2-3 design in progress
 
 ---
 
@@ -37,31 +37,23 @@ People frame decisions wrong:
 
 ---
 
-## The Five-Epic Journey
+## The Three-Epic Journey
 
-Outcomist guides decisions through five progressive epics. See [End-to-End Flow Documentation](docs/vision/end-to-end-flow.md) for complete details.
+Outcomist guides users through three progressive epics. See [Product Vision v2](docs/vision/product-vision-v2.md) for complete details.
 
-### **Epic 1: Pattern Recognition** (✅ Validated - 30 seconds)
-Identify deeper patterns using 9 documented patterns. Reframe the question.
-**Output**: Understanding what you're really deciding
+### **Epic 1: Deep Discovery** (✅ Validated)
+One continuous discovery process combining pattern recognition, questions, and optional deep analysis. Validates AI can execute within user's constraints.
+**Output**: Executable proposal
 
-### **Epic 2: Discovery** (✅ Validated - 5-10 minutes)
-Adaptive questions, evidence gathering, personalized recommendation.
-**Output**: Clear recommendation grounded in your situation
+### **Epic 2: Proposal Review** (⏳ Proposed)
+User reviews tangible, high-quality proposal with working prototypes or complete artifacts. Iterative refinement until validated.
+**Output**: "This is exactly what I want"
 
-### **Epic 3: Deep Analysis** (⏳ Proposed - 20-30 minutes)
-Systematic alternative comparison, risk assessment, scenario planning.
-**Output**: Confident direction with full analysis
+### **Epic 3: Build & Track** (⏳ Proposed - Optional)
+Execute validated proposal, track progress, handle blockers, measure outcomes.
+**Output**: Done + learned
 
-### **Epic 4: Design** (⏳ Proposed - Variable)
-Wireframes, specifications, prototypes before building.
-**Output**: Validated design ready for implementation
-
-### **Epic 5: Build & Track** (⏳ Proposed - Ongoing)
-Execute, handle blockers, measure outcomes, capture learning.
-**Output**: Working solution + lessons learned
-
-**Note**: Most decisions resolve at Epic 2. Deeper epics for complex, high-stakes decisions only.
+**Key insight**: Users want to reach Epic 2 (proposal review) as quickly as possible. Epic 1 exists to make Epic 2 proposals high-quality, executable, and gap-free.
 
 ---
 
