@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 40px; font-family: monospace; }
+        svg { border: 1px solid #ccc; display: block; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h3>Measuring vertical alignment</h3>
+    <svg id="testSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="800" height="120">
+        <text id="text" x="50" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="16" fill="#1e293b">OUTCOMIST</text>
+
+        <!-- Draw bounding box -->
+        <rect id="bbox" fill="none" stroke="red" stroke-width="1"/>
+
+        <!-- Horizontal line at text baseline -->
+        <line x1="0" y1="85" x2="800" y2="85" stroke="blue" stroke-width="1" opacity="0.3"/>
+    </svg>
+
+    <div id="output"></div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const text = document.getElementById('text');
+            const bbox = text.getBBox();
+
+            // Update bbox rect
+            document.getElementById('bbox').setAttribute('x', bbox.x);
+            document.getElementById('bbox').setAttribute('y', bbox.y);
+            document.getElementById('bbox').setAttribute('width', bbox.width);
+            document.getElementById('bbox').setAttribute('height', bbox.height);
+
+            // Calculate vertical center of the text bbox
+            const verticalCenter = bbox.y + (bbox.height / 2);
+
+            document.getElementById('output').innerHTML = `
+                <p><strong>Text bbox:</strong> x=${bbox.x.toFixed(2)}, y=${bbox.y.toFixed(2)}, width=${bbox.width.toFixed(2)}, height=${bbox.height.toFixed(2)}</p>
+                <p><strong>Baseline:</strong> y=85</p>
+                <p style="font-size: 20px; color: red; font-weight: bold;">>>> VERTICAL CENTER Y: ${verticalCenter.toFixed(2)}</p>
+                <p style="color: blue;">Current circle is at Y=50, should be at Y=${verticalCenter.toFixed(2)}</p>
+            `;
+
+            console.log('VERTICAL CENTER Y:', verticalCenter.toFixed(2));
+        });
+    </script>
+</body>
+</html>

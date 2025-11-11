@@ -1,18 +1,15 @@
-# Phase 2: Non-Code Files Index
+# Phase 2: Non-Code Files to Update (UI Redesign)
 
-## Files to Create (7)
-[x] docs/vision/end-to-end-flow.md
-[x] docs/epics/epic-1-pattern-recognition.md
-[x] docs/epics/epic-2-discovery.md
-[x] docs/epics/epic-3-deep-analysis.md
-[x] docs/epics/epic-4-design.md
-[x] docs/epics/epic-5-build.md
-[x] docs/principles/epic-transitions.md
+## Documentation Files
 
-## Files to Update (4)
-[x] docs/vision/product-vision.md
-[x] docs/principles/progressive-disclosure.md
-[x] README.md
-[x] MUST_HAVES.md (verified - no changes needed)
+[x] docs/DESIGN.md - NEW: Document design system, component contracts, aesthetic choices
+[ ] outcomist-demo/README.md - Update with redesign info, design philosophy reference
+[ ] ai_working/ddd/ui-redesign-plan.md - Archive note referencing this DDD plan
 
-## Total: 11 files
+## Configuration Files
+
+[ ] .vscode/settings.json - Check if Tailwind CSS IntelliSense config needed
+
+---
+
+Total files: 4 (2 updates + 1 new + 1 check)

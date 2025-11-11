@@ -22,9 +22,9 @@
 
   <div style="margin-bottom: 16px;">
     <img
-      src="/src/assets/outcomist-logo.svg"
+      src="/src/assets/outcomist-logo-web.svg"
       alt="Outcomist"
-      style="height: 64px; width: auto; display: block; margin: 0 auto;"
+      style="height: 56px; width: auto; display: block; margin: 0 auto;"
     />
   </div>
 

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcomist - Final 5 Concepts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0f172a;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #3b82f6;
+            text-align: center;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            transition: transform 0.2s;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .concept-number {
+            font-size: 72px;
+            font-weight: 900;
+            color: #e2e8f0;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .concept-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .logo-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            margin-bottom: 40px;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .meaning {
+            padding: 32px;
+            background: #eff6ff;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .meaning h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 12px;
+        }
+
+        .meaning p {
+            font-size: 15px;
+            color: #1e3a8a;
+            line-height: 1.7;
+        }
+
+        .meaning strong {
+            color: #1e40af;
+        }
+
+        .dark-preview {
+            background: #0f172a;
+            padding: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OUTCOMIST</h1>
+        <p class="tagline">Hidden Patterns · Deep Understanding · Real Outcomes</p>
+        <p class="subtitle">
+            Reveals what you can't see · Understands the core problem · Focuses on outcomes, not activity
+        </p>
+
+        <div class="concepts-grid">
+            <!-- Concept 1: The Hidden Pattern (Dots) -->
+            <div class="concept-card">
+                <div class="concept-number">1</div>
+                <div class="concept-title">The Hidden Pattern</div>
+
+                <div class="logo-display">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- O made entirely of dots - pattern only visible when you step back -->
+                        <g transform="translate(335, 70)">
+                            <!-- Circle of dots forming the O -->
+                            <circle cx="0" cy="-35" r="5" fill="#1e293b"/>
+                            <circle cx="12" cy="-33" r="5" fill="#1e293b"/>
+                            <circle cx="24" cy="-28" r="5" fill="#1e293b"/>
+                            <circle cx="33" cy="-20" r="5" fill="#1e293b"/>
+                            <circle cx="38" cy="-10" r="5" fill="#1e293b"/>
+                            <circle cx="40" cy="0" r="5" fill="#1e293b"/>
+                            <circle cx="38" cy="10" r="5" fill="#1e293b"/>
+                            <circle cx="33" cy="20" r="5" fill="#1e293b"/>
+                            <circle cx="24" cy="28" r="5" fill="#1e293b"/>
+                            <circle cx="12" cy="33" r="5" fill="#1e293b"/>
+                            <circle cx="0" cy="35" r="5" fill="#1e293b"/>
+                            <circle cx="-12" cy="33" r="5" fill="#1e293b"/>
+                            <circle cx="-24" cy="28" r="5" fill="#1e293b"/>
+                            <circle cx="-33" cy="20" r="5" fill="#1e293b"/>
+                            <circle cx="-38" cy="10" r="5" fill="#1e293b"/>
+                            <circle cx="-40" cy="0" r="5" fill="#1e293b"/>
+                            <circle cx="-38" cy="-10" r="5" fill="#1e293b"/>
+                            <circle cx="-33" cy="-20" r="5" fill="#1e293b"/>
+                            <circle cx="-24" cy="-28" r="5" fill="#1e293b"/>
+                            <circle cx="-12" cy="-33" r="5" fill="#1e293b"/>
+
+                            <!-- Subtle connecting hint (the pattern revealed) -->
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.15" stroke-dasharray="4,4"/>
+                        </g>
+
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="meaning">
+                    <h3>Core Insight</h3>
+                    <p><strong>"You're too close to see the pattern"</strong><br/><br/>
+                    Individual dots look random when you're close. But step back—there's a perfect circle. That's Outcomist: revealing the hidden pattern you can't see because you're too close to your own problem. <br/><br/>
+                    User says "Should I redesign my office?" Pattern reveals: "You want personal sanctuary, not productivity."</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(335, 70)">
+                            <circle cx="0" cy="-35" r="5" fill="#f1f5f9"/>
+                            <circle cx="12" cy="-33" r="5" fill="#f1f5f9"/>
+                            <circle cx="24" cy="-28" r="5" fill="#f1f5f9"/>
+                            <circle cx="33" cy="-20" r="5" fill="#f1f5f9"/>
+                            <circle cx="38" cy="-10" r="5" fill="#f1f5f9"/>
+                            <circle cx="40" cy="0" r="5" fill="#f1f5f9"/>
+                            <circle cx="38" cy="10" r="5" fill="#f1f5f9"/>
+                            <circle cx="33" cy="20" r="5" fill="#f1f5f9"/>
+                            <circle cx="24" cy="28" r="5" fill="#f1f5f9"/>
+                            <circle cx="12" cy="33" r="5" fill="#f1f5f9"/>
+                            <circle cx="0" cy="35" r="5" fill="#f1f5f9"/>
+                            <circle cx="-12" cy="33" r="5" fill="#f1f5f9"/>
+                            <circle cx="-24" cy="28" r="5" fill="#f1f5f9"/>
+                            <circle cx="-33" cy="20" r="5" fill="#f1f5f9"/>
+                            <circle cx="-38" cy="10" r="5" fill="#f1f5f9"/>
+                            <circle cx="-40" cy="0" r="5" fill="#f1f5f9"/>
+                            <circle cx="-38" cy="-10" r="5" fill="#f1f5f9"/>
+                            <circle cx="-33" cy="-20" r="5" fill="#f1f5f9"/>
+                            <circle cx="-24" cy="-28" r="5" fill="#f1f5f9"/>
+                            <circle cx="-12" cy="-33" r="5" fill="#f1f5f9"/>
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/>
+                        </g>
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Concept 2: The Core (Peeling layers to center) -->
+            <div class="concept-card">
+                <div class="concept-number">2</div>
+                <div class="concept-title">The Core</div>
+
+                <div class="logo-display">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- O with layers peeling away to reveal core -->
+                        <g transform="translate(335, 70)">
+                            <!-- Outer faded layers (surface questions) -->
+                            <circle cx="0" cy="0" r="42" fill="none" stroke="#cbd5e1" stroke-width="3" opacity="0.2"/>
+                            <circle cx="0" cy="0" r="36" fill="none" stroke="#94a3b8" stroke-width="3" opacity="0.35"/>
+
+                            <!-- Main O (getting closer) -->
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#64748b" stroke-width="4" opacity="0.6"/>
+
+                            <!-- Inner core (the real problem) -->
+                            <circle cx="0" cy="0" r="18" fill="none" stroke="#3b82f6" stroke-width="5"/>
+                            <circle cx="0" cy="0" r="10" fill="#3b82f6" opacity="0.3"/>
+                            <circle cx="0" cy="0" r="4" fill="#1e40af"/>
+                        </g>
+
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="meaning">
+                    <h3>Core Insight</h3>
+                    <p><strong>"Peel away layers to find the real problem"</strong><br/><br/>
+                    Outer layers = surface questions. Inner core = what you're REALLY deciding. Outcomist strips away the noise to reveal the center—the core problem you need to solve.<br/><br/>
+                    "Should I take this client work?" → Core: "You have scarcity mindset despite 12 months runway."</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(335, 70)">
+                            <circle cx="0" cy="0" r="42" fill="none" stroke="#475569" stroke-width="3" opacity="0.2"/>
+                            <circle cx="0" cy="0" r="36" fill="none" stroke="#64748b" stroke-width="3" opacity="0.35"/>
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#94a3b8" stroke-width="4" opacity="0.6"/>
+                            <circle cx="0" cy="0" r="18" fill="none" stroke="#3b82f6" stroke-width="5"/>
+                            <circle cx="0" cy="0" r="10" fill="#3b82f6" opacity="0.3"/>
+                            <circle cx="0" cy="0" r="4" fill="#60a5fa"/>
+                        </g>
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Concept 3: The Target (Outcome not activity) -->
+            <div class="concept-card">
+                <div class="concept-number">3</div>
+                <div class="concept-title">The Target</div>
+
+                <div class="logo-display">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- O as bullseye target - outcomes not activity -->
+                        <g transform="translate(335, 70)">
+                            <!-- Outer ring (activity) -->
+                            <circle cx="0" cy="0" r="38" fill="none" stroke="#cbd5e1" stroke-width="6" opacity="0.3"/>
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#94a3b8" stroke-width="6" opacity="0.5"/>
+
+                            <!-- Center target (outcome) -->
+                            <circle cx="0" cy="0" r="20" fill="none" stroke="#ef4444" stroke-width="6"/>
+                            <circle cx="0" cy="0" r="10" fill="#ef4444" opacity="0.3"/>
+                            <circle cx="0" cy="0" r="5" fill="#dc2626"/>
+
+                            <!-- Arrow hitting bullseye -->
+                            <path d="M -55,-55 L -8,-8" stroke="#1e293b" stroke-width="4"/>
+                            <polygon points="-8,-8 -12,-5 -5,-12" fill="#1e293b"/>
+                        </g>
+
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="meaning">
+                    <h3>Core Insight</h3>
+                    <p><strong>"Outcomes, not activity"</strong><br/><br/>
+                    Outer rings = busy work, features, tasks (activity). Center bullseye = what you're actually trying to achieve (outcome). Outcomist helps you hit the target that matters.<br/><br/>
+                    Not "build 10 features" → "Validate product-market fit with 2 customers."</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(335, 70)">
+                            <circle cx="0" cy="0" r="38" fill="none" stroke="#475569" stroke-width="6" opacity="0.3"/>
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#64748b" stroke-width="6" opacity="0.5"/>
+                            <circle cx="0" cy="0" r="20" fill="none" stroke="#ef4444" stroke-width="6"/>
+                            <circle cx="0" cy="0" r="10" fill="#ef4444" opacity="0.3"/>
+                            <circle cx="0" cy="0" r="5" fill="#dc2626"/>
+                            <path d="M -55,-55 L -8,-8" stroke="#f1f5f9" stroke-width="4"/>
+                            <polygon points="-8,-8 -12,-5 -5,-12" fill="#f1f5f9"/>
+                        </g>
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Concept 4: The Reveal (Hidden to visible) -->
+            <div class="concept-card">
+                <div class="concept-number">4</div>
+                <div class="concept-title">The Reveal</div>
+
+                <div class="logo-display">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="revealGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#cbd5e1;stop-opacity:0.2" />
+                                <stop offset="30%" style="stop-color:#94a3b8;stop-opacity:0.4" />
+                                <stop offset="60%" style="stop-color:#3b82f6;stop-opacity:0.7" />
+                                <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- O transitioning from hidden/blurred to sharp/clear -->
+                        <g transform="translate(335, 70)">
+                            <!-- Left side: scattered, unclear -->
+                            <circle cx="-28" cy="-28" r="3" fill="#e2e8f0" opacity="0.3"/>
+                            <circle cx="-35" cy="-15" r="3" fill="#e2e8f0" opacity="0.3"/>
+                            <circle cx="-38" cy="0" r="3" fill="#cbd5e1" opacity="0.4"/>
+                            <circle cx="-35" cy="15" r="3" fill="#cbd5e1" opacity="0.4"/>
+                            <circle cx="-28" cy="28" r="3" fill="#94a3b8" opacity="0.5"/>
+
+                            <!-- Transition area -->
+                            <circle cx="-15" cy="33" r="4" fill="#94a3b8" opacity="0.6"/>
+                            <circle cx="0" cy="35" r="4" fill="#64748b" opacity="0.7"/>
+                            <circle cx="15" cy="33" r="4" fill="#475569" opacity="0.8"/>
+
+                            <!-- Right side: clear, solid O -->
+                            <path d="M 28,-28 A 35,35 0 0,1 35,0 A 35,35 0 0,1 28,28"
+                                  fill="none" stroke="#1e293b" stroke-width="8"/>
+
+                            <!-- The reveal gradient showing the transformation -->
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="url(#revealGradient)" stroke-width="8"/>
+                        </g>
+
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="meaning">
+                    <h3>Core Insight</h3>
+                    <p><strong>"From confusion to clarity"</strong><br/><br/>
+                    Left side = scattered thoughts, unclear problem. Right side = sharp understanding, clear picture. The gradient shows Outcomist's process: progressively revealing what was always there but hidden by confusion.<br/><br/>
+                    You start with fog. Outcomist brings it into focus.</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="revealGradientDark" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#475569;stop-opacity:0.2" />
+                                <stop offset="30%" style="stop-color:#64748b;stop-opacity:0.4" />
+                                <stop offset="60%" style="stop-color:#3b82f6;stop-opacity:0.7" />
+                                <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(335, 70)">
+                            <circle cx="-28" cy="-28" r="3" fill="#475569" opacity="0.3"/>
+                            <circle cx="-35" cy="-15" r="3" fill="#475569" opacity="0.3"/>
+                            <circle cx="-38" cy="0" r="3" fill="#64748b" opacity="0.4"/>
+                            <circle cx="-35" cy="15" r="3" fill="#64748b" opacity="0.4"/>
+                            <circle cx="-28" cy="28" r="3" fill="#94a3b8" opacity="0.5"/>
+                            <circle cx="-15" cy="33" r="4" fill="#94a3b8" opacity="0.6"/>
+                            <circle cx="0" cy="35" r="4" fill="#cbd5e1" opacity="0.7"/>
+                            <circle cx="15" cy="33" r="4" fill="#e2e8f0" opacity="0.8"/>
+                            <path d="M 28,-28 A 35,35 0 0,1 35,0 A 35,35 0 0,1 28,28"
+                                  fill="none" stroke="#f1f5f9" stroke-width="8"/>
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="url(#revealGradientDark)" stroke-width="8"/>
+                        </g>
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Concept 5: The Discovery (X marks the spot) -->
+            <div class="concept-card">
+                <div class="concept-number">5</div>
+                <div class="concept-title">The Discovery</div>
+
+                <div class="logo-display">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- O with X marks the spot (discovery) -->
+                        <g transform="translate(335, 70)">
+                            <!-- Main O -->
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="#1e293b" stroke-width="8"/>
+
+                            <!-- X in the center (the discovery point) -->
+                            <path d="M -15,-15 L 15,15" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M 15,-15 L -15,15" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
+
+                            <!-- Small treasure dots around X -->
+                            <circle cx="0" cy="0" r="8" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+                            <circle cx="-6" cy="-6" r="2" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="6" cy="-6" r="2" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="-6" cy="6" r="2" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="6" cy="6" r="2" fill="#fbbf24" opacity="0.7"/>
+                        </g>
+
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="meaning">
+                    <h3>Core Insight</h3>
+                    <p><strong>"X marks the spot - the answer was here all along"</strong><br/><br/>
+                    The X reveals the buried insight. You were standing on the answer but couldn't see it. Outcomist digs through surface questions to uncover what you needed to find—the core truth that was hidden beneath.<br/><br/>
+                    "The treasure wasn't in building more features. It was in talking to those 2 customers."</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(335, 70)">
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="#f1f5f9" stroke-width="8"/>
+                            <path d="M -15,-15 L 15,15" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M 15,-15 L -15,15" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
+                            <circle cx="0" cy="0" r="8" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+                            <circle cx="-6" cy="-6" r="2" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="6" cy="-6" r="2" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="-6" cy="6" r="2" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="6" cy="6" r="2" fill="#fbbf24" opacity="0.7"/>
+                        </g>
+                        <text x="395" y="90" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 20px; padding: 60px; text-align: center;">
+            <h2 style="font-size: 36px; color: #1e293b; margin-bottom: 24px; font-weight: 700;">Which one captures it?</h2>
+            <p style="color: #64748b; font-size: 18px; margin-bottom: 40px; line-height: 1.6;">
+                Pick the concept that best represents:<br/>
+                <strong style="color: #1e293b;">Hidden patterns · Deep understanding · Outcomes not activity</strong>
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">
+                <div style="padding: 24px; border: 3px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
+                    <div style="font-size: 32px; font-weight: 900; color: #1e293b; margin-bottom: 12px;">1</div>
+                    <div style="font-size: 14px; color: #64748b; font-weight: 500;">Hidden Pattern</div>
+                </div>
+                <div style="padding: 24px; border: 3px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
+                    <div style="font-size: 32px; font-weight: 900; color: #1e293b; margin-bottom: 12px;">2</div>
+                    <div style="font-size: 14px; color: #64748b; font-weight: 500;">The Core</div>
+                </div>
+                <div style="padding: 24px; border: 3px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
+                    <div style="font-size: 32px; font-weight: 900; color: #1e293b; margin-bottom: 12px;">3</div>
+                    <div style="font-size: 14px; color: #64748b; font-weight: 500;">The Target</div>
+                </div>
+                <div style="padding: 24px; border: 3px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
+                    <div style="font-size: 32px; font-weight: 900; color: #1e293b; margin-bottom: 12px;">4</div>
+                    <div style="font-size: 14px; color: #64748b; font-weight: 500;">The Reveal</div>
+                </div>
+                <div style="padding: 24px; border: 3px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all 0.2s;">
+                    <div style="font-size: 32px; font-weight: 900; color: #1e293b; margin-bottom: 12px;">5</div>
+                    <div style="font-size: 14px; color: #64748b; font-weight: 500;">Discovery</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

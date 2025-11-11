@@ -1,0 +1,18 @@
+{
+  "session_id": "a15dc46c-454a-435d-9cb3-6ae67e6fbabf",
+  "created_at": "2025-11-05T15:27:13.299292",
+  "decision_statement": "Should i buy a home right now? i'm locked in at 2.4% rate. Home is worth 1.9M and houses seem to be cheaper. My kids are 8 and 12 so getting older. I wish we had more space.",
+  "current_tier": 1,
+  "conversation": [],
+  "state": {
+    "intent": "unknown",
+    "confidence": "low",
+    "patterns_identified": [],
+    "questions_asked": [],
+    "current_round": 0,
+    "awaiting_summary_confirmation": false,
+    "recommendation_delivered": false,
+    "summary_text": "",
+    "user_answers": []
+  }
+}

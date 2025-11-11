@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcomist - O-Integrated Concepts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0f172a;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            transition: transform 0.2s;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .concept-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+
+        .logo-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .description {
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .description h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .description p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .dark-preview {
+            background: #0f172a;
+            padding: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        /* SVG styles will be inline in SVG elements */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OUTCOMIST - O-Integrated Concepts</h1>
+        <p class="subtitle">Using the "O" as the symbolic anchor, like Alchemist's "A"</p>
+
+        <div class="concepts-grid">
+            <!-- Concept A: Target O -->
+            <div class="concept-card">
+                <div class="concept-label">CONCEPT A: TARGET O (CONVERGING)</div>
+
+                <div class="logo-display">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- O with converging arrows pointing inward (target/outcome) -->
+                        <defs>
+                            <marker id="arrowTarget" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                                <polygon points="0 0, 8 4, 0 8" fill="#1e293b" />
+                            </marker>
+                        </defs>
+
+                        <!-- Regular letters -->
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                            <!-- Skip O, we'll draw it special -->
+                        </text>
+
+                        <!-- Special O with target symbol -->
+                        <g transform="translate(305, 60)">
+                            <!-- Main O -->
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#1e293b" stroke-width="8"/>
+                            <!-- Inner target rings -->
+                            <circle cx="0" cy="0" r="20" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+                            <circle cx="0" cy="0" r="10" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.7"/>
+                            <!-- Center dot -->
+                            <circle cx="0" cy="0" r="4" fill="#3b82f6"/>
+                            <!-- Converging arrows -->
+                            <line x1="-50" y1="-50" x2="-32" y2="-32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTarget)" opacity="0.4"/>
+                            <line x1="50" y1="-50" x2="32" y2="-32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTarget)" opacity="0.4"/>
+                            <line x1="-50" y1="50" x2="-32" y2="32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTarget)" opacity="0.4"/>
+                            <line x1="50" y1="50" x2="32" y2="32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTarget)" opacity="0.4"/>
+                        </g>
+
+                        <!-- Rest of word -->
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="description">
+                    <h3>Symbolism</h3>
+                    <p><strong>Target/Convergence:</strong> All paths lead to the outcome. The arrows converging on the O represent how Outcomist guides everything toward clarity and action. The rings inside show progressive focus.</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrowTargetDark" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                                <polygon points="0 0, 8 4, 0 8" fill="#f1f5f9" />
+                            </marker>
+                        </defs>
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(305, 60)">
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#f1f5f9" stroke-width="8"/>
+                            <circle cx="0" cy="0" r="20" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+                            <circle cx="0" cy="0" r="10" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.7"/>
+                            <circle cx="0" cy="0" r="4" fill="#3b82f6"/>
+                            <line x1="-50" y1="-50" x2="-32" y2="-32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTargetDark)" opacity="0.4"/>
+                            <line x1="50" y1="-50" x2="32" y2="-32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTargetDark)" opacity="0.4"/>
+                            <line x1="-50" y1="50" x2="-32" y2="32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTargetDark)" opacity="0.4"/>
+                            <line x1="50" y1="50" x2="32" y2="32" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowTargetDark)" opacity="0.4"/>
+                        </g>
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Concept B: Ripple O -->
+            <div class="concept-card">
+                <div class="concept-label">CONCEPT B: RIPPLE O (RADIATING)</div>
+
+                <div class="logo-display">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- O with ripples radiating outward (progressive discovery) -->
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- Special O with ripple rings -->
+                        <g transform="translate(305, 60)">
+                            <!-- Outer ripples (progressive tiers) -->
+                            <circle cx="0" cy="0" r="42" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.2"/>
+                            <circle cx="0" cy="0" r="36" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.35"/>
+                            <!-- Main O -->
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#1e293b" stroke-width="8"/>
+                            <!-- Inner core -->
+                            <circle cx="0" cy="0" r="8" fill="#3b82f6"/>
+                        </g>
+
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="description">
+                    <h3>Symbolism</h3>
+                    <p><strong>Progressive Discovery:</strong> The ripples expanding outward represent Tier 1 → 2 → 3 → 4. Start at the center (quick insight), expand outward as needed (deeper analysis). Discovery radiates from the core question.</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(305, 60)">
+                            <circle cx="0" cy="0" r="42" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.2"/>
+                            <circle cx="0" cy="0" r="36" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.35"/>
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#f1f5f9" stroke-width="8"/>
+                            <circle cx="0" cy="0" r="8" fill="#3b82f6"/>
+                        </g>
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Concept C: Lens O -->
+            <div class="concept-card">
+                <div class="concept-label">CONCEPT C: LENS O (CLARITY)</div>
+
+                <div class="logo-display">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- O as a lens bringing things into focus -->
+                        <defs>
+                            <radialGradient id="lensGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.15" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+                            </radialGradient>
+                        </defs>
+
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- Special O as lens -->
+                        <g transform="translate(305, 60)">
+                            <!-- Lens glow effect -->
+                            <circle cx="0" cy="0" r="35" fill="url(#lensGradient)"/>
+                            <!-- Main O -->
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#1e293b" stroke-width="8"/>
+                            <!-- Light rays through lens -->
+                            <line x1="-60" y1="0" x2="-32" y2="0" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+                            <line x1="32" y1="0" x2="60" y2="0" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+                            <line x1="-50" y1="-20" x2="-28" y2="-12" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+                            <line x1="28" y1="12" x2="50" y2="20" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+                            <line x1="-50" y1="20" x2="-28" y2="12" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+                            <line x1="28" y1="-12" x2="50" y2="-20" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+                            <!-- Center focus point -->
+                            <circle cx="0" cy="0" r="5" fill="#3b82f6"/>
+                        </g>
+
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="description">
+                    <h3>Symbolism</h3>
+                    <p><strong>Clarity Through Focus:</strong> The O as a lens that brings scattered thoughts into sharp focus. Light rays converge through the lens, representing how Outcomist clarifies confused decisions into clear direction.</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="lensGradientDark" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.25" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+                            </radialGradient>
+                        </defs>
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(305, 60)">
+                            <circle cx="0" cy="0" r="35" fill="url(#lensGradientDark)"/>
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#f1f5f9" stroke-width="8"/>
+                            <line x1="-60" y1="0" x2="-32" y2="0" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+                            <line x1="32" y1="0" x2="60" y2="0" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+                            <line x1="-50" y1="-20" x2="-28" y2="-12" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+                            <line x1="28" y1="12" x2="50" y2="20" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+                            <line x1="-50" y1="20" x2="-28" y2="12" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+                            <line x1="28" y1="-12" x2="50" y2="-20" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+                            <circle cx="0" cy="0" r="5" fill="#3b82f6"/>
+                        </g>
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Concept D: Crosshair O -->
+            <div class="concept-card">
+                <div class="concept-label">CONCEPT D: CROSSHAIR O (PRECISION)</div>
+
+                <div class="logo-display">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- O with crosshair - finding the right answer -->
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+
+                        <!-- Special O with crosshair -->
+                        <g transform="translate(305, 60)">
+                            <!-- Main O -->
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#1e293b" stroke-width="8"/>
+                            <!-- Crosshair lines -->
+                            <line x1="-30" y1="0" x2="-15" y2="0" stroke="#3b82f6" stroke-width="3"/>
+                            <line x1="15" y1="0" x2="30" y2="0" stroke="#3b82f6" stroke-width="3"/>
+                            <line x1="0" y1="-30" x2="0" y2="-15" stroke="#3b82f6" stroke-width="3"/>
+                            <line x1="0" y1="15" x2="0" y2="30" stroke="#3b82f6" stroke-width="3"/>
+                            <!-- Inner ring -->
+                            <circle cx="0" cy="0" r="12" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                            <!-- Center dot -->
+                            <circle cx="0" cy="0" r="4" fill="#3b82f6"/>
+                        </g>
+
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="description">
+                    <h3>Symbolism</h3>
+                    <p><strong>Precision Targeting:</strong> The crosshair represents finding the exact right answer. Outcomist helps you zero in on what matters, cutting through noise to hit the target with precision.</p>
+                </div>
+
+                <div class="dark-preview">
+                    <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>OUTC</tspan>
+                        </text>
+                        <g transform="translate(305, 60)">
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#f1f5f9" stroke-width="8"/>
+                            <line x1="-30" y1="0" x2="-15" y2="0" stroke="#3b82f6" stroke-width="3"/>
+                            <line x1="15" y1="0" x2="30" y2="0" stroke="#3b82f6" stroke-width="3"/>
+                            <line x1="0" y1="-30" x2="0" y2="-15" stroke="#3b82f6" stroke-width="3"/>
+                            <line x1="0" y1="15" x2="0" y2="30" stroke="#3b82f6" stroke-width="3"/>
+                            <circle cx="0" cy="0" r="12" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                            <circle cx="0" cy="0" r="4" fill="#3b82f6"/>
+                        </g>
+                        <text x="355" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" letter-spacing="16">
+                            <tspan>MIST</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 16px; padding: 40px; text-align: center;">
+            <h2 style="font-size: 28px; color: #1e293b; margin-bottom: 16px;">Which "O" captures Outcomist best?</h2>
+            <p style="color: #64748b; font-size: 16px; margin-bottom: 32px;">A (Target), B (Ripple), C (Lens), or D (Crosshair)?</p>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 800px; margin: 0 auto;">
+                <div style="padding: 20px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">A</div>
+                    <div style="font-size: 14px; color: #64748b;">Target<br/>Converging</div>
+                </div>
+                <div style="padding: 20px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">B</div>
+                    <div style="font-size: 14px; color: #64748b;">Ripple<br/>Radiating</div>
+                </div>
+                <div style="padding: 20px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">C</div>
+                    <div style="font-size: 14px; color: #64748b;">Lens<br/>Clarity</div>
+                </div>
+                <div style="padding: 20px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">D</div>
+                    <div style="font-size: 14px; color: #64748b;">Crosshair<br/>Precision</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

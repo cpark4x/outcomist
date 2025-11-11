@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 40px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="800" height="120">
+            <!-- Guide: Show where text would be -->
+            <text x="50" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="16" fill="#e0e0e0" opacity="0.3">
+                OUTCOMIST
+            </text>
+
+            <!-- Actual text: OUTC -->
+            <text x="50" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="16" fill="#1e293b">
+                OUTC
+            </text>
+
+            <!-- Hidden Pattern O: 20 dots forming perfect circle -->
+            <g transform="translate(318, 50)">
+                <!-- Center crosshair for debugging -->
+                <line x1="-5" y1="0" x2="5" y2="0" stroke="red" stroke-width="1"/>
+                <line x1="0" y1="-5" x2="0" y2="5" stroke="red" stroke-width="1"/>
+
+                <!-- Dots positioned in perfect circle at radius 32 -->
+                <circle cx="0" cy="-32" r="4.5" fill="#1e293b"/>
+                <circle cx="11.31" cy="-30.06" r="4.5" fill="#1e293b"/>
+                <circle cx="21.33" cy="-25.46" r="4.5" fill="#1e293b"/>
+                <circle cx="29.23" cy="-18.47" r="4.5" fill="#1e293b"/>
+                <circle cx="34.64" cy="-10.27" r="4.5" fill="#1e293b"/>
+                <circle cx="37.42" cy="-1.41" r="4.5" fill="#1e293b"/>
+                <circle cx="37.42" cy="7.41" r="4.5" fill="#1e293b"/>
+                <circle cx="34.64" cy="16.27" r="4.5" fill="#1e293b"/>
+                <circle cx="29.23" cy="24.47" r="4.5" fill="#1e293b"/>
+                <circle cx="21.33" cy="31.46" r="4.5" fill="#1e293b"/>
+                <circle cx="11.31" cy="36.06" r="4.5" fill="#1e293b"/>
+                <circle cx="0" cy="38" r="4.5" fill="#1e293b"/>
+                <circle cx="-11.31" cy="36.06" r="4.5" fill="#1e293b"/>
+                <circle cx="-21.33" cy="31.46" r="4.5" fill="#1e293b"/>
+                <circle cx="-29.23" cy="24.47" r="4.5" fill="#1e293b"/>
+                <circle cx="-34.64" cy="16.27" r="4.5" fill="#1e293b"/>
+                <circle cx="-37.42" cy="7.41" r="4.5" fill="#1e293b"/>
+                <circle cx="-37.42" cy="-1.41" r="4.5" fill="#1e293b"/>
+                <circle cx="-34.64" cy="-10.27" r="4.5" fill="#1e293b"/>
+                <circle cx="-29.23" cy="-18.47" r="4.5" fill="#1e293b"/>
+                <circle cx="-21.33" cy="-25.46" r="4.5" fill="#1e293b"/>
+                <circle cx="-11.31" cy="-30.06" r="4.5" fill="#1e293b"/>
+            </g>
+
+            <text x="390" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="16" fill="#1e293b">
+                MIST
+            </text>
+        </svg>
+    </div>
+
+    <p>Testing circle alignment. The red crosshair shows the center of the circle.</p>
+</body>
+</html>

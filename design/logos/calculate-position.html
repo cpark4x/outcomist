@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 40px; font-family: monospace; }
+        svg { border: 1px solid #ccc; display: block; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h3>Calculating exact O position</h3>
+    <svg id="testSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="800" height="120">
+        <text id="outc" x="50" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="16" fill="#1e293b">OUTC</text>
+        <text id="o" x="50" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="16" fill="red" opacity="0.3">OUTCO</text>
+        <text id="mist" x="390" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="16" fill="#1e293b">MIST</text>
+    </svg>
+
+    <div id="output"></div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const outc = document.getElementById('outc');
+            const o = document.getElementById('o');
+
+            // Get the width of "OUTC"
+            const outcBBox = outc.getBBox();
+            const oBBox = o.getBBox();
+
+            // The O starts where OUTC ends
+            const oStart = outcBBox.x + outcBBox.width;
+            // The O ends where OUTCO ends
+            const oEnd = oBBox.x + oBBox.width;
+
+            // O width
+            const oWidth = oEnd - oStart;
+
+            // O center
+            const oCenter = oStart + (oWidth / 2);
+
+            document.getElementById('output').innerHTML = `
+                <p><strong>OUTC bbox:</strong> x=${outcBBox.x.toFixed(2)}, width=${outcBBox.width.toFixed(2)}, end=${(outcBBox.x + outcBBox.width).toFixed(2)}</p>
+                <p><strong>OUTCO bbox:</strong> x=${oBBox.x.toFixed(2)}, width=${oBBox.width.toFixed(2)}, end=${(oBBox.x + oBBox.width).toFixed(2)}</p>
+                <p><strong>O starts at:</strong> ${oStart.toFixed(2)}</p>
+                <p><strong>O width:</strong> ${oWidth.toFixed(2)}</p>
+                <p style="font-size: 20px; color: red; font-weight: bold;">>>> O CENTER X: ${oCenter.toFixed(2)}</p>
+            `;
+
+            console.log('O CENTER X:', oCenter.toFixed(2));
+        });
+    </script>
+</body>
+</html>

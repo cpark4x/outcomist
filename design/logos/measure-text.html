@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 40px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .test {
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: 16px;
+            display: inline-block;
+            position: relative;
+        }
+        .char {
+            display: inline-block;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Measuring character widths at 72px, weight 700, 16px letter-spacing:</h3>
+
+    <div class="test">
+        <span class="char">O</span>
+        <span class="char">U</span>
+        <span class="char">T</span>
+        <span class="char">C</span>
+        <span class="char">O</span>
+        <span class="char">M</span>
+        <span class="char">I</span>
+        <span class="char">S</span>
+        <span class="char">T</span>
+    </div>
+
+    <script>
+        const chars = document.querySelectorAll('.char');
+        let totalWidth = 50; // Start at x=50
+        console.log('Character positions:');
+        chars.forEach((char, i) => {
+            const width = char.offsetWidth;
+            const center = totalWidth + (width / 2);
+            console.log(`Char ${i} (${char.textContent}): left=${totalWidth}, width=${width}, center=${center}`);
+            if (i === 4) { // The O position
+                console.log(`>>> O CENTER SHOULD BE AT X=${center}`);
+            }
+            totalWidth += width;
+        });
+    </script>
+</body>
+</html>

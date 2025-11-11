@@ -14,9 +14,9 @@
 >
   <div>
     <img
-      src="/src/assets/outcomist-logo.svg"
+      src="/src/assets/outcomist-logo-web.svg"
       alt="Outcomist"
-      style="height: 32px; width: auto; display: block;"
+      style="height: 28px; width: auto; display: block;"
     />
   </div>
 

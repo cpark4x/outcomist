@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcomist - Final Wordmark Choice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0f172a;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #f1f5f9;
+            margin-bottom: 60px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .option-card {
+            background: white;
+            border-radius: 16px;
+            padding: 60px 40px;
+            transition: transform 0.2s;
+        }
+
+        .option-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .option-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+
+        .wordmark-large {
+            font-size: 80px;
+            color: #1e293b;
+            margin-bottom: 40px;
+            line-height: 1;
+        }
+
+        .opt8 {
+            font-family: Arial Black, Arial, sans-serif;
+            font-weight: 900;
+            letter-spacing: -6px;
+        }
+
+        .opt10 {
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 16px;
+        }
+
+        .sizes {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 40px;
+            padding: 24px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .size-demo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .size-label {
+            font-size: 12px;
+            color: #64748b;
+            width: 60px;
+        }
+
+        .size-64 { font-size: 64px; }
+        .size-48 { font-size: 48px; }
+        .size-32 { font-size: 32px; }
+        .size-24 { font-size: 24px; }
+
+        .personality {
+            padding: 24px;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        .personality h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .personality ul {
+            list-style: none;
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .personality li:before {
+            content: "✓ ";
+            color: #3b82f6;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .use-cases {
+            padding: 24px;
+            background: #fef3c7;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .use-cases h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 12px;
+        }
+
+        .use-cases p {
+            font-size: 14px;
+            color: #78350f;
+            line-height: 1.6;
+        }
+
+        .dark-preview {
+            background: #0f172a;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .dark-preview .wordmark-large {
+            color: #f1f5f9;
+        }
+
+        .decision {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .decision h2 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 24px;
+        }
+
+        .decision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .decision-option {
+            padding: 32px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .decision-option:hover {
+            border-color: #3b82f6;
+            background: #f8fafc;
+        }
+
+        .decision-option h3 {
+            font-size: 20px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .decision-option p {
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OPTION 8 vs OPTION 10</h1>
+
+        <div class="comparison-grid">
+            <!-- Option 8 -->
+            <div class="option-card">
+                <div class="option-label">OPTION 8 - BLACK SUPER TIGHT</div>
+
+                <div class="wordmark-large opt8">OUTCOMIST</div>
+
+                <div class="sizes">
+                    <div class="size-demo">
+                        <div class="size-label">Large</div>
+                        <div class="size-64 opt8">OUTCOMIST</div>
+                    </div>
+                    <div class="size-demo">
+                        <div class="size-label">Medium</div>
+                        <div class="size-48 opt8">OUTCOMIST</div>
+                    </div>
+                    <div class="size-demo">
+                        <div class="size-label">Small</div>
+                        <div class="size-32 opt8">OUTCOMIST</div>
+                    </div>
+                    <div class="size-demo">
+                        <div class="size-label">Tiny</div>
+                        <div class="size-24 opt8">OUTCOMIST</div>
+                    </div>
+                </div>
+
+                <div class="personality">
+                    <h3>Personality</h3>
+                    <ul>
+                        <li>Dense and powerful</li>
+                        <li>Intense focus</li>
+                        <li>Commanding presence</li>
+                        <li>No-nonsense</li>
+                        <li>Technical confidence</li>
+                    </ul>
+                </div>
+
+                <div class="use-cases">
+                    <h3>Best For</h3>
+                    <p>CLI tools, developer products, serious decision-making tools. Feels authoritative and direct. "We mean business."</p>
+                </div>
+
+                <div class="dark-preview">
+                    <div class="wordmark-large opt8">OUTCOMIST</div>
+                </div>
+            </div>
+
+            <!-- Option 10 -->
+            <div class="option-card">
+                <div class="option-label">OPTION 10 - BOLD EXTRA WIDE</div>
+
+                <div class="wordmark-large opt10">OUTCOMIST</div>
+
+                <div class="sizes">
+                    <div class="size-demo">
+                        <div class="size-label">Large</div>
+                        <div class="size-64 opt10">OUTCOMIST</div>
+                    </div>
+                    <div class="size-demo">
+                        <div class="size-label">Medium</div>
+                        <div class="size-48 opt10">OUTCOMIST</div>
+                    </div>
+                    <div class="size-demo">
+                        <div class="size-label">Small</div>
+                        <div class="size-32 opt10">OUTCOMIST</div>
+                    </div>
+                    <div class="size-demo">
+                        <div class="size-label">Tiny</div>
+                        <div class="size-24 opt10">OUTCOMIST</div>
+                    </div>
+                </div>
+
+                <div class="personality">
+                    <h3>Personality</h3>
+                    <ul>
+                        <li>Open and expansive</li>
+                        <li>Premium feel</li>
+                        <li>Confident clarity</li>
+                        <li>Sophisticated</li>
+                        <li>Approachable authority</li>
+                    </ul>
+                </div>
+
+                <div class="use-cases">
+                    <h3>Best For</h3>
+                    <p>Web apps, consumer products, premium services. Feels luxurious and confident. "We have space to think clearly."</p>
+                </div>
+
+                <div class="dark-preview">
+                    <div class="wordmark-large opt10">OUTCOMIST</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="decision">
+            <h2>Which one captures Outcomist?</h2>
+            <p style="color: #64748b; margin-bottom: 32px;">Pick the one that feels right for your vision</p>
+
+            <div class="decision-grid">
+                <div class="decision-option">
+                    <h3>Choose Option 8</h3>
+                    <p>Dense, commanding, technical</p>
+                </div>
+                <div class="decision-option">
+                    <h3>Choose Option 10</h3>
+                    <p>Premium, expansive, sophisticated</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
