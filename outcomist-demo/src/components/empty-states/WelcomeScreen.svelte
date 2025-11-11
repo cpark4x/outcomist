@@ -24,7 +24,7 @@
     <img
       src="/src/assets/outcomist-logo.svg"
       alt="Outcomist"
-      style="height: 48px; width: auto; display: block; margin: 0 auto;"
+      style="height: 64px; width: auto; display: block; margin: 0 auto;"
     />
   </div>
 
