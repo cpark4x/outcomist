@@ -5,7 +5,7 @@
   </text>
 
   <!-- Hidden Pattern O: 20 dots forming perfect circle -->
-  <g transform="translate(348, 50)">
+  <g transform="translate(338, 50)">
     <!-- Dots positioned in perfect circle at radius 32 -->
     <circle cx="0" cy="-32" r="4.5" fill="#f1f5f9"/>
     <circle cx="11.31" cy="-30.06" r="4.5" fill="#f1f5f9"/>
