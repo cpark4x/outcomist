@@ -11,6 +11,7 @@ A professional web interface for the Outcomist decision exploration tool. The de
 - **Adaptive Questioning**: Context-aware 2-round discovery structure
 - **Trade-off Discovery**: Identifies and presents conflicting priorities
 - **Personalized Recommendations**: Generates specific, actionable advice
+- **Automatic Profile Learning**: Automatically extracts and remembers personal facts from conversations (name, goals, constraints, skills, family details) to personalize future interactions without asking the same questions
 
 ### Refined Conversational UI
 - **9.5/10 Quality Design**: Professional, conversation-focused interface
@@ -93,7 +94,9 @@ src/
 │   └── ChatContainer.svelte       # Orchestration layer (logic + title generation)
 ├── components/
 │   ├── layout/
-│   │   └── Header.svelte          # Branding + dynamic project title
+│   │   └── Header.svelte          # Branding + dynamic project title + profile button
+│   ├── profile/
+│   │   └── ProfileModal.svelte    # User profile editor (modal UI)
 │   ├── messages/
 │   │   ├── MessageBubble.svelte   # Single message display
 │   │   ├── MessageList.svelte     # Scrollable message container
@@ -112,7 +115,13 @@ src/
 │   └── conversation.ts            # Conversation state (messages + projectTitle)
 └── App.svelte                     # Root component
 
-server.js                          # Express server (connects to /explore)
+lib/
+└── profile.js                     # Profile storage & context generation
+
+profiles/
+└── self.json                      # User profile data (gitignored)
+
+server.js                          # Express server (connects to /explore + profile API)
 ```
 
 ## How It Works
@@ -128,6 +137,36 @@ The demo connects to the real Outcomist v4.8 engine:
 6. **UI Update** → Frontend displays message with animation
 
 All decision exploration logic (pattern recognition, adaptive questioning, trade-off discovery) runs through the actual v4.8 CLI command—not a simulation.
+
+### Automatic Profile Learning
+
+The system automatically learns about you as you chat, eliminating the need to repeat yourself:
+
+**How it works:**
+1. **During conversation** - You mention facts naturally ("I have two kids aged 8 and 10", "I'm a solo founder")
+2. **Automatic extraction** - After each response, Claude analyzes the conversation and extracts personal facts
+3. **Profile storage** - Facts are merged into your profile (`profiles/self.json`) without duplicates
+4. **Future conversations** - Profile context is automatically injected, so Claude remembers without asking
+
+**What gets learned:**
+- Basic info (name, age, role)
+- Goals, constraints, skills, values
+- Personal facts (family details, work situation, preferences)
+
+**Privacy:**
+- Profile data stored locally only
+- File is gitignored (never committed)
+- You can view/edit via Profile button in header
+- Manual profile management still available if preferred
+
+**Example:**
+```
+First chat: "I have two kids aged 8 and 10. I'm building a SaaS product."
+→ Profile learns: role="solo founder", goals=["build SaaS product"], personalFacts=["has 2 kids aged 8 and 10"]
+
+New chat: "My kids need attention but I also need to launch."
+→ Claude responds knowing you're a solo founder with kids, doesn't re-ask
+```
 
 ### Design System
 

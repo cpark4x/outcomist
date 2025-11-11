@@ -12,6 +12,8 @@ eggs/
 .eggs/
 lib/
 lib64/
+# Exception: outcomist-demo uses lib/ for profile management
+!outcomist-demo/lib/
 parts/
 sdist/
 var/
@@ -61,6 +63,9 @@ outcomist-demo/EPIC-*.md
 outcomist-demo/TESTED-*.md
 outcomist-demo/UI_*.md
 outcomist-demo/public/
+
+# User profile data (keep directory structure with .gitkeep)
+outcomist-demo/profiles/*.json
 
 # Experimental/working directories
 outcomist/
