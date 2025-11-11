@@ -435,6 +435,70 @@ My wife Laura is taking 100mg of oral progesterone, and it is micronized. It hel
 
 ---
 
+## Test #17: Side Hustle AI Monetization
+
+**User**: Chris
+**Date**: 2025-01-10
+**Decision Type**: Existence (should I do this?)
+
+### Decision Statement
+```
+i want to build a side hustle to earn some extra cash
+```
+
+### Context Provided
+- **Round 1 Answer**: "i want to earn some extra money. i am pretty good at Ai and i think i want to think about how to leveage Ai to earn some small money on the side. eventually, i can create residiual side income as i approach retirement. i am 46 but want to retire at 55."
+- **Round 2 Answer**: "i want to just make money. it can be social, marektplace, anything"
+- **Round 3 Answer**: "i want to see some results in 1-2 months. and then build on it. i am willing to invest some money and time initially. as a side benefit, it will help me think about Ai in my job as well"
+
+### Expected Challenges
+- **Pattern**: Classic "fast validation + long-term residual income" tension
+- **Conflict**: Quick money (1-2 months) vs. residual income (scales without time)
+- **Requires**: Understanding that residual income requires phased approach - can't skip directly to passive income
+- **Profile system gap**: User requested that learnings about them be saved for future sessions
+
+### What Happened
+1. **Tier 1**: Recognized "opportunity vs. anxiety" driver pattern
+2. **Round 1**: Asked about current situation (understanding motivations)
+3. **Round 2**: Clarified "using AI as tool" vs. "teaching AI" preference → User: outcome-focused, any method
+4. **Round 3**: Surfaced tension between fast validation (1-2 months) and residual income goal
+5. **Summary**: Confirmed 9-year timeline, AI skills, fast validation need, double benefit (side income + day job learning)
+6. **Proposal**: 3-phase ladder approach:
+   - Phase 1: AI consulting for fast validation (Months 1-2)
+   - Phase 2: Productized services (Months 3-6)
+   - Phase 3: SaaS/marketplace for residual income (Months 6-24)
+7. **User**: "it feels right" then revealed this was a test
+
+### User Feedback
+> "okay, this was a test btw. let's add this to the test documentation"
+>
+> (Earlier in conversation) "can you store everything you learn bout me and create a profile knowledgebase about me so you can re-use it for future converastaions? i think this is part of outcomist"
+
+### Key Learning
+
+**Profile/memory system is critical missing piece**. User explicitly asked: "can you store everything you learn bout me and create a profile knowledgebase about me so you can re-use it for future converastaions?"
+
+From this ONE conversation, we learned:
+- Age: 46, retirement goal: 55 (9-year timeline)
+- Skills: Strong AI capabilities
+- Goals: Residual side income that scales
+- Constraints: Want validation in 1-2 months
+- Values: Outcome-focused, willing to invest, wants learning to compound into day job
+- Context: Open to any method (social, marketplace, products, services)
+
+This should persist across sessions so:
+- Future Outcomist sessions can reference goals
+- Don't ask same questions again
+- Can track progress toward 55 retirement goal
+- Recommendations get more tailored over time
+
+**Test validated**: The 3-phase approach resonated ("it feels right"). Discovery questions successfully revealed the tension between fast validation and long-term residual income, leading to a phased recommendation that addresses both.
+
+### Results
+- **v4.8**: ⭐⭐⭐⭐⭐ (PASS - Complete epic 1 flow, proper discovery, phased recommendation matched user's dual goals)
+
+---
+
 ## Test Capture Template
 
 For future tests, use this template and add to this file IMMEDIATELY after completing the test:
