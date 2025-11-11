@@ -1,6 +1,22 @@
 # Changelog
 
-## 2025-01-10 - UI Polish & Dynamic Project Titles
+## 2025-01-10 - Voice Input & UI Polish
+
+### Added
+- **Voice Input Feature**: Speech-to-text using Web Speech API
+  - Microphone button in chat input
+  - Visual recording state with pulsing animation
+  - Auto-submit after voice transcription
+  - Browser compatibility detection (Chrome, Edge, Safari)
+  - Accessible with ARIA labels
+
+### Technical Details
+- Created VoiceButton.svelte component with Web Speech API integration
+- Added recording state management with visual feedback
+- Graceful degradation for unsupported browsers
+- Auto-submission workflow for voice input
+
+## 2025-01-10 - Dynamic Project Titles
 
 ### Added
 - **Dynamic Project Title System**: Header now displays context-aware project title extracted from first user message

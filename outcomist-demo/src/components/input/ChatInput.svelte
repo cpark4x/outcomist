@@ -1,5 +1,6 @@
 <script lang="ts">
   import SendButton from './SendButton.svelte';
+  import VoiceButton from './VoiceButton.svelte';
 
   export let onSubmit: (content: string) => void;
   export let disabled: boolean = false;
@@ -19,6 +20,15 @@
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSubmit(e);
+    }
+  }
+
+  function handleVoiceTranscript(transcript: string) {
+    value = transcript;
+    // Auto-submit after voice input
+    if (transcript.trim() && !disabled) {
+      onSubmit(transcript.trim());
+      value = '';
     }
   }
 </script>
@@ -61,6 +71,10 @@
             color: var(--text-primary);
             background: transparent;
           "
+        />
+        <VoiceButton
+          {disabled}
+          onTranscript={handleVoiceTranscript}
         />
         <SendButton
           {disabled}

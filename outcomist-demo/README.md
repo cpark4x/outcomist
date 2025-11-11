@@ -16,6 +16,7 @@ A professional web interface for the Outcomist decision exploration tool. The de
 - **9.5/10 Quality Design**: Professional, conversation-focused interface
 - **Dynamic Project Titles**: Intelligent title generation from conversation context with topic shift detection
 - **Professional Header**: Minimal header bar with branding and contextual project name
+- **Voice Input**: Speech-to-text using Web Speech API with visual recording feedback
 - **Adaptive Discovery Preview**: Conversational (straightforward) or detailed (complex) based on question
 - **OKLCH Color System**: Modern color science for perceptual accuracy
 - **Sophisticated Animations**: Spring physics, staggered reveals, smooth transitions
@@ -99,6 +100,7 @@ src/
 │   │   └── StreamingIndicator.svelte
 │   ├── input/
 │   │   ├── ChatInput.svelte       # Pure input component
+│   │   ├── VoiceButton.svelte     # Voice input with Web Speech API
 │   │   └── SendButton.svelte      # Send button
 │   └── empty-states/
 │       └── WelcomeScreen.svelte   # Empty state UI
