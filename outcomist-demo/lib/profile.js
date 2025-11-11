@@ -124,6 +124,10 @@ export function getProfileContext(profile) {
     parts.push(`Values: ${profile.values.join(', ')}`);
   }
 
+  if (profile.preferences?.personalFacts?.length > 0) {
+    parts.push(`Personal facts: ${profile.preferences.personalFacts.join('; ')}`);
+  }
+
   if (parts.length === 0) {
     return '';
   }
