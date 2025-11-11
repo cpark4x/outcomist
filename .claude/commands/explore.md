@@ -288,8 +288,23 @@ Once I know which direction you're headed, I can help you think it through.
 
 ### Discovery Transition
 
-After initial response (any type), transition to discovery:
+After initial response (any type), transition to discovery using **adaptive preview** based on question complexity:
 
+**For STRAIGHTFORWARD questions** (clear problem, sufficient context, no obvious complexity):
+```markdown
+---
+
+This'll take about 10 minutes - I'll ask a few questions to understand your situation, then give you a specific proposal for what I'll build.
+
+**Ready to dive in?**
+
+1. **yes** → Start discovery
+2. **clarify** → Ask me anything first
+
+---
+```
+
+**For COMPLEX questions** (ambiguous, high stakes, multiple dimensions, or deep analysis needed):
 ```markdown
 ---
 
@@ -313,6 +328,23 @@ The goal: Understand your situation deeply enough to propose a solution I can ac
 
 ---
 ```
+
+**Signals for STRAIGHTFORWARD (use short preview)**:
+- Single clear goal (e.g., "side hustle", "vacation choice", "meal planning")
+- Sufficient context provided upfront
+- No obvious trade-offs or competing priorities
+- User seems confident and ready to move forward
+- Low-to-moderate stakes
+
+**Signals for COMPLEX (use detailed preview)**:
+- Multiple competing priorities or trade-offs
+- High stakes (major life decisions, significant budget, team impacts)
+- Ambiguous or confused framing
+- User seems stuck or overwhelmed
+- Requires deep analysis or extensive alternatives comparison
+- Strategic decisions affecting multiple areas
+
+**When in doubt**: Default to **straightforward** (short preview). Users prefer conversational over formal.
 
 ### Guidelines: When to Reframe vs. Gather Context
 

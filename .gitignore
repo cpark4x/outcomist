@@ -44,3 +44,27 @@ Thumbs.db
 # Cache
 .cache/
 *.log
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Demo working files
+outcomist-demo/test-*.js
+outcomist-demo/test-*.html
+outcomist-demo/*.html
+outcomist-demo/test-results/
+outcomist-demo/setup-env.sh
+outcomist-demo/*.png
+outcomist-demo/DESIGN_*.md
+outcomist-demo/EPIC-*.md
+outcomist-demo/TESTED-*.md
+outcomist-demo/UI_*.md
+outcomist-demo/public/
+
+# Experimental/working directories
+outcomist/
+
+# AI working files (keep structure, not temp files)
+ai_working/ddd/*-old-*.md
+ai_working/ddd/ui-redesign-implementation-summary.md

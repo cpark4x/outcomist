@@ -1,0 +1,36 @@
+{
+  "name": "outcomist-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@tsconfig/svelte": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "autoprefixer": "^10.4.22",
+    "lucide-svelte": "^0.553.0",
+    "playwright": "^1.56.1",
+    "postcss": "^8.5.6",
+    "svelte": "^5.43.5",
+    "svelte-check": "^4.3.3",
+    "tailwindcss": "^3.4.18",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "marked": "^17.0.0"
+  }
+}
