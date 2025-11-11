@@ -17,19 +17,16 @@
   }
 
   function handleKeydown(e: KeyboardEvent) {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    // For single-line input: Enter submits (Shift+Enter, Command+Enter, Ctrl+Enter would need textarea)
+    if (e.key === 'Enter' && !e.shiftKey && !e.metaKey && !e.ctrlKey) {
       e.preventDefault();
       handleSubmit(e);
     }
   }
 
   function handleVoiceTranscript(transcript: string) {
+    // Populate the input but don't auto-submit - let user review and edit
     value = transcript;
-    // Auto-submit after voice input
-    if (transcript.trim() && !disabled) {
-      onSubmit(transcript.trim());
-      value = '';
-    }
   }
 </script>
 

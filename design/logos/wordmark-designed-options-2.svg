@@ -1,0 +1,72 @@
+<svg width="1200" height="3000" viewBox="0 0 1200 3000" xmlns="http://www.w3.org/2000/svg">
+  <!-- 10 More Designed Wordmark Options for Outcomist -->
+
+  <!-- Option 13: Split Color with Emphasis -->
+  <text x="50" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="4">
+    <tspan fill="#3B7FE8">OUT</tspan><tspan fill="#1e293b">COMIST</tspan>
+  </text>
+  <text x="50" y="130" font-family="Arial, sans-serif" font-size="16" fill="#64748b">13. Split Color - Blue OUT + Dark COMIST</text>
+
+  <!-- Option 14: Vertical Bar Accent -->
+  <rect x="45" y="200" width="6" height="80" fill="#3B7FE8" rx="3"/>
+  <text x="70" y="265" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="600" fill="#1e293b" letter-spacing="6">OUTCOMIST</text>
+  <text x="50" y="295" font-family="Arial, sans-serif" font-size="16" fill="#64748b">14. Bold with Left Blue Bar Accent</text>
+
+  <!-- Option 15: Letter O as Circle Element -->
+  <circle cx="390" cy="425" r="36" fill="none" stroke="#3B7FE8" stroke-width="6"/>
+  <text x="50" y="445" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="6">OUTC<tspan fill="transparent">O</tspan>MIST</text>
+  <text x="50" y="475" font-family="Arial, sans-serif" font-size="16" fill="#64748b">15. Circle O - Blue Ring Element</text>
+
+  <!-- Option 16: Double Line Underline -->
+  <text x="50" y="625" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="8">OUTCOMIST</text>
+  <rect x="50" y="645" width="720" height="3" fill="#1e293b"/>
+  <rect x="50" y="653" width="720" height="3" fill="#3B7FE8"/>
+  <text x="50" y="685" font-family="Arial, sans-serif" font-size="16" fill="#64748b">16. Bold with Double Line Underline</text>
+
+  <!-- Option 17: Angled/Skewed -->
+  <text x="50" y="835" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#1e293b" letter-spacing="6" transform="skewX(-8) translate(50, 0)">OUTCOMIST</text>
+  <text x="50" y="865" font-family="Arial, sans-serif" font-size="16" fill="#64748b">17. Bold Skewed - Forward Motion</text>
+
+  <!-- Option 18: Offset Shadow -->
+  <text x="56" y="1016" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#3B7FE8" opacity="0.3" letter-spacing="6">OUTCOMIST</text>
+  <text x="50" y="1010" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#1e293b" letter-spacing="6">OUTCOMIST</text>
+  <text x="50" y="1040" font-family="Arial, sans-serif" font-size="16" fill="#64748b">18. Bold with Offset Blue Shadow</text>
+
+  <!-- Option 19: Compact Bold with Dot Separator -->
+  <text x="50" y="1190" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="900" fill="#1e293b" letter-spacing="2">OUTC<tspan fill="#3B7FE8">•</tspan>MIST</text>
+  <text x="50" y="1220" font-family="Arial, sans-serif" font-size="16" fill="#64748b">19. Heavy Compact with Blue Dot Separator</text>
+
+  <!-- Option 20: Thin with Blue Background Block -->
+  <rect x="45" y="1270" width="200" height="85" fill="#3B7FE8" rx="8"/>
+  <text x="60" y="1335" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="300" fill="#ffffff" letter-spacing="6">OUT</text>
+  <text x="245" y="1335" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="300" fill="#1e293b" letter-spacing="6">COMIST</text>
+  <text x="50" y="1375" font-family="Arial, sans-serif" font-size="16" fill="#64748b">20. Thin with Blue Background Block on OUT</text>
+
+  <!-- Option 21: Stencil Cut Effect -->
+  <defs>
+    <mask id="stencil">
+      <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+      <text x="50" y="1515" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="6">OUTCOMIST</text>
+    </mask>
+  </defs>
+  <rect x="45" y="1445" width="750" height="90" fill="#1e293b" mask="url(#stencil)"/>
+  <text x="50" y="1515" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#3B7FE8" letter-spacing="6">OUTCOMIST</text>
+  <text x="50" y="1555" font-family="Arial, sans-serif" font-size="16" fill="#64748b">21. Blue Bold with Dark Background</text>
+
+  <!-- Option 22: Rounded Caps with Underline Fade -->
+  <defs>
+    <linearGradient id="fadeUnderline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B7FE8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B7FE8;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  <text x="50" y="1705" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="600" fill="#1e293b" letter-spacing="10">OUTCOMIST</text>
+  <rect x="50" y="1725" width="520" height="5" fill="url(#fadeUnderline)" rx="2.5"/>
+  <text x="50" y="1765" font-family="Arial, sans-serif" font-size="16" fill="#64748b">22. Bold Wide with Gradient Fade Underline</text>
+
+  <!-- Instructions -->
+  <rect x="50" y="1900" width="1100" height="180" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  <text x="600" y="1970" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#1e293b" text-anchor="middle">10 More Designed Options</text>
+  <text x="600" y="2010" font-family="Arial, sans-serif" font-size="18" fill="#64748b" text-anchor="middle">Which number (13-22) feels right?</text>
+  <text x="600" y="2045" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">More creative variations with personality and character</text>
+</svg>

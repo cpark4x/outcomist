@@ -1,0 +1,80 @@
+<svg width="1200" height="3000" viewBox="0 0 1200 3000" xmlns="http://www.w3.org/2000/svg">
+  <!-- 12 Designed Wordmark Options for Outcomist -->
+
+  <!-- Option 1: Gradient Bold -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B7FE8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <text x="50" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="url(#grad1)" letter-spacing="8">OUTCOMIST</text>
+  <text x="50" y="130" font-family="Arial, sans-serif" font-size="16" fill="#64748b">1. Gradient Bold - Blue to Dark</text>
+
+  <!-- Option 2: All Caps with Underline Accent -->
+  <text x="50" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="6">OUTCOMIST</text>
+  <rect x="50" y="300" width="140" height="6" fill="#3B7FE8" rx="3"/>
+  <text x="50" y="340" font-family="Arial, sans-serif" font-size="16" fill="#64748b">2. Bold with Blue Underline Accent</text>
+
+  <!-- Option 3: Mixed Weight Emphasis -->
+  <text x="50" y="490" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="300" fill="#1e293b" letter-spacing="4">OUTC<tspan font-weight="800">O</tspan>MIST</text>
+  <text x="50" y="520" font-family="Arial, sans-serif" font-size="16" fill="#64748b">3. Mixed Weight - Heavy O Emphasis</text>
+
+  <!-- Option 4: Italic Bold Slant -->
+  <text x="50" y="670" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#1e293b" letter-spacing="6" font-style="italic">OUTCOMIST</text>
+  <text x="50" y="700" font-family="Arial, sans-serif" font-size="16" fill="#64748b">4. Italic Bold Slant - Dynamic Energy</text>
+
+  <!-- Option 5: Outlined Stroke -->
+  <text x="50" y="850" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="none" stroke="#1e293b" stroke-width="2.5" letter-spacing="8">OUTCOMIST</text>
+  <text x="50" y="880" font-family="Arial, sans-serif" font-size="16" fill="#64748b">5. Outlined Stroke - Modern Minimal</text>
+
+  <!-- Option 6: Stacked Split -->
+  <text x="50" y="1030" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="#1e293b" letter-spacing="12">OUTCO</text>
+  <text x="50" y="1090" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="#3B7FE8" letter-spacing="12">MIST</text>
+  <text x="50" y="1120" font-family="Arial, sans-serif" font-size="16" fill="#64748b">6. Stacked Split - Two-Tone Color</text>
+
+  <!-- Option 7: Rounded Friendly -->
+  <text x="50" y="1270" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="600" fill="#1e293b" letter-spacing="6" style="font-variant: small-caps;">OUTCOMIST</text>
+  <text x="50" y="1300" font-family="Arial, sans-serif" font-size="16" fill="#64748b">7. Rounded Bold - Friendly Approachable</text>
+
+  <!-- Option 8: Dot Pattern Background -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="2" fill="#e2e8f0"/>
+    </pattern>
+  </defs>
+  <rect x="45" y="1350" width="720" height="90" fill="url(#dots)" rx="8"/>
+  <text x="50" y="1420" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#1e293b" letter-spacing="6">OUTCOMIST</text>
+  <text x="50" y="1460" font-family="Arial, sans-serif" font-size="16" fill="#64748b">8. Bold on Dot Pattern Background</text>
+
+  <!-- Option 9: Shadow Depth -->
+  <text x="52" y="1612" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#cbd5e1" letter-spacing="8">OUTCOMIST</text>
+  <text x="50" y="1610" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#1e293b" letter-spacing="8">OUTCOMIST</text>
+  <text x="50" y="1650" font-family="Arial, sans-serif" font-size="16" fill="#64748b">9. Bold with Shadow Depth</text>
+
+  <!-- Option 10: Monospace Tech -->
+  <text x="50" y="1800" font-family="'SF Mono', 'Monaco', 'Courier New', monospace" font-size="64" font-weight="600" fill="#1e293b" letter-spacing="8">OUTCOMIST</text>
+  <text x="50" y="1830" font-family="Arial, sans-serif" font-size="16" fill="#64748b">10. Monospace Tech - Developer Vibe</text>
+
+  <!-- Option 11: Condensed Super Tight with Color Accent -->
+  <text x="50" y="1980" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="900" fill="#1e293b" letter-spacing="-4" transform="scale(0.85, 1) translate(58.8, 0)">OUTCOMIST</text>
+  <circle cx="305" cy="1960" r="8" fill="#3B7FE8"/>
+  <text x="50" y="2010" font-family="Arial, sans-serif" font-size="16" fill="#64748b">11. Condensed Heavy with Blue Dot</text>
+
+  <!-- Option 12: Wide Spaced with Thin Weight -->
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B7FE8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <text x="50" y="2160" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="300" fill="url(#grad2)" letter-spacing="14">OUTCOMIST</text>
+  <text x="50" y="2190" font-family="Arial, sans-serif" font-size="16" fill="#64748b">12. Thin Wide with Center Gradient</text>
+
+  <!-- Instructions -->
+  <rect x="50" y="2300" width="1100" height="180" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  <text x="600" y="2370" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#1e293b" text-anchor="middle">More Designed Options</text>
+  <text x="600" y="2410" font-family="Arial, sans-serif" font-size="18" fill="#64748b" text-anchor="middle">Which number has the right personality? (1-12)</text>
+  <text x="600" y="2445" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">These options have more visual interest and distinctive character</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg width="1200" height="1800" viewBox="0 0 1200 1800" xmlns="http://www.w3.org/2000/svg">
+  <!-- 5 Refined Arrow Options for OUTCOMIST -->
+
+  <!-- Option A: Thin Arrow + Teal -->
+  <text x="50" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="10">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#14b8a6" font-weight="300">→</tspan>
+  </text>
+  <text x="50" y="130" font-family="Arial, sans-serif" font-size="16" fill="#64748b">A. Thin Arrow + Teal (#14b8a6)</text>
+
+  <!-- Option B: Bold Arrow + Emerald Green -->
+  <text x="50" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="10">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#10b981" font-weight="900">→</tspan>
+  </text>
+  <text x="50" y="310" font-family="Arial, sans-serif" font-size="16" fill="#64748b">B. Bold Arrow + Emerald Green (#10b981)</text>
+
+  <!-- Option C: Long Arrow + Orange -->
+  <text x="50" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="10">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#f97316" font-weight="700">⟶</tspan>
+  </text>
+  <text x="50" y="490" font-family="Arial, sans-serif" font-size="16" fill="#64748b">C. Long Arrow (⟶) + Orange (#f97316)</text>
+
+  <!-- Option D: Heavy Arrow + Purple -->
+  <text x="50" y="640" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="10">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#8b5cf6" font-weight="900">➜</tspan>
+  </text>
+  <text x="50" y="670" font-family="Arial, sans-serif" font-size="16" fill="#64748b">D. Heavy Arrow (➜) + Purple (#8b5cf6)</text>
+
+  <!-- Option E: Simple Arrow + Dark Teal -->
+  <text x="50" y="820" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="10">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#0d9488" font-weight="700">→</tspan>
+  </text>
+  <text x="50" y="850" font-family="Arial, sans-serif" font-size="16" fill="#64748b">E. Standard Arrow + Dark Teal (#0d9488)</text>
+
+  <!-- Color Swatches -->
+  <rect x="50" y="950" width="1100" height="300" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  <text x="600" y="1010" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#1e293b" text-anchor="middle">Color & Arrow Style Options</text>
+
+  <!-- Color palette -->
+  <text x="100" y="1070" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Colors:</text>
+  <circle cx="100" cy="1100" r="20" fill="#14b8a6"/>
+  <text x="130" y="1107" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Teal</text>
+
+  <circle cx="220" cy="1100" r="20" fill="#10b981"/>
+  <text x="250" y="1107" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Emerald</text>
+
+  <circle cx="350" cy="1100" r="20" fill="#f97316"/>
+  <text x="380" y="1107" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Orange</text>
+
+  <circle cx="480" cy="1100" r="20" fill="#8b5cf6"/>
+  <text x="510" y="1107" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Purple</text>
+
+  <circle cx="600" cy="1100" r="20" fill="#0d9488"/>
+  <text x="630" y="1107" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Dark Teal</text>
+
+  <!-- Arrow styles -->
+  <text x="100" y="1170" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Arrows:</text>
+  <text x="100" y="1200" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="#1e293b">→ (thin)  → (standard)  ⟶ (long)  ➜ (heavy)</text>
+
+  <text x="600" y="1240" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Which letter (A-E) has the right arrow style and color?</text>
+</svg>

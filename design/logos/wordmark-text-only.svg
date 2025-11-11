@@ -1,0 +1,49 @@
+<svg width="1200" height="3000" viewBox="0 0 1200 3000" xmlns="http://www.w3.org/2000/svg">
+  <!-- 10 Text-Only Wordmark Options for Outcomist -->
+
+  <!-- Option 23: Ultra Light Extended -->
+  <text x="50" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="200" fill="#1e293b" letter-spacing="20">OUTCOMIST</text>
+  <text x="50" y="130" font-family="Arial, sans-serif" font-size="16" fill="#64748b">23. Ultra Light Extended - Elegant Spacious</text>
+
+  <!-- Option 24: Heavy Black Tight -->
+  <text x="50" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="900" fill="#1e293b" letter-spacing="-3">OUTCOMIST</text>
+  <text x="50" y="310" font-family="Arial, sans-serif" font-size="16" fill="#64748b">24. Heavy Black Tight - Powerful Dense</text>
+
+  <!-- Option 25: Medium Weight Wide -->
+  <text x="50" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="500" fill="#1e293b" letter-spacing="18">OUTCOMIST</text>
+  <text x="50" y="490" font-family="Arial, sans-serif" font-size="16" fill="#64748b">25. Medium Wide - Balanced Breathing Room</text>
+
+  <!-- Option 26: Bold Compressed Vertical -->
+  <text x="50" y="640" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#1e293b" letter-spacing="-2" transform="scale(0.75, 1) translate(66.7, 0)">OUTCOMIST</text>
+  <text x="50" y="670" font-family="Arial, sans-serif" font-size="16" fill="#64748b">26. Bold Compressed - Condensed Height</text>
+
+  <!-- Option 27: Light Normal Spacing -->
+  <text x="50" y="820" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="300" fill="#1e293b" letter-spacing="2">OUTCOMIST</text>
+  <text x="50" y="850" font-family="Arial, sans-serif" font-size="16" fill="#64748b">27. Light Normal - Refined Understated</text>
+
+  <!-- Option 28: Extra Bold Medium Spacing -->
+  <text x="50" y="1000" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#1e293b" letter-spacing="10">OUTCOMIST</text>
+  <text x="50" y="1030" font-family="Arial, sans-serif" font-size="16" fill="#64748b">28. Extra Bold Medium - Strong Confident</text>
+
+  <!-- Option 29: Thin Super Wide -->
+  <text x="50" y="1180" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="250" fill="#1e293b" letter-spacing="24">OUTCOMIST</text>
+  <text x="50" y="1210" font-family="Arial, sans-serif" font-size="16" fill="#64748b">29. Thin Super Wide - Luxurious Expansive</text>
+
+  <!-- Option 30: Semibold Comfortable -->
+  <text x="50" y="1360" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="600" fill="#1e293b" letter-spacing="8">OUTCOMIST</text>
+  <text x="50" y="1390" font-family="Arial, sans-serif" font-size="16" fill="#64748b">30. Semibold Comfortable - Professional Approachable</text>
+
+  <!-- Option 31: Black Extra Wide -->
+  <text x="50" y="1540" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="900" fill="#1e293b" letter-spacing="14">OUTCOMIST</text>
+  <text x="50" y="1570" font-family="Arial, sans-serif" font-size="16" fill="#64748b">31. Black Extra Wide - Bold Statement</text>
+
+  <!-- Option 32: Regular Slightly Wide -->
+  <text x="50" y="1720" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="400" fill="#1e293b" letter-spacing="12">OUTCOMIST</text>
+  <text x="50" y="1750" font-family="Arial, sans-serif" font-size="16" fill="#64748b">32. Regular Wide - Clean Contemporary</text>
+
+  <!-- Instructions -->
+  <rect x="50" y="1850" width="1100" height="180" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  <text x="600" y="1920" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#1e293b" text-anchor="middle">Text-Only Typography</text>
+  <text x="600" y="1960" font-family="Arial, sans-serif" font-size="18" fill="#64748b" text-anchor="middle">Which number (23-32) has the right feel?</text>
+  <text x="600" y="1995" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Pure typography - weight and spacing variations only</text>
+</svg>

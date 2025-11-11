@@ -4,6 +4,7 @@
   import ChatInput from '../components/input/ChatInput.svelte';
   import WelcomeScreen from '../components/empty-states/WelcomeScreen.svelte';
   import Header from '../components/layout/Header.svelte';
+  import Sidebar from '../components/layout/Sidebar.svelte';
 
   const API_URL = 'http://localhost:3001/api/explore';
 
@@ -97,27 +98,41 @@
       conversation.setProcessing(false);
     }
   }
+
+  function handleQuickReply(option: string) {
+    // When user clicks a quick reply button, submit that as their message
+    handleSubmit(option);
+  }
 </script>
 
-<div class="flex flex-col h-screen" style="background: #FAFBFC;">
-  <!-- Header (only show when conversation started) -->
-  {#if messages.length > 0}
-    <Header {projectTitle} />
-  {/if}
+<div class="flex h-screen" style="background: #FAFBFC;">
+  <!-- Left sidebar -->
+  <Sidebar />
 
-  <div class="flex-1 overflow-y-auto">
-    {#if messages.length === 0}
-      <WelcomeScreen />
-    {:else}
-      <MessageList {messages} />
+  <!-- Main content area -->
+  <div class="flex flex-col flex-1">
+    <!-- Header (only show when conversation started) -->
+    {#if messages.length > 0}
+      <Header {projectTitle} />
     {/if}
-  </div>
 
-  <div class="flex-shrink-0">
-    <ChatInput
-      onSubmit={handleSubmit}
-      disabled={isProcessing}
-      placeholder="Type your message..."
-    />
+    <div class="flex-1 overflow-y-auto">
+      {#if messages.length === 0}
+        <WelcomeScreen onSubmit={handleSubmit} disabled={isProcessing} />
+      {:else}
+        <MessageList {messages} {isProcessing} onQuickReply={handleQuickReply} />
+      {/if}
+    </div>
+
+    <!-- Only show bottom input when conversation started -->
+    {#if messages.length > 0}
+      <div class="flex-shrink-0">
+        <ChatInput
+          onSubmit={handleSubmit}
+          disabled={isProcessing}
+          placeholder="Type your message..."
+        />
+      </div>
+    {/if}
   </div>
 </div>

@@ -2,8 +2,11 @@
   import { afterUpdate, tick } from 'svelte';
   import type { Message } from '../../stores/conversation';
   import MessageBubble from './MessageBubble.svelte';
+  import ThinkingIndicator from './ThinkingIndicator.svelte';
 
   export let messages: Message[];
+  export let isProcessing: boolean = false;
+  export let onQuickReply: ((option: string) => void) | undefined = undefined;
 
   let messagesEnd: HTMLDivElement;
 
@@ -32,7 +35,13 @@
       role={message.role}
       content={message.content}
       isStreaming={message.isStreaming}
+      onQuickReply={onQuickReply}
     />
   {/each}
+
+  {#if isProcessing}
+    <ThinkingIndicator />
+  {/if}
+
   <div bind:this={messagesEnd}></div>
 </div>

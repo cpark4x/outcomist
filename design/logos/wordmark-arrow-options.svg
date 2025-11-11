@@ -1,0 +1,68 @@
+<svg width="1200" height="3000" viewBox="0 0 1200 3000" xmlns="http://www.w3.org/2000/svg">
+  <!-- 10 Arrow Wordmark Options for Outcomist -->
+
+  <!-- Option 1: Extra Bold Medium + Arrow End -->
+  <text x="50" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="10">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="130" font-family="Arial, sans-serif" font-size="16" fill="#64748b">1. Extra Bold Medium + Blue Arrow End</text>
+
+  <!-- Option 2: Semibold Wide + Arrow End -->
+  <text x="50" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="600" letter-spacing="12">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="310" font-family="Arial, sans-serif" font-size="16" fill="#64748b">2. Semibold Wide + Blue Arrow End</text>
+
+  <!-- Option 3: Light Extended + Arrow End -->
+  <text x="50" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="300" letter-spacing="16">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="490" font-family="Arial, sans-serif" font-size="16" fill="#64748b">3. Light Extended + Blue Arrow End</text>
+
+  <!-- Option 4: Black Extra Wide + Arrow End -->
+  <text x="50" y="640" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="900" letter-spacing="14">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="670" font-family="Arial, sans-serif" font-size="16" fill="#64748b">4. Black Extra Wide + Blue Arrow End</text>
+
+  <!-- Option 5: Arrow Replaces T -->
+  <text x="50" y="820" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="10">
+    <tspan fill="#1e293b">OUTCOMIS</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="850" font-family="Arial, sans-serif" font-size="16" fill="#64748b">5. Arrow Replaces T - Integrated</text>
+
+  <!-- Option 6: Regular Wide + Arrow with Space -->
+  <text x="50" y="1000" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="400" letter-spacing="12">
+    <tspan fill="#1e293b">OUTCOMIST </tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="1030" font-family="Arial, sans-serif" font-size="16" fill="#64748b">6. Regular Wide + Spaced Arrow</text>
+
+  <!-- Option 7: Bold Tight + Arrow -->
+  <text x="50" y="1180" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" letter-spacing="4">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="1210" font-family="Arial, sans-serif" font-size="16" fill="#64748b">7. Bold Tight + Blue Arrow - Compact Energy</text>
+
+  <!-- Option 8: Medium Normal + Small Arrow Superscript -->
+  <text x="50" y="1360" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="500" fill="#1e293b" letter-spacing="8">OUTCOMIST</text>
+  <text x="670" y="1330" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="600" fill="#3B7FE8">→</text>
+  <text x="50" y="1390" font-family="Arial, sans-serif" font-size="16" fill="#64748b">8. Medium Normal + Small Arrow Superscript</text>
+
+  <!-- Option 9: Thin Super Wide + Arrow -->
+  <text x="50" y="1540" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="250" letter-spacing="20">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="1570" font-family="Arial, sans-serif" font-size="16" fill="#64748b">9. Thin Super Wide + Blue Arrow - Elegant</text>
+
+  <!-- Option 10: Bold Compressed + Arrow -->
+  <text x="50" y="1720" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="-2" transform="scale(0.75, 1) translate(66.7, 0)">
+    <tspan fill="#1e293b">OUTCOMIST</tspan><tspan fill="#3B7FE8">→</tspan>
+  </text>
+  <text x="50" y="1750" font-family="Arial, sans-serif" font-size="16" fill="#64748b">10. Bold Compressed + Arrow - Dense Forward</text>
+
+  <!-- Instructions -->
+  <rect x="50" y="1850" width="1100" height="200" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  <text x="600" y="1930" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#1e293b" text-anchor="middle">Arrow Wordmark Options</text>
+  <text x="600" y="1975" font-family="Arial, sans-serif" font-size="18" fill="#64748b" text-anchor="middle">Which number (1-10) feels right?</text>
+  <text x="600" y="2015" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Arrow (→) represents forward motion and outcomes achieved</text>
+</svg>

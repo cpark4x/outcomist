@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Screen Redesign Comparison</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f8f9fc;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #0D0F11;
+      font-size: 28px;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .design {
+      background: white;
+      border: 2px solid #E4E6E8;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .design-header {
+      background: #f8f9fc;
+      padding: 16px 24px;
+      border-bottom: 2px solid #E4E6E8;
+      font-weight: 600;
+      color: #0D0F11;
+      font-size: 16px;
+    }
+
+    .design-content {
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      position: relative;
+    }
+
+    /* Current Design Styles */
+    .current .accent-line {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, #3B7FE8 0%, #5E8FF5 100%);
+      border-radius: 2px;
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+
+    .current .logo {
+      height: 56px;
+      margin-bottom: 16px;
+    }
+
+    .current .tagline {
+      font-size: 17px;
+      color: #64676B;
+      text-align: center;
+      max-width: 520px;
+      line-height: 1.6;
+      font-weight: 400;
+      margin-bottom: 48px;
+    }
+
+    .current .example-prompts {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .current .example-prompt {
+      padding: 14px 18px;
+      background: white;
+      border: 1px solid #E4E6E8;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #64676B;
+      cursor: pointer;
+      transition: all 150ms ease-out;
+    }
+
+    .current .example-prompt:hover {
+      border-color: #3B7FE8;
+      background: #F8F9FC;
+      color: #0D0F11;
+      transform: translateY(-1px);
+    }
+
+    /* Proposed Design Styles */
+    .proposed .logo {
+      height: 56px;
+      margin-bottom: 24px;
+    }
+
+    .proposed .tagline {
+      font-size: 17px;
+      color: #64676B;
+      text-align: center;
+      max-width: 520px;
+      line-height: 1.6;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    .proposed .input-container {
+      width: 100%;
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+
+    .proposed .main-input {
+      width: 100%;
+      padding: 18px 24px;
+      font-size: 16px;
+      border: 2px solid #E4E6E8;
+      border-radius: 12px;
+      outline: none;
+      transition: all 200ms ease-out;
+      background: white;
+      color: #0D0F11;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .proposed .main-input:focus {
+      border-color: #3B7FE8;
+      box-shadow: 0 0 0 4px rgba(59, 127, 232, 0.1);
+    }
+
+    .proposed .main-input::placeholder {
+      color: #94969A;
+    }
+
+    .proposed .example-prompts {
+      display: flex;
+      gap: 12px;
+      max-width: 680px;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .proposed .example-prompt {
+      padding: 10px 16px;
+      background: white;
+      border: 1px solid #E4E6E8;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #64676B;
+      cursor: pointer;
+      transition: all 150ms ease-out;
+      white-space: nowrap;
+    }
+
+    .proposed .example-prompt:hover {
+      border-color: #3B7FE8;
+      background: #F8F9FC;
+      color: #0D0F11;
+      transform: translateY(-1px);
+    }
+
+    .notes {
+      background: #fffbeb;
+      border: 2px solid #fde68a;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 40px;
+    }
+
+    .notes h2 {
+      font-size: 18px;
+      color: #92400e;
+      margin-bottom: 16px;
+    }
+
+    .notes ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .notes li {
+      color: #92400e;
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .notes li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Manus-inspired Design Styles */
+    .manus .manus-question {
+      font-size: 32px;
+      color: #0D0F11;
+      font-weight: 500;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .manus .manus-input-container {
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 24px;
+    }
+
+    .manus .manus-input {
+      width: 100%;
+      padding: 20px 24px;
+      font-size: 16px;
+      border: 2px solid #E4E6E8;
+      border-radius: 16px;
+      outline: none;
+      transition: all 200ms ease-out;
+      background: white;
+      color: #0D0F11;
+      font-family: system-ui, -apple-system, sans-serif;
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.5;
+    }
+
+    .manus .manus-input:focus {
+      border-color: #3B7FE8;
+      box-shadow: 0 0 0 4px rgba(59, 127, 232, 0.08);
+    }
+
+    .manus .manus-input::placeholder {
+      color: #B8BABD;
+    }
+
+    .manus .manus-explore {
+      font-size: 14px;
+      color: #94969A;
+      cursor: pointer;
+      transition: color 150ms ease-out;
+      text-align: center;
+    }
+
+    .manus .manus-explore:hover {
+      color: #3B7FE8;
+    }
+
+    @media (max-width: 1400px) {
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome Screen Redesign Comparison</h1>
+
+    <div class="comparison">
+      <!-- Current Design -->
+      <div class="design current">
+        <div class="design-header">Current Design</div>
+        <div class="design-content">
+          <div class="accent-line"></div>
+
+          <img src="../outcomist-demo/src/assets/outcomist-logo-web.svg" alt="Outcomist" class="logo">
+
+          <p class="tagline">
+            Navigate complex decisions with clarity.
+            <br>
+            <span style="opacity: 0.75;">Ask about any choice you're facing.</span>
+          </p>
+
+          <div class="example-prompts">
+            <div class="example-prompt">Should I switch careers?</div>
+            <div class="example-prompt">How do I prioritize competing projects?</div>
+            <div class="example-prompt">Is now the right time to start my business?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proposed Design -->
+      <div class="design proposed">
+        <div class="design-header">Proposed Design (ChatGPT-inspired)</div>
+        <div class="design-content">
+          <img src="../outcomist-demo/src/assets/outcomist-logo-web.svg" alt="Outcomist" class="logo">
+
+          <p class="tagline">
+            Navigate complex decisions with clarity.
+          </p>
+
+          <div class="input-container">
+            <input
+              type="text"
+              class="main-input"
+              placeholder="What decision are you facing?"
+            >
+          </div>
+
+          <div class="example-prompts">
+            <div class="example-prompt">Should I switch careers?</div>
+            <div class="example-prompt">Prioritize competing projects</div>
+            <div class="example-prompt">Start my business now?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manus-inspired Design -->
+      <div class="design manus">
+        <div class="design-header">Manus-Inspired Design (Best)</div>
+        <div class="design-content">
+          <div class="manus-question">What decision are you facing?</div>
+
+          <div class="manus-input-container">
+            <textarea
+              class="manus-input"
+              placeholder="Describe your decision..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="manus-explore">
+            Explore example decisions ↓
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <h2>Why Manus-Inspired Design Is Best</h2>
+      <ul>
+        <li><strong>Much larger input area</strong> — Textarea (not single-line input) invites detailed descriptions</li>
+        <li><strong>Prominent question as heading</strong> — "What decision are you facing?" is personal and direct</li>
+        <li><strong>No visual clutter</strong> — Removed logo, accent line, tagline - just the essentials</li>
+        <li><strong>Subtle example discovery</strong> — "Explore example decisions" link at bottom, not in your face</li>
+        <li><strong>Premium spacing</strong> — Generous breathing room makes it feel high-quality</li>
+        <li><strong>Larger input = more inviting</strong> — Signals "take your time, be detailed"</li>
+        <li><strong>Better first impression</strong> — Immediately actionable, not marketing-heavy</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
