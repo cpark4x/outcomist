@@ -6,7 +6,14 @@
   export let content: string;
   export let isStreaming: boolean = false;
 
-  $: htmlContent = marked(content);
+  // Configure marked to be synchronous and return HTML string
+  let htmlContent = '';
+  $: {
+    if (role === 'assistant') {
+      // marked.parse() is the synchronous method in v17
+      htmlContent = marked.parse(content, { async: false }) as string;
+    }
+  }
 </script>
 
 <!-- Option C: Precise Elegance - Cool grays, compact, sophisticated -->
@@ -71,8 +78,8 @@
   }
 
   :global(.prose strong) {
-    font-weight: 600;
-    color: #0D0F11;
+    font-weight: 500;
+    color: #1A1D21;
   }
 
   /* Enhanced list styling */

@@ -1,5 +1,36 @@
 # Changelog
 
+## 2025-01-10 - Conversational UX Improvements
+
+### Changed
+- **Removed Discovery Transition Friction**: Eliminated formal preview boxes with "yes/clarify" gates
+  - Users can now answer immediately after first question
+  - Discovery feels like natural conversation, not structured interview
+  - Removed entire 58-line "Discovery Transition" section from explore.md
+
+- **Inline Time Expectations**: Changed from formal preview to inline parenthetical
+  - Format: "(~10-15 min)" instead of separate time box
+  - Honest estimate (10-15 min) reflects actual Tier 2 discovery time
+  - Works seamlessly in both CLI and web UI
+
+- **Tighter Opening Language**: Reduced verbosity by ~15 words
+  - FROM: "To give you a solid recommendation, I'll ask a few questions to understand your situation - what's driving this, what options you're considering, and what's working vs. not in your current [context]."
+  - TO: "I'll ask a few questions to understand your situation - what's driving this, what you're considering, and what matters most."
+
+- **Lighter Markdown Bold Styling**: Reduced visual weight of bold text in assistant messages
+  - Font weight: 600 → 500 (semi-bold → medium)
+  - Color: #0D0F11 → #1A1D21 (pure black → slightly lighter)
+  - Result: Clearer emphasis without feeling "heavy"
+
+### Files Modified
+- `.claude/commands/explore.md` - Removed discovery transition section, updated opening language and time estimate
+- `src/components/messages/MessageBubble.svelte` - Reduced bold text weight and softened color
+
+### Technical Details
+- Backend restart required to load explore.md changes
+- Frontend CSS hot-reloads automatically via Vite
+- No changes to progressive disclosure or Tier 1→2→3→4 ladder system
+
 ## 2025-01-10 - Voice Input & UI Polish
 
 ### Added
