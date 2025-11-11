@@ -208,6 +208,79 @@ app.post('/api/profile', async (req, res) => {
   }
 });
 
+// Generate AI summary of profile
+app.post('/api/profile/summarize', async (req, res) => {
+  try {
+    const profile = req.body;
+
+    const summaryPrompt = `Create a concise, natural summary (2-3 sentences) of this person's profile:
+
+Goals: ${profile.goals?.join(', ') || 'None'}
+Constraints: ${profile.constraints?.join(', ') || 'None'}
+Personal Facts: ${profile.personalFacts?.join('; ') || 'None'}
+
+Write as if speaking directly to the person. Focus on what matters most to them.`;
+
+    const response = await client.messages.create({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 200,
+      system: 'You are a helpful assistant that creates concise, warm summaries of user profiles.',
+      messages: [{
+        role: 'user',
+        content: summaryPrompt
+      }]
+    });
+
+    const summary = response.content[0].text.trim();
+    res.json({ summary });
+
+  } catch (error) {
+    console.error('Error generating summary:', error);
+    res.status(500).json({
+      error: 'Failed to generate summary',
+      details: error.message
+    });
+  }
+});
+
+// Answer questions about profile
+app.post('/api/profile/ask', async (req, res) => {
+  try {
+    const { profile, question } = req.body;
+
+    const answerPrompt = `Answer this question about the user's profile:
+
+Question: ${question}
+
+Profile data:
+- Goals: ${profile.goals?.join(', ') || 'None'}
+- Constraints: ${profile.constraints?.join(', ') || 'None'}
+- Personal Facts: ${profile.personalFacts?.join('; ') || 'None'}
+
+Provide a direct, helpful answer based only on the profile data. If the information isn't in the profile, say so clearly.`;
+
+    const response = await client.messages.create({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 300,
+      system: 'You are a helpful assistant that answers questions about user profiles accurately and concisely.',
+      messages: [{
+        role: 'user',
+        content: answerPrompt
+      }]
+    });
+
+    const answer = response.content[0].text.trim();
+    res.json({ answer });
+
+  } catch (error) {
+    console.error('Error answering question:', error);
+    res.status(500).json({
+      error: 'Failed to answer question',
+      details: error.message
+    });
+  }
+});
+
 // Generate AI-powered conversation title
 app.post('/api/generate-title', async (req, res) => {
   const { userMessage, conversationContext } = req.body;
