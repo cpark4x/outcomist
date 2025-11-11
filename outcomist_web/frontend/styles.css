@@ -128,14 +128,13 @@ header {
 }
 
 .logo {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-semibold);
-    letter-spacing: -0.5px;
     margin-bottom: var(--space-2);
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-info) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+}
+
+.logo-image {
+    height: 48px;
+    width: auto;
+    display: block;
 }
 
 .tagline {
@@ -888,8 +887,8 @@ header {
         padding: var(--space-8) var(--space-4);
     }
 
-    .logo {
-        font-size: var(--font-size-3xl);
+    .logo-image {
+        height: 36px;
     }
 
     .progress-stepper {
