@@ -12,15 +12,12 @@
     align-items: center;
   "
 >
-  <div
-    style="
-      font-size: 18px;
-      font-weight: 600;
-      color: #0D0F11;
-      letter-spacing: -0.02em;
-    "
-  >
-    Outcomist
+  <div>
+    <img
+      src="/src/assets/outcomist-logo.svg"
+      alt="Outcomist"
+      style="height: 32px; width: auto; display: block;"
+    />
   </div>
 
   <div
