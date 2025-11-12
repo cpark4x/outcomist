@@ -1,24 +1,8 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# AI Voiceover Generation Temporary Files
+voiceover.mp3
+temp_sped_up_video.mp4
+frame_*.png
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Output videos (too large for git, keep on Desktop)
+Demo-*.mp4
+*-With-Voiceover.mp4
