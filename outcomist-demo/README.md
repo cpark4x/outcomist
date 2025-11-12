@@ -36,6 +36,14 @@ A professional web interface for the Outcomist decision exploration tool. The de
 npm install
 ```
 
+### Configuration
+
+**Environment Variables:**
+- `ANTHROPIC_API_KEY` (required): Your Anthropic API key
+- `EXPLORE_PROMPT_PATH` (optional): Custom path to explore.md prompt file
+  - Default: `../.claude/commands/explore.md` (relative to server.js)
+  - Example: `EXPLORE_PROMPT_PATH=/custom/path/explore.md npm run server`
+
 ### Start Backend Server
 The backend connects to the real `/explore` CLI command:
 

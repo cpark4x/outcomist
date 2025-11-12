@@ -5,6 +5,7 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
 import { loadProfile, saveProfile, getProfileContext, getExtractionPrompt, mergeProfileFacts } from './lib/profile.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -45,14 +46,17 @@ const client = new Anthropic({
 });
 
 // Load the /explore prompt from the CLI command file
-const explorePromptPath = path.join(__dirname, '../.claude/commands/explore.md');
+// Use environment variable with fallback to default location
+const explorePromptPath = process.env.EXPLORE_PROMPT_PATH ||
+  path.join(__dirname, '../.claude/commands/explore.md');
 let EXPLORE_SYSTEM_PROMPT = '';
 
 try {
   EXPLORE_SYSTEM_PROMPT = fs.readFileSync(explorePromptPath, 'utf-8');
-  console.log('✓ Loaded /explore prompt from .claude/commands/explore.md');
+  console.log(`✓ Loaded /explore prompt from ${explorePromptPath}`);
 } catch (error) {
   console.error('❌ Failed to load /explore prompt:', error.message);
+  console.error(`   Tried path: ${explorePromptPath}`);
   console.log('Using fallback prompt');
   EXPLORE_SYSTEM_PROMPT = 'You are Outcomist, a decision exploration tool that helps users think through decisions.';
 }
@@ -329,6 +333,17 @@ Return ONLY the title, nothing else.`;
       error: 'Failed to generate title',
       details: error.message
     });
+  }
+});
+
+// Launch Terminal endpoint
+app.get('/launch-terminal', (req, res) => {
+  try {
+    exec('open -a Terminal');
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error launching Terminal:', error);
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
