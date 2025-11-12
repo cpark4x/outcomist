@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Placement Options</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #F8F9FA;
+            padding: 40px;
+        }
+
+        .option {
+            background: white;
+            border: 2px solid #E4E6E8;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .option-label {
+            background: #F8F9FA;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0D0F11;
+            border-bottom: 1px solid #E4E6E8;
+        }
+
+        .mockup-container {
+            display: flex;
+            min-height: 400px;
+        }
+
+        .sidebar {
+            width: 60px;
+            background: #FFFFFF;
+            border-right: 1px solid #E4E6E8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px 0;
+            flex-shrink: 0;
+        }
+
+        .sidebar-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: #F3F4F6;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6B7280;
+            font-size: 20px;
+        }
+
+        .sidebar-icon.logo {
+            background: #3B7FE8;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .main-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #E4E6E8;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .logo {
+            height: 26.4px;
+            width: auto;
+            background: linear-gradient(90deg, #FF6B35, #F7931E);
+            border-radius: 4px;
+            padding: 4px 12px;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .breadcrumb-item {
+            color: #94969A;
+            font-weight: 500;
+        }
+
+        .breadcrumb-item.active {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        .breadcrumb-sep {
+            color: #E4E6E8;
+        }
+
+        .title {
+            font-size: 15px;
+            color: #3D4043;
+            font-weight: 500;
+            padding-top: 4px;
+        }
+
+        .title-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .title-large {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #94969A;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .profile-btn {
+            padding: 6px 16px;
+            border-radius: 8px;
+            border: 1px solid #E4E6E8;
+            background: white;
+            color: #3D4043;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .chat-content {
+            flex: 1;
+            background: #FAFBFC;
+            padding: 24px;
+        }
+
+        .message {
+            max-width: 600px;
+            margin: 0 auto 16px;
+            padding: 16px 20px;
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .notes {
+            background: #F8F9FA;
+            padding: 16px 24px;
+            border-top: 1px solid #E4E6E8;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #3D4043;
+        }
+
+        .notes strong {
+            color: #0D0F11;
+        }
+
+        .recommended {
+            border-color: #3B7FE8;
+            border-width: 2px;
+        }
+
+        .recommended .option-label {
+            background: #F0F5FF;
+            color: #3B7FE8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Current Design -->
+    <div class="option">
+        <div class="option-label">CURRENT: Logo in Header with Breadcrumbs</div>
+        <div class="mockup-container">
+            <div class="sidebar">
+                <div class="sidebar-icon">+</div>
+                <div class="sidebar-icon">⏱</div>
+                <div class="sidebar-icon">🔍</div>
+            </div>
+            <div class="main-area">
+                <div class="header">
+                    <div class="header-left">
+                        <div class="logo">OUTCOMIST</div>
+                        <div class="breadcrumbs">
+                            <span class="breadcrumb-item active">Discover</span>
+                            <span class="breadcrumb-sep">›</span>
+                            <span class="breadcrumb-item">Review</span>
+                            <span class="breadcrumb-sep">›</span>
+                            <span class="breadcrumb-item">Execute</span>
+                        </div>
+                    </div>
+                    <div class="title">Trip Planning Assistance</div>
+                    <button class="profile-btn">Profile</button>
+                </div>
+                <div class="chat-content">
+                    <div class="message">I can help you plan your trip...</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Current state:</strong> Logo and breadcrumbs stacked on left, title in center, profile on right.
+        </div>
+    </div>
+
+    <!-- Option 1 -->
+    <div class="option">
+        <div class="option-label">OPTION 1: Logo + Breadcrumbs Inline, Title Moved Left</div>
+        <div class="mockup-container">
+            <div class="sidebar">
+                <div class="sidebar-icon">+</div>
+                <div class="sidebar-icon">⏱</div>
+                <div class="sidebar-icon">🔍</div>
+            </div>
+            <div class="main-area">
+                <div class="header" style="align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 24px;">
+                        <div class="logo">OUTCOMIST</div>
+                        <div class="breadcrumbs">
+                            <span class="breadcrumb-item active">Discover</span>
+                            <span class="breadcrumb-sep">›</span>
+                            <span class="breadcrumb-item">Review</span>
+                            <span class="breadcrumb-sep">›</span>
+                            <span class="breadcrumb-item">Execute</span>
+                        </div>
+                    </div>
+                    <div class="title">Trip Planning Assistance</div>
+                    <button class="profile-btn">Profile</button>
+                </div>
+                <div class="chat-content">
+                    <div class="message">I can help you plan your trip...</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> More balanced horizontal layout, logo stays visible<br>
+            <strong>Cons:</strong> Takes more horizontal space, might feel cramped on smaller screens
+        </div>
+    </div>
+
+    <!-- Option 2 - RECOMMENDED -->
+    <div class="option recommended">
+        <div class="option-label">⭐ OPTION 2: Remove Logo from Header (Cleanest)</div>
+        <div class="mockup-container">
+            <div class="sidebar">
+                <div class="sidebar-icon">+</div>
+                <div class="sidebar-icon">⏱</div>
+                <div class="sidebar-icon">🔍</div>
+            </div>
+            <div class="main-area">
+                <div class="header" style="align-items: center;">
+                    <div class="breadcrumbs">
+                        <span class="breadcrumb-item active">Discover</span>
+                        <span class="breadcrumb-sep">›</span>
+                        <span class="breadcrumb-item">Review</span>
+                        <span class="breadcrumb-sep">›</span>
+                        <span class="breadcrumb-item">Execute</span>
+                    </div>
+                    <div class="title">Trip Planning Assistance</div>
+                    <button class="profile-btn">Profile</button>
+                </div>
+                <div class="chat-content">
+                    <div class="message">I can help you plan your trip...</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Cleanest, most spacious, focuses on conversation content<br>
+            <strong>Cons:</strong> No logo reinforcement on conversation page<br>
+            <strong>Best for:</strong> Minimal distraction, maximum focus on content
+        </div>
+    </div>
+
+    <!-- Option 3 -->
+    <div class="option">
+        <div class="option-label">OPTION 3: Small Logo Icon in Sidebar</div>
+        <div class="mockup-container">
+            <div class="sidebar">
+                <div class="sidebar-icon logo">O</div>
+                <div style="height: 16px;"></div>
+                <div class="sidebar-icon">+</div>
+                <div class="sidebar-icon">⏱</div>
+                <div class="sidebar-icon">🔍</div>
+            </div>
+            <div class="main-area">
+                <div class="header" style="align-items: center;">
+                    <div class="breadcrumbs">
+                        <span class="breadcrumb-item active">Discover</span>
+                        <span class="breadcrumb-sep">›</span>
+                        <span class="breadcrumb-item">Review</span>
+                        <span class="breadcrumb-sep">›</span>
+                        <span class="breadcrumb-item">Execute</span>
+                    </div>
+                    <div class="title">Trip Planning Assistance</div>
+                    <button class="profile-btn">Profile</button>
+                </div>
+                <div class="chat-content">
+                    <div class="message">I can help you plan your trip...</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Subtle brand presence, clean header, always visible<br>
+            <strong>Cons:</strong> Logo becomes less prominent<br>
+            <strong>Best for:</strong> Balance between branding and minimalism
+        </div>
+    </div>
+
+    <!-- Option 4 -->
+    <div class="option">
+        <div class="option-label">OPTION 4: Logo Prominent, Title as Subtitle</div>
+        <div class="mockup-container">
+            <div class="sidebar">
+                <div class="sidebar-icon">+</div>
+                <div class="sidebar-icon">⏱</div>
+                <div class="sidebar-icon">🔍</div>
+            </div>
+            <div class="main-area">
+                <div class="header">
+                    <div class="header-left">
+                        <div class="logo" style="height: 32px; font-size: 16px;">OUTCOMIST</div>
+                        <div class="breadcrumbs">
+                            <span class="breadcrumb-item active">Discover</span>
+                            <span class="breadcrumb-sep">›</span>
+                            <span class="breadcrumb-item">Review</span>
+                            <span class="breadcrumb-sep">›</span>
+                            <span class="breadcrumb-item">Execute</span>
+                        </div>
+                        <div class="subtitle">Trip Planning Assistance</div>
+                    </div>
+                    <button class="profile-btn">Profile</button>
+                </div>
+                <div class="chat-content">
+                    <div class="message">I can help you plan your trip...</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Strong brand presence, clear hierarchy<br>
+            <strong>Cons:</strong> Title becomes less prominent, takes vertical space<br>
+            <strong>Best for:</strong> When branding is more important than project title
+        </div>
+    </div>
+
+    <!-- Option 5 -->
+    <div class="option">
+        <div class="option-label">OPTION 5: Integrated Breadcrumb-Logo</div>
+        <div class="mockup-container">
+            <div class="sidebar">
+                <div class="sidebar-icon">+</div>
+                <div class="sidebar-icon">⏱</div>
+                <div class="sidebar-icon">🔍</div>
+            </div>
+            <div class="main-area">
+                <div class="header" style="align-items: center;">
+                    <div class="breadcrumbs">
+                        <span class="breadcrumb-item" style="color: #FF6B35; font-weight: 700;">OUTCOMIST</span>
+                        <span class="breadcrumb-sep">›</span>
+                        <span class="breadcrumb-item active">Discover</span>
+                        <span class="breadcrumb-sep">›</span>
+                        <span class="breadcrumb-item">Review</span>
+                        <span class="breadcrumb-sep">›</span>
+                        <span class="breadcrumb-item">Execute</span>
+                    </div>
+                    <div class="title">Trip Planning Assistance</div>
+                    <button class="profile-btn">Profile</button>
+                </div>
+                <div class="chat-content">
+                    <div class="message">I can help you plan your trip...</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Most compact, creates unified navigation element<br>
+            <strong>Cons:</strong> Logo becomes just text, less prominent branding<br>
+            <strong>Best for:</strong> Maximum space efficiency
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="option">
+        <div class="option-label">SUMMARY & RECOMMENDATION</div>
+        <div class="notes" style="border: none;">
+            <strong>Cleanest & Most Focused:</strong> Option 2 (remove logo from header)<br><br>
+            <strong>Best Balance:</strong> Option 3 (small logo icon in sidebar)<br><br>
+            <strong>If Branding Critical:</strong> Option 1 (inline logo + breadcrumbs)<br><br>
+            <strong>Most Compact:</strong> Option 5 (integrated breadcrumb)<br><br>
+            <strong>My Recommendation:</strong> Option 2 or 3. Once users are in a conversation, they don't need constant brand reinforcement. Focus should be on the conversation itself. Option 2 gives maximum breathing room, Option 3 keeps subtle brand presence.
+        </div>
+    </div>
+</body>
+</html>

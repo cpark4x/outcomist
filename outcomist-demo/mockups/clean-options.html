@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Phase Indicators</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #FAFBFC;
+            padding: 40px;
+        }
+
+        .option {
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .option-label {
+            font-size: 14px;
+            color: #94969A;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-demo {
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        /* Option 1: Words Only */
+        .indicator-words {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-size: 14px;
+        }
+
+        .indicator-words .phase {
+            color: #94969A;
+            font-weight: 500;
+        }
+
+        .indicator-words .phase.active {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        .indicator-words .arrow {
+            color: #E4E6E8;
+            font-size: 18px;
+        }
+
+        /* Option 2: Dots Only */
+        .indicator-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #E4E6E8;
+            transition: all 200ms;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dot.active {
+            background: #3B7FE8;
+            width: 12px;
+            height: 12px;
+        }
+
+        .dot:hover::after {
+            content: attr(data-label);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 8px;
+            background: #0D0F11;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .dot-line {
+            width: 40px;
+            height: 2px;
+            background: #E4E6E8;
+        }
+
+        /* Option 3: Stepped Progress */
+        .indicator-stepped {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            color: #94969A;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .step.active {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        .step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -8px;
+            color: #E4E6E8;
+            font-size: 14px;
+        }
+
+        /* Option 4: Minimalist Single Line */
+        .indicator-minimal {
+            text-align: center;
+            font-size: 12px;
+            color: #94969A;
+        }
+
+        .indicator-minimal .current {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        /* Option 5: Progress Bar */
+        .indicator-bar {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .bar-track {
+            height: 4px;
+            background: #E4E6E8;
+            border-radius: 2px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: #3B7FE8;
+            border-radius: 2px;
+            width: 33%;
+            transition: width 300ms;
+        }
+
+        .bar-labels {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bar-label {
+            font-size: 12px;
+            color: #94969A;
+            font-weight: 500;
+        }
+
+        .bar-label.active {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        .notes {
+            margin-top: 16px;
+            padding: 12px;
+            background: #F8F9FA;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #3D4043;
+            line-height: 1.6;
+        }
+
+        .notes strong {
+            color: #0D0F11;
+        }
+    </style>
+</head>
+<body>
+    <!-- Option 1: Words Only -->
+    <div class="option">
+        <div class="option-label">Option 1: Words Only (Cleanest)</div>
+        <div class="header-demo">
+            <div class="indicator-words">
+                <span class="phase active">Discover</span>
+                <span class="arrow">→</span>
+                <span class="phase">Review</span>
+                <span class="arrow">→</span>
+                <span class="phase">Execute</span>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Clear, readable, no interpretation needed<br>
+            <strong>Cons:</strong> Takes more horizontal space<br>
+            <strong>Best for:</strong> Desktop, maximum clarity
+        </div>
+    </div>
+
+    <!-- Option 2: Dots Only with Hover -->
+    <div class="option">
+        <div class="option-label">Option 2: Dots Only (Hover for Labels)</div>
+        <div class="header-demo">
+            <div class="indicator-dots">
+                <div class="dot active" data-label="Discover"></div>
+                <div class="dot-line"></div>
+                <div class="dot" data-label="Review"></div>
+                <div class="dot-line"></div>
+                <div class="dot" data-label="Execute"></div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Minimal space, clean aesthetic, hover reveals names<br>
+            <strong>Cons:</strong> Requires hover/tap to understand, not immediately clear<br>
+            <strong>Best for:</strong> Minimal UI, mobile-friendly
+        </div>
+    </div>
+
+    <!-- Option 3: Compact Steps -->
+    <div class="option">
+        <div class="option-label">Option 3: Compact Steps</div>
+        <div class="header-demo">
+            <div class="indicator-stepped">
+                <div class="step active">Discover</div>
+                <div class="step">Review</div>
+                <div class="step">Execute</div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Balanced - readable but compact, arrows built-in<br>
+            <strong>Cons:</strong> Slightly more visual weight<br>
+            <strong>Best for:</strong> Good middle ground
+        </div>
+    </div>
+
+    <!-- Option 4: Single Line Text -->
+    <div class="option">
+        <div class="option-label">Option 4: Text Only (Ultra Minimal)</div>
+        <div class="header-demo">
+            <div class="indicator-minimal">
+                <span class="current">Discover</span> · Review · Execute
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Extremely compact, feels like metadata<br>
+            <strong>Cons:</strong> Less emphasis, might feel too subtle<br>
+            <strong>Best for:</strong> When you want phases barely noticeable
+        </div>
+    </div>
+
+    <!-- Option 5: Progress Bar -->
+    <div class="option">
+        <div class="option-label">Option 5: Progress Bar Style</div>
+        <div class="header-demo">
+            <div class="indicator-bar">
+                <div class="bar-track">
+                    <div class="bar-fill"></div>
+                </div>
+                <div class="bar-labels">
+                    <span class="bar-label active">Discover</span>
+                    <span class="bar-label">Review</span>
+                    <span class="bar-label">Execute</span>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Clear progress visualization, familiar pattern<br>
+            <strong>Cons:</strong> Takes vertical space, might feel too "app-like"<br>
+            <strong>Best for:</strong> When progress feeling is important
+        </div>
+    </div>
+</body>
+</html>

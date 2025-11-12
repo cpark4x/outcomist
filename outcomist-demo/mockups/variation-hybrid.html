@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Approach: Welcome + Phase Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #FAFBFC;
+        }
+
+        .label {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10B981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            z-index: 1000;
+        }
+
+        .label::before {
+            content: '★ ';
+        }
+
+        /* Welcome Screen Styles */
+        .welcome-screen {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #0D0F11;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo-arrow {
+            color: #FF6B35;
+            font-size: 18px;
+        }
+
+        .welcome-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 24px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #0D0F11;
+            font-weight: 500;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .phase-mini {
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 10px;
+            padding: 16px 24px;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .phase-mini-number {
+            font-size: 11px;
+            color: #94969A;
+            font-weight: 500;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .phase-mini-title {
+            font-size: 15px;
+            color: #0D0F11;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .phase-mini-time {
+            font-size: 12px;
+            color: #94969A;
+        }
+
+        .arrow-mini {
+            color: #B8BABD;
+            font-size: 18px;
+        }
+
+        .input-container {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 12px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 20px 100px 20px 24px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-family: inherit;
+            color: #0D0F11;
+            resize: vertical;
+            border-radius: 12px;
+        }
+
+        textarea::placeholder {
+            color: #B8BABD;
+        }
+
+        .button-group {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: #F8F9FA;
+            border: 1px solid #E4E6E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3D4043;
+            font-size: 16px;
+        }
+
+        .send-btn {
+            background: #3B7FE8;
+            border: none;
+            color: white;
+        }
+
+        /* Conversation Styles */
+        .conversation-screen {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #E4E6E8;
+            padding: 24px 24px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 15px;
+            color: #3D4043;
+            font-weight: 500;
+        }
+
+        .chat-area {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+        }
+
+        .message.user {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 600px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .message.user .message-bubble {
+            background: #3B7FE8;
+            color: white;
+        }
+
+        .message.assistant .message-bubble {
+            background: white;
+            border: 1px solid #E4E6E8;
+            color: #0D0F11;
+        }
+
+        .phase-transition {
+            background: linear-gradient(135deg, #F0F5FF 0%, #F8F9FA 100%);
+            border-left: 4px solid #3B7FE8;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .phase-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .phase-transition-title {
+            font-size: 18px;
+            color: #0D0F11;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .phase-transition-desc {
+            font-size: 14px;
+            color: #3D4043;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .phase-next {
+            font-size: 13px;
+            color: #94969A;
+            font-weight: 500;
+        }
+
+        .phase-next strong {
+            color: #3B7FE8;
+        }
+
+        .screen-divider {
+            margin: 60px 0;
+            text-align: center;
+            color: #94969A;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .screen-divider::before,
+        .screen-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #E4E6E8;
+        }
+
+        .screen-divider::before {
+            left: 0;
+        }
+
+        .screen-divider::after {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="label">RECOMMENDED: Hybrid Approach</div>
+
+    <!-- Welcome Screen -->
+    <div class="welcome-screen">
+        <div class="logo">
+            OUTCOMIST<span class="logo-arrow">≫</span>
+        </div>
+
+        <div class="welcome-content">
+            <h1>What are you deciding?</h1>
+
+            <div class="timeline">
+                <div class="phase-mini">
+                    <div class="phase-mini-number">Phase 1</div>
+                    <div class="phase-mini-title">Discover</div>
+                    <div class="phase-mini-time">~10 min</div>
+                </div>
+
+                <div class="arrow-mini">→</div>
+
+                <div class="phase-mini">
+                    <div class="phase-mini-number">Phase 2</div>
+                    <div class="phase-mini-title">Review</div>
+                    <div class="phase-mini-time">Proposal</div>
+                </div>
+
+                <div class="arrow-mini">→</div>
+
+                <div class="phase-mini">
+                    <div class="phase-mini-number">Phase 3</div>
+                    <div class="phase-mini-title">Execute</div>
+                    <div class="phase-mini-time">Plan</div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea placeholder="Describe your decision..."></textarea>
+                    <div class="button-group">
+                        <button class="icon-btn">🎤</button>
+                        <button class="icon-btn send-btn">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen-divider">↓ User starts conversation ↓</div>
+
+    <!-- Conversation Screen -->
+    <div class="conversation-screen" style="display: block;">
+        <div class="header">
+            <div class="logo">
+                OUTCOMIST<span class="logo-arrow">≫</span>
+            </div>
+            <div class="title">Vegas Thanksgiving Family Trip</div>
+        </div>
+
+        <div class="chat-area">
+            <div class="message user">
+                <div class="message-bubble">
+                    help me plan trip to vegas with my wife (laura), daughter (charlotte 8), son (mason 12). we are going over thanksgiving...
+                </div>
+            </div>
+
+            <div class="message assistant">
+                <div class="message-bubble">
+                    I'll help you plan a Vegas trip that works for everyone – kids, adults, and extended family over Thanksgiving.
+                </div>
+            </div>
+
+            <div class="phase-transition">
+                <div class="phase-icon">🔍</div>
+                <div class="phase-transition-title">Phase 1: Discover</div>
+                <div class="phase-transition-desc">
+                    I'll ask questions to understand your priorities, constraints, and what matters most. This usually takes about 10 minutes.
+                </div>
+                <div class="phase-next">
+                    <strong>Next:</strong> Review Proposal → Execute Plan
+                </div>
+            </div>
+
+            <div class="message assistant">
+                <div class="message-bubble">
+                    <strong>What's your current situation with this trip?</strong><br><br>
+                    • Is this already booked (flights/hotels)?<br>
+                    • Any specific must-dos with kids that age?<br>
+                    • What's the family dynamic like?
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

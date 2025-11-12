@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Phase Badge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #FAFBFC;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #E4E6E8;
+            padding: 24px 24px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0D0F11;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo-arrow {
+            color: #FF6B35;
+            font-size: 18px;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title {
+            font-size: 15px;
+            color: #3D4043;
+            font-weight: 500;
+        }
+
+        .phase-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: #F0F5FF;
+            border: 1px solid #3B7FE8;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #3B7FE8;
+            font-weight: 500;
+            cursor: help;
+            position: relative;
+        }
+
+        .phase-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #3B7FE8;
+        }
+
+        .phase-badge:hover .phase-tooltip {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        .phase-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            margin-top: 8px;
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 240px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 200ms;
+            z-index: 100;
+        }
+
+        .phase-tooltip::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .tooltip-phase {
+            font-size: 12px;
+            color: #0D0F11;
+            margin-bottom: 8px;
+        }
+
+        .tooltip-phase strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .tooltip-phase.active {
+            color: #3B7FE8;
+        }
+
+        .tooltip-divider {
+            height: 1px;
+            background: #E4E6E8;
+            margin: 8px 0;
+        }
+
+        .profile-btn {
+            padding: 6px 16px;
+            border-radius: 8px;
+            border: 1px solid #E4E6E8;
+            background: white;
+            color: #3D4043;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .chat-area {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+        }
+
+        .message.user {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 600px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .message.user .message-bubble {
+            background: #3B7FE8;
+            color: white;
+        }
+
+        .message.assistant .message-bubble {
+            background: white;
+            border: 1px solid #E4E6E8;
+            color: #0D0F11;
+        }
+
+        .label {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3B7FE8;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="label">Option C: Minimal Badge (Hover)</div>
+
+    <div class="header">
+        <div class="logo">
+            OUTCOMIST<span class="logo-arrow">≫</span>
+        </div>
+
+        <div class="title-group">
+            <div class="title">Vegas Thanksgiving Family Trip</div>
+            <div class="phase-badge">
+                Phase 1: Discover
+                <div class="phase-tooltip">
+                    <div class="tooltip-phase active">
+                        <strong>1. Discover</strong>
+                        Understanding priorities & constraints
+                    </div>
+                    <div class="tooltip-divider"></div>
+                    <div class="tooltip-phase">
+                        <strong>2. Review Proposal</strong>
+                        See recommendation & reasoning
+                    </div>
+                    <div class="tooltip-divider"></div>
+                    <div class="tooltip-phase">
+                        <strong>3. Execute Plan</strong>
+                        Get actionable next steps
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="profile-btn">Profile</button>
+    </div>
+
+    <div class="chat-area">
+        <div class="message user">
+            <div class="message-bubble">
+                help me plan trip to vegas with my wife (laura), daughter (charlotte 8), son (mason 12). we are going over thanksgiving...
+            </div>
+        </div>
+
+        <div class="message assistant">
+            <div class="message-bubble">
+                I'll help you plan a Vegas trip that works for everyone – kids, adults, and extended family over Thanksgiving.<br><br>
+                Let me ask a few questions to understand your situation better (~10 min), then I can create a specific itinerary and logistics plan for your group.
+            </div>
+        </div>
+
+        <div class="message assistant">
+            <div class="message-bubble">
+                <strong>What's your current situation with this trip?</strong><br><br>
+                • Is this already booked (flights/hotels), or are you still in planning mode?<br>
+                • Any specific must-dos or concerns about Vegas with kids that age?
+            </div>
+        </div>
+    </div>
+</body>
+</html>

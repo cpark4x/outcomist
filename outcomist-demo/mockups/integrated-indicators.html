@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Phase Indicators</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #FAFBFC;
+            padding: 40px;
+        }
+
+        .option {
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .option-label {
+            font-size: 14px;
+            color: #94969A;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-demo {
+            background: white;
+            border: 1px solid #E4E6E8;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        /* Option 1: Dot + Label Pairs (Integrated) */
+        .indicator-integrated {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .phase-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #94969A;
+            font-weight: 500;
+        }
+
+        .phase-item .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #E4E6E8;
+            flex-shrink: 0;
+        }
+
+        .phase-item.active {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        .phase-item.active .dot {
+            background: #3B7FE8;
+            width: 10px;
+            height: 10px;
+        }
+
+        .arrow-sep {
+            color: #E4E6E8;
+            font-size: 16px;
+        }
+
+        /* Option 2: Numbered Labels */
+        .indicator-numbered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .numbered-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #94969A;
+            font-weight: 500;
+        }
+
+        .numbered-item .number {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #F8F9FA;
+            border: 1px solid #E4E6E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .numbered-item.active {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        .numbered-item.active .number {
+            background: #3B7FE8;
+            border-color: #3B7FE8;
+            color: white;
+        }
+
+        /* Option 3: Pill Style */
+        .indicator-pills {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .pill {
+            padding: 6px 14px;
+            border-radius: 16px;
+            background: #F8F9FA;
+            border: 1px solid #E4E6E8;
+            font-size: 13px;
+            color: #94969A;
+            font-weight: 500;
+            transition: all 200ms;
+        }
+
+        .pill.active {
+            background: #3B7FE8;
+            border-color: #3B7FE8;
+            color: white;
+        }
+
+        .pill-arrow {
+            color: #E4E6E8;
+            font-size: 14px;
+        }
+
+        /* Option 4: Underline Style */
+        .indicator-underline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .underline-item {
+            font-size: 14px;
+            color: #94969A;
+            font-weight: 500;
+            padding-bottom: 4px;
+            position: relative;
+        }
+
+        .underline-item.active {
+            color: #3B7FE8;
+            font-weight: 600;
+        }
+
+        .underline-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #3B7FE8;
+            border-radius: 1px;
+        }
+
+        .notes {
+            margin-top: 16px;
+            padding: 12px;
+            background: #F8F9FA;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #3D4043;
+            line-height: 1.6;
+        }
+
+        .notes strong {
+            color: #0D0F11;
+        }
+
+        .recommendation {
+            background: #F0F5FF;
+            border: 1px solid #3B7FE8;
+            border-left-width: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Option 1: Dot + Label (Integrated) -->
+    <div class="option recommendation">
+        <div class="option-label">⭐ Option 1: Dot + Label (Integrated)</div>
+        <div class="header-demo">
+            <div class="indicator-integrated">
+                <div class="phase-item active">
+                    <div class="dot"></div>
+                    <span>Discover</span>
+                </div>
+                <span class="arrow-sep">→</span>
+                <div class="phase-item">
+                    <div class="dot"></div>
+                    <span>Review</span>
+                </div>
+                <span class="arrow-sep">→</span>
+                <div class="phase-item">
+                    <div class="dot"></div>
+                    <span>Execute</span>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Dot and label are clearly connected, clean hierarchy<br>
+            <strong>Cons:</strong> None - this fixes the separation issue<br>
+            <strong>Recommended:</strong> Best balance of clarity and aesthetics
+        </div>
+    </div>
+
+    <!-- Option 2: Numbered Labels -->
+    <div class="option">
+        <div class="option-label">Option 2: Numbered Labels</div>
+        <div class="header-demo">
+            <div class="indicator-numbered">
+                <div class="numbered-item active">
+                    <div class="number">1</div>
+                    <span>Discover</span>
+                </div>
+                <span class="arrow-sep">→</span>
+                <div class="numbered-item">
+                    <div class="number">2</div>
+                    <span>Review</span>
+                </div>
+                <span class="arrow-sep">→</span>
+                <div class="numbered-item">
+                    <div class="number">3</div>
+                    <span>Execute</span>
+                </div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Numbers make sequence very clear, professional look<br>
+            <strong>Cons:</strong> Slightly more visual weight<br>
+            <strong>Good for:</strong> When emphasizing linear progression
+        </div>
+    </div>
+
+    <!-- Option 3: Pill/Badge Style -->
+    <div class="option">
+        <div class="option-label">Option 3: Pill/Badge Style</div>
+        <div class="header-demo">
+            <div class="indicator-pills">
+                <div class="pill active">Discover</div>
+                <span class="pill-arrow">→</span>
+                <div class="pill">Review</div>
+                <span class="pill-arrow">→</span>
+                <div class="pill">Execute</div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Modern, clear active state, contained design<br>
+            <strong>Cons:</strong> Takes more space, heavier visual presence<br>
+            <strong>Good for:</strong> When phases need more emphasis
+        </div>
+    </div>
+
+    <!-- Option 4: Underline/Tab Style -->
+    <div class="option">
+        <div class="option-label">Option 4: Underline/Tab Style</div>
+        <div class="header-demo">
+            <div class="indicator-underline">
+                <div class="underline-item active">Discover</div>
+                <div class="underline-item">Review</div>
+                <div class="underline-item">Execute</div>
+            </div>
+        </div>
+        <div class="notes">
+            <strong>Pros:</strong> Clean, minimal, familiar pattern (like tabs)<br>
+            <strong>Cons:</strong> No visual connection/progression between phases<br>
+            <strong>Good for:</strong> Maximum simplicity
+        </div>
+    </div>
+
+    <!-- Comparison Grid -->
+    <div class="option">
+        <div class="option-label">Quick Comparison</div>
+        <div style="padding: 16px; font-size: 14px; line-height: 2;">
+            <strong>Visual Weight (lightest to heaviest):</strong><br>
+            Underline < Dot+Label < Numbered < Pills<br><br>
+
+            <strong>Clarity (most to least clear):</strong><br>
+            Numbered = Dot+Label > Pills > Underline<br><br>
+
+            <strong>Modern Feel:</strong><br>
+            Pills > Dot+Label > Underline > Numbered<br><br>
+
+            <strong>Space Efficiency:</strong><br>
+            Underline > Dot+Label > Numbered > Pills
+        </div>
+    </div>
+</body>
+</html>
