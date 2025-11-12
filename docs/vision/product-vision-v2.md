@@ -6,11 +6,24 @@
 
 ---
 
+## The Core Problem
+
+**AI drives activity, not outcomes.**
+
+People ask AI to do things, but they often don't know:
+1. What they actually want (the real outcome)
+2. How to articulate it clearly enough for AI to help
+3. Whether what they're asking for will achieve the outcome
+
+The result? Lots of activity, but not the outcomes they're seeking.
+
+---
+
 ## Core Value Proposition
 
-**Outcomist turns unclear decisions into executable proposals.**
+**Outcomist helps you figure out what you actually want before taking action.**
 
-Users arrive with vague questions. AI deeply understands the problem, validates it can execute within constraints, and delivers a high-quality proposal the user can review and validate before committing.
+Users arrive with vague questions. Outcomist asks the right questions to surface what matters, helps you understand the decision space, and turns unclear intentions into clear, executable proposals you can validate before committing.
 
 ---
 

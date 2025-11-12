@@ -1,8 +1,19 @@
 # Outcomist
 
-**Decision exploration through pattern recognition and progressive discovery**
+**AI drives activity, not outcomes. Outcomist helps you figure out what you actually want before taking action.**
 
 **Current Status**: Epic 1 (Deep Discovery) validated - v4.8 shipped | Epic 2-3 design in progress
+
+---
+
+## The Problem
+
+People ask AI to do things, but they often don't know:
+1. What they actually want (the real outcome)
+2. How to articulate it clearly enough for AI to help
+3. Whether what they're asking for will achieve the outcome
+
+The result? Lots of activity, but not the outcomes they're seeking.
 
 ---
 
@@ -26,7 +37,7 @@ Outcomist will:
 
 ## What is Outcomist?
 
-A decision exploration tool that helps you understand what you're REALLY deciding.
+A decision exploration tool that helps you understand what you actually want before taking action. It asks the right questions to surface what matters, so you can make decisions that lead to real outcomes.
 
 People frame decisions wrong:
 - "Should I redesign my office?" → Really about creating personal sanctuary
