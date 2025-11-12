@@ -17,72 +17,145 @@
   }
 
   const phases = [
-    { id: 'discover' as Phase, label: 'Discover' },
+    { id: 'discover' as Phase, label: 'Explore' },
     { id: 'review' as Phase, label: 'Review' },
-    { id: 'execute' as Phase, label: 'Execute' }
+    { id: 'execute' as Phase, label: 'Build' }
   ];
 </script>
 
-<header
-  style="
-    position: relative;
-    background: white;
-    border-bottom: 1px solid #E4E6E8;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-  "
->
+<header class="header">
   <!-- Left: Phases breadcrumb -->
   {#if showPhases}
-    <div style="display: flex; align-items: center; gap: 8px;">
+    <div class="phases-breadcrumb">
       {#each phases as phase, i}
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 13px; color: {currentPhase === phase.id ? '#3B7FE8' : '#94969A'}; font-weight: {currentPhase === phase.id ? '600' : '500'};">
-            {phase.label}
-          </span>
+        <div class="phase-item">
+          <div class="phase-content">
+            <span
+              class="phase-label"
+              class:active={currentPhase === phase.id}
+            >
+              {phase.label}
+            </span>
+            <div class="phase-indicator">
+              <div
+                class="indicator-dot"
+                class:active={currentPhase === phase.id}
+              ></div>
+            </div>
+          </div>
           {#if i < phases.length - 1}
-            <span style="color: #E4E6E8;">›</span>
+            <span class="phase-separator">›</span>
           {/if}
         </div>
       {/each}
     </div>
   {/if}
 
-  <!-- Center: Project title (absolutely positioned for true centering) -->
-  <div
-    style="
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 15px;
-      color: #3D4043;
-      font-weight: 500;
-    "
-  >
+  <!-- Center: Project title -->
+  <div class="project-title">
     {projectTitle || 'New Decision'}
   </div>
 
   <!-- Profile button on right -->
-  <button
-    on:click={openProfile}
-    style="
-      position: absolute;
-      right: 24px;
-      top: 24px;
-      padding: 6px 16px;
-      border-radius: 8px;
-      border: 1px solid #E4E6E8;
-      background: white;
-      color: #3D4043;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 200ms ease-out;
-    "
-  >
+  <button class="profile-button" on:click={openProfile}>
     Profile
   </button>
 </header>
 
 <ProfileModal show={showProfile} onClose={closeProfile} />
+
+<style>
+  .header {
+    position: relative;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-default);
+    padding: var(--space-6);
+    display: flex;
+    align-items: center;
+  }
+
+  .phases-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .phase-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .phase-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .phase-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .phase-label.active {
+    color: var(--blue-500);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .phase-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .indicator-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    transition: background var(--duration-fast) var(--ease-out);
+  }
+
+  .indicator-dot.active {
+    background: var(--blue-500);
+  }
+
+  .phase-separator {
+    color: var(--border-default);
+  }
+
+  .project-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .profile-button {
+    position: absolute;
+    right: var(--space-6);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-default);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+
+  .profile-button:hover {
+    background: var(--gray-50);
+    border-color: var(--border-emphasis);
+  }
+
+  .profile-button:active {
+    transform: scale(0.98);
+  }
+</style>

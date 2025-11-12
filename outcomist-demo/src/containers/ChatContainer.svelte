@@ -7,28 +7,36 @@
   import Sidebar from '../components/layout/Sidebar.svelte';
 
   const API_URL = 'http://localhost:3001/api/explore';
+  const TITLE_API_URL = 'http://localhost:3001/api/generate-title';
 
   $: messages = $conversation.messages;
   $: isProcessing = $conversation.isProcessing;
   $: projectTitle = $conversation.projectTitle;
+  $: currentPhase = $conversation.currentPhase;
 
-  // Helper function to generate project title from message content
-  function generateProjectTitle(content: string): string {
-    // Take first 50 chars, capitalize first letter, remove "i want to" type phrases
-    let title = content
-      .toLowerCase()
-      .replace(/^(i want to|i need to|help me|should i|can i|how do i|what about|how about|now|okay|what if)\s+/i, '')
-      .trim();
+  // Generate AI-powered project title
+  async function generateProjectTitle(userMessage: string, conversationContext?: string): Promise<string> {
+    try {
+      const response = await fetch(TITLE_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userMessage,
+          conversationContext
+        }),
+      });
 
-    // Capitalize first letter
-    title = title.charAt(0).toUpperCase() + title.slice(1);
+      if (!response.ok) {
+        throw new Error(`Title generation failed: ${response.statusText}`);
+      }
 
-    // Truncate if too long
-    if (title.length > 50) {
-      title = title.substring(0, 47) + '...';
+      const data = await response.json();
+      return data.title;
+    } catch (error) {
+      console.error('Error generating title:', error);
+      // Fallback: simple truncation
+      return userMessage.substring(0, 50) + (userMessage.length > 50 ? '...' : '');
     }
-
-    return title;
   }
 
   // Helper to detect if message indicates topic shift
@@ -45,11 +53,16 @@
 
     // Generate or update project title
     if (messages.length === 0) {
-      // First message - always set title
-      conversation.setProjectTitle(generateProjectTitle(content.trim()));
+      // First message - generate AI title asynchronously
+      generateProjectTitle(content.trim()).then(title => {
+        conversation.setProjectTitle(title);
+      });
     } else if (isTopicShift(content.trim())) {
-      // Topic shifted - update title
-      conversation.setProjectTitle(generateProjectTitle(content.trim()));
+      // Topic shifted - generate new title with context
+      const conversationSummary = messages.slice(-2).map(m => `${m.role}: ${m.content.substring(0, 100)}`).join('\n');
+      generateProjectTitle(content.trim(), conversationSummary).then(title => {
+        conversation.setProjectTitle(title);
+      });
     }
 
     // Add user message
@@ -105,22 +118,22 @@
   }
 </script>
 
-<div class="flex h-screen" style="background: #FAFBFC;">
-  <!-- Left sidebar -->
-  <Sidebar />
+<div class="flex h-screen" style="background: var(--bg-page);">
+  <!-- Left sidebar (narrow icons) -->
+  <Sidebar showLogo={messages.length > 0} />
 
   <!-- Main content area -->
   <div class="flex flex-col flex-1">
     <!-- Header (only show when conversation started) -->
     {#if messages.length > 0}
-      <Header {projectTitle} />
+      <Header {projectTitle} {currentPhase} showPhases={true} />
     {/if}
 
     <div class="flex-1 overflow-y-auto">
       {#if messages.length === 0}
         <WelcomeScreen onSubmit={handleSubmit} disabled={isProcessing} />
       {:else}
-        <MessageList {messages} {isProcessing} onQuickReply={handleQuickReply} />
+        <MessageList {messages} {isProcessing} {currentPhase} onQuickReply={handleQuickReply} />
       {/if}
     </div>
 

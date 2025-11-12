@@ -1,11 +1,12 @@
 <script lang="ts">
   import { afterUpdate, tick } from 'svelte';
-  import type { Message } from '../../stores/conversation';
+  import type { Message, Phase } from '../../stores/conversation';
   import MessageBubble from './MessageBubble.svelte';
   import ThinkingIndicator from './ThinkingIndicator.svelte';
 
   export let messages: Message[];
   export let isProcessing: boolean = false;
+  export let currentPhase: Phase = 'discover';
   export let onQuickReply: ((option: string) => void) | undefined = undefined;
 
   let messagesEnd: HTMLDivElement;
@@ -20,16 +21,7 @@
   });
 </script>
 
-<div
-  class="messages-container"
-  style="
-    display: flex;
-    flex-direction: column;
-    padding: 24px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  "
->
+<div class="messages-container">
   {#each messages as message (message.id)}
     <MessageBubble
       role={message.role}
@@ -45,3 +37,13 @@
 
   <div bind:this={messagesEnd}></div>
 </div>
+
+<style>
+  .messages-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6) var(--space-5);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+</style>

@@ -1,9 +1,23 @@
 <script lang="ts">
+  export let showLogo: boolean = false;
+
   // Navigation items will be added here as we build out features
   let activeItem = 'home';
 </script>
 
 <div class="sidebar">
+  <!-- Logo icon (only when conversation active) -->
+  {#if showLogo}
+    <div class="logo-icon">
+      <img
+        src="/src/assets/outcomist-icon.svg"
+        alt="Outcomist"
+        style="width: 32px; height: 32px; object-fit: contain;"
+      />
+    </div>
+    <div class="divider"></div>
+  {/if}
+
   <!-- Navigation items -->
   <nav class="nav-items">
     <!-- Home/New chat -->
@@ -77,27 +91,45 @@
 <style>
   .sidebar {
     width: 60px;
-    background: #FFFFFF;
-    border-right: 1px solid #E4E6E8;
+    background: var(--bg-primary);
+    border-right: 1px solid var(--border-default);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px 0;
+    padding: 0;
     flex-shrink: 0;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+  }
+
+  .divider {
+    width: 32px;
+    height: 1px;
+    background: var(--border-default);
+    margin: 0 0 var(--space-4) 0;
   }
 
   .nav-items {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-2);
     flex: 1;
   }
 
   .bottom-items {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-2);
     margin-top: auto;
+    padding-bottom: var(--space-4);
   }
 
   .nav-item {
@@ -108,23 +140,24 @@
     justify-content: center;
     border: none;
     background: transparent;
-    color: #6B7280;
+    color: var(--gray-500);
     cursor: pointer;
-    border-radius: 8px;
-    transition: all 150ms ease-out;
+    border-radius: var(--radius-md);
+    transition: all var(--duration-fast) var(--ease-out);
   }
 
   .nav-item:hover {
-    background: #F3F4F6;
-    color: #0D0F11;
+    background: var(--gray-100);
+    color: var(--text-primary);
   }
 
   .nav-item.active {
-    background: #EEF2FF;
-    color: #3B7FE8;
+    background: var(--blue-50);
+    color: var(--blue-500);
   }
 
   .nav-item:active {
     transform: scale(0.95);
+    transition: transform var(--duration-instant) var(--ease-in);
   }
 </style>

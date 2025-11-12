@@ -43,37 +43,20 @@
     "
   >
     <img
-      src="/src/assets/outcomist-wordmark.png"
+      src="/src/assets/outcomist-wordmark.svg"
       alt="Outcomist"
       style="height: 26.4px; width: auto; display: block;"
     />
   </div>
 
   <!-- Centered content (headline + input like Manus) -->
-  <div
-    class="welcome-content"
-    style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 48px 24px;
-      padding-bottom: 25vh;
-      animation: fadeIn 600ms ease-out;
-    "
-  >
-    <h1
-      style="
-        font-size: 32px;
-        color: #0D0F11;
-        font-weight: 500;
-        margin-bottom: 40px;
-        text-align: center;
-      "
-    >
-      What are you deciding?
+  <div class="welcome-content">
+    <h1 class="headline">
+      Turn uncertainty into clarity
     </h1>
+    <p class="subheadline">
+      Your AI partner for structured decision-making
+    </p>
 
     <!-- Centered input box (like Manus) -->
     <div class="input-container-centered">
@@ -123,6 +106,17 @@
     position: relative;
   }
 
+  .welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: var(--space-12) var(--space-6);
+    padding-bottom: 25vh;
+    animation: fadeIn var(--duration-slow) var(--ease-out);
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -134,6 +128,28 @@
     }
   }
 
+  /* Headline Styling */
+  .headline {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    text-align: center;
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  .subheadline {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-12);
+    max-width: 600px;
+  }
+
+  /* Input Styling */
   .input-container-centered {
     width: 100%;
     max-width: 700px;
@@ -146,44 +162,52 @@
 
   .main-input {
     width: 100%;
-    padding: 20px 24px;
+    padding: var(--space-5) var(--space-6);
     padding-right: 100px;
-    font-size: 16px;
-    border: 1px solid #E4E6E8;
-    border-radius: 12px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
     outline: none;
-    transition: all 200ms ease-out;
-    background: white;
-    color: #0D0F11;
-    font-family: system-ui, -apple-system, sans-serif;
+    transition: all var(--duration-fast) var(--ease-out);
+    background: var(--bg-primary);
+    color: var(--text-primary);
     resize: vertical;
     min-height: 120px;
-    line-height: 1.5;
+    line-height: var(--line-height-base);
+  }
+
+  .main-input:hover {
+    border-color: var(--border-emphasis);
   }
 
   .main-input:focus {
-    border-color: #3B7FE8;
-    box-shadow: 0 0 0 3px rgba(59, 127, 232, 0.06);
+    border-color: var(--blue-500);
+    box-shadow: var(--shadow-focus);
   }
 
   .main-input::placeholder {
-    color: #B8BABD;
+    color: var(--text-placeholder);
   }
 
   .button-group {
     position: absolute;
-    bottom: 16px;
-    right: 16px;
+    bottom: var(--space-4);
+    right: var(--space-4);
     display: flex;
-    gap: 8px;
+    gap: var(--space-2);
     align-items: center;
   }
 
   .explore-link {
-    transition: color 150ms ease-out;
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+    cursor: pointer;
+    margin-top: var(--space-6);
+    transition: color var(--duration-fast) var(--ease-out);
   }
 
   .explore-link:hover {
-    color: #3B7FE8;
+    color: var(--blue-500);
   }
 </style>

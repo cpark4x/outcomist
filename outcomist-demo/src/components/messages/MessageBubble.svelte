@@ -48,26 +48,13 @@
   }
 </script>
 
-<!-- Enhanced styling inspired by Manus -->
+<!-- Enhanced styling using design tokens -->
 <div
   class="message"
-  style="
-    display: flex;
-    justify-content: {role === 'user' ? 'flex-end' : 'flex-start'};
-    margin-bottom: 24px;
-    animation: slideIn 250ms ease-out;
-  "
+  class:user-message={role === 'user'}
+  class:assistant-message={role === 'assistant'}
 >
-  <div class="message-content" style="
-    padding: {role === 'user' ? '14px 18px' : '18px 22px'};
-    border-radius: {role === 'user' ? '12px 12px 4px 12px' : '12px 12px 12px 4px'};
-    background-color: {role === 'user' ? '#3B7FE8' : '#F5F7F9'};
-    color: {role === 'user' ? 'white' : '#1A1D21'};
-    max-width: {role === 'user' ? '75%' : '90%'};
-    font-size: {role === 'user' ? '15px' : '15px'};
-    line-height: 1.6;
-    box-shadow: {role === 'user' ? '0 1px 2px rgba(0, 0, 0, 0.05)' : '0 1px 3px rgba(0, 0, 0, 0.05)'};
-  ">
+  <div class="message-content">
     {#if role === 'assistant'}
       <div class="prose">
         {@html htmlContent}
@@ -89,10 +76,49 @@
 </div>
 
 <style>
+  /* Message container styling */
+  .message {
+    display: flex;
+    margin-bottom: var(--space-6);
+    animation: slideIn var(--duration-base) var(--ease-out);
+  }
+
+  .user-message {
+    justify-content: flex-end;
+  }
+
+  .assistant-message {
+    justify-content: flex-start;
+  }
+
+  /* Message bubble styling */
+  .message-content {
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    box-shadow: var(--shadow-sm);
+    max-width: 85%;
+  }
+
+  .user-message .message-content {
+    background-color: var(--blue-500);
+    color: white;
+    border-bottom-right-radius: var(--radius-sm);
+    max-width: 75%;
+  }
+
+  .assistant-message .message-content {
+    background-color: var(--gray-50);
+    color: var(--text-primary);
+    border-bottom-left-radius: var(--radius-sm);
+    max-width: 90%;
+  }
+
   @keyframes slideIn {
     from {
       opacity: 0;
-      transform: translateY(8px);
+      transform: translateY(12px);
     }
     to {
       opacity: 1;
@@ -100,10 +126,11 @@
     }
   }
 
+  /* Prose styling using design tokens */
   :global(.prose) {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #1A1D21;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-primary);
   }
 
   :global(.prose p) {
@@ -114,40 +141,40 @@
     margin-bottom: 0;
   }
 
-  /* Enhanced bold text - more prominent like Manus */
+  /* Enhanced bold text */
   :global(.prose strong) {
-    font-weight: 600;
-    color: #0D0F11;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-900);
   }
 
   /* Italic text for emphasis */
   :global(.prose em) {
     font-style: italic;
-    color: #2C3036;
+    color: var(--gray-700);
   }
 
-  /* Headings */
+  /* Headings using design tokens */
   :global(.prose h1), :global(.prose h2), :global(.prose h3) {
-    font-weight: 600;
-    color: #0D0F11;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-900);
     margin-top: 1.5em;
     margin-bottom: 0.75em;
-    line-height: 1.3;
+    line-height: var(--line-height-tight);
   }
 
   :global(.prose h1) {
-    font-size: 1.5em;
+    font-size: var(--font-size-xl);
   }
 
   :global(.prose h2) {
-    font-size: 1.25em;
+    font-size: var(--font-size-lg);
   }
 
   :global(.prose h3) {
-    font-size: 1.1em;
+    font-size: var(--font-size-md);
   }
 
-  /* Enhanced list styling - clearer hierarchy like Manus */
+  /* Enhanced list styling */
   :global(.prose ul), :global(.prose ol) {
     margin-top: 1.2em;
     margin-bottom: 1.2em;
@@ -159,7 +186,7 @@
     margin-bottom: 0.9em;
     padding-left: 2em;
     position: relative;
-    line-height: 1.6;
+    line-height: var(--line-height-base);
   }
 
   :global(.prose li:last-child) {
@@ -170,8 +197,8 @@
     content: "•";
     position: absolute;
     left: 0.6em;
-    color: #3B7FE8;
-    font-weight: 700;
+    color: var(--blue-500);
+    font-weight: var(--font-weight-bold);
     font-size: 1.15em;
   }
 
@@ -184,17 +211,17 @@
     counter-increment: item;
     position: absolute;
     left: 0.4em;
-    color: #3B7FE8;
-    font-weight: 700;
+    color: var(--blue-500);
+    font-weight: var(--font-weight-bold);
     font-size: 0.95em;
   }
 
-  /* Strong text in lists - acts as labels like Manus */
+  /* Strong text in lists */
   :global(.prose li strong) {
     display: inline-block;
     margin-bottom: 0.3em;
-    color: #0D0F11;
-    font-weight: 600;
+    color: var(--gray-900);
+    font-weight: var(--font-weight-semibold);
   }
 
   /* Nested lists */
@@ -203,22 +230,22 @@
     margin-bottom: 0.6em;
   }
 
-  /* Code blocks */
+  /* Code blocks using design tokens */
   :global(.prose code) {
-    background: #EDF0F3;
+    background: var(--gray-100);
     padding: 0.15em 0.4em;
-    border-radius: 4px;
-    font-size: 0.9em;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
     font-family: 'Courier New', monospace;
-    color: #2C3036;
+    color: var(--gray-700);
   }
 
-  /* Blockquotes */
+  /* Blockquotes using design tokens */
   :global(.prose blockquote) {
-    border-left: 3px solid #3B7FE8;
+    border-left: 3px solid var(--blue-500);
     padding-left: 1em;
     margin: 1.2em 0;
-    color: #4A4E55;
+    color: var(--gray-600);
     font-style: italic;
   }
 </style>

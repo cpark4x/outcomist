@@ -8,10 +8,13 @@ export interface Message {
   isStreaming?: boolean;
 }
 
+export type Phase = 'discover' | 'review' | 'execute';
+
 export interface ConversationState {
   messages: Message[];
   isProcessing: boolean;
   projectTitle: string;
+  currentPhase: Phase;
 }
 
 function createConversationStore() {
@@ -19,6 +22,7 @@ function createConversationStore() {
     messages: [],
     isProcessing: false,
     projectTitle: '',
+    currentPhase: 'discover',
   };
 
   const { subscribe, set, update } = writable<ConversationState>(initialState);
@@ -50,6 +54,10 @@ function createConversationStore() {
 
     setProjectTitle: (projectTitle: string) => {
       update(state => ({ ...state, projectTitle }));
+    },
+
+    setPhase: (phase: Phase) => {
+      update(state => ({ ...state, currentPhase: phase }));
     },
   };
 }
